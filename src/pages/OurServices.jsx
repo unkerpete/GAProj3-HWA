@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const OurServices = () => {
+  const dosomeshit = [];
   return <div></div>;
 };
 
