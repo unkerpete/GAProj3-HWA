@@ -4,6 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        transparent: "transparent",
+        current: "currentColor",
+        peach: "#fdf4d8",
         primary: {
           800: "#2B4435",
           600: "#4F7F71",
@@ -16,9 +19,17 @@ module.exports = {
           200: "#F3F8FF",
         },
       },
+
+      fontFamily: {
+        DM: ["DM Sans", "sans-serif"],
+      },
+      fontSize: {
+        "3xl": "32px",
+        xl: "20px",
+        lg: "18px",
+        base: "16px",
+      },
     },
   },
   plugins: [],
 };
-
-//eg. bg-primary-800 // text-primary-800 // bg-primary-800
