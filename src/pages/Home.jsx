@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Components/Button";
-import categoryCardData  from "../Components/categoryCardData";
-import CategoryCard from "../Components/CategoryCard";
+import categoryCardData from "../Components/Home/categoryCardData";
+import CategoryCard from "../Components/Home/CategoryCard";
 
 const Home = () => {
   return (
