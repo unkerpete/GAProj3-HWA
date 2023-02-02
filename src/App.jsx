@@ -1,16 +1,28 @@
-import './App.css';
+import "./App.css";
+import GetInvolved from "./pages/GetInvolved";
+import NavBar from "./Components/NavBar";
+import Footer from "./Components/Footer";
+import { Route, Routes, Navigate } from "react-router-dom";
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import OurServices from "./pages/OurServices";
+import CurrentEvents from "./pages/CurrentEvents";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
-    <div className=''>
+    <div className="">
       <NavBar />
 
       <Routes>
-        <Route path='/' element={<Navigate replace to='/Home' />} />
-        <Route path='/page-one' element={<PageOne />} />
-        <Route path='/page-one/:item' element={<Details />} />
-        <Route path='/page-two/' element={<PageTwo />} />
-        <Route path='/page-three/' element={<PageThree />} />
+        <Route path="/" element={<Navigate replace to="/about-us" />} />
+        <Route path="/Home" element={<Home />} />
+        
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/our-services" element={<OurServices />} />
+        <Route path="/get-involved/" element={<GetInvolved />} />
+        <Route path="/current-events/" element={<CurrentEvents />} />
+        <Route path="/contact-us/" element={<ContactUs />} />
       </Routes>
       <Footer />
     </div>

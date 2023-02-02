@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Components/Button";
-import { categoryCardData } from "../Components/categoryCardData";
+import categoryCardData  from "../Components/categoryCardData";
 import CategoryCard from "../Components/CategoryCard";
 
 const Home = () => {
