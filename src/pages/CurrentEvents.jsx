@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AboutOurPeople = () => {
+const CurrentEvents = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const AboutOurPeople = () => {
     );
 };
 
-export default AboutOurPeople;
+export default CurrentEvents;
