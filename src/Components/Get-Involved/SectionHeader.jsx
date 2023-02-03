@@ -1,6 +1,6 @@
 import React from "react";
 
-const SectionHeader = () => {
+const SectionHeader = ({ toggleTab }) => {
   return (
     <>
       {/* MESSAGE + IMAGE */}
@@ -14,55 +14,23 @@ const SectionHeader = () => {
         </div>
         <div className="">IMAGE HERE YO</div>
       </div>
-
       {/* TABS */}
-      {/* <div className=" bg-primary-200 text-center">
-        <ul className="flex flex-wrap">
-          <li className="mr-2">
-            <a
-              href=""
-              className="inline-block p-4 border-b-2 border-transparent rounded-t-lg'"
-            >
-              Make a Donation
-            </a>
-          </li>
-        </ul>
-      </div> */}
-
-      <div class="bg-primary-200 text-center">
-        <ul class="grid grid-cols-2">
-          <li class="">
-            <a
-              href=""
-              class="inline-block p-4 border-b-4 border-transparent hover:border-[#2B4435] active:border-[#2B4435]"
-            >
-              Make a Donation
-            </a>
-          </li>
-          <li class="">
-            <a
-              href=""
-              class="inline-block p-4 border-b-4 border-transparent hover:border-[#2B4435] active:border-[#2B4435]"
-            >
-              Become a Volunteer
-            </a>
-          </li>
-        </ul>
+      <div className="grid grid-cols-2 bg-primary-200 text-center mb-20">
+        <div
+          className="p-4 font-DM text-xl font-normal border-transparent hover:border-[#2b4435]"
+          onClick={() => toggleTab(1)}
+        >
+          Make a Donation
+        </div>
+        <div
+          className="p-4 font-DM text-xl font-normal border-transparent hover:border-[#2b4435]"
+          onClick={() => toggleTab(2)}
+        >
+          Become a Volunteer
+        </div>
       </div>
     </>
   );
 };
 
 export default SectionHeader;
-{
-  /* <div className="text-center">
-          <button className="" type="submit">
-            Make a Donation
-          </button>
-        </div>
-        <div className="text-center">
-          <button className="" type="submit">
-            Become a Volunteer
-          </button>
-        </div> */
-}
