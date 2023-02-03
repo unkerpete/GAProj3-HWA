@@ -3,7 +3,7 @@ import React from "react";
 const Volunteers = () => {
   return (
     <div>
-      <div className="grid grid-cols-1 text-center pb-4">
+      <div className="grid grid-cols-1 text-center pb-4 mt-36">
         <h3 className="text-primary-800">Volunteers</h3>
       </div>
       <div className="grid grid-cols-4 text-center">
