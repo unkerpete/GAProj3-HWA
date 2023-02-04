@@ -4,8 +4,8 @@ const Accordion = ({ title, content, image }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className="justify-center border-b">
-      <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
+    <div className="justify-center text-center mb-2 border-b">
+      <div className="accordion-title mb-2" onClick={() => setIsActive(!isActive)}>
         <div>
           {title}
           {isActive ? "-" : "+"}
