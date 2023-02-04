@@ -11,14 +11,16 @@ const Form = () => {
   };
 
   return (
-    <div class="container mx-auto bg-green-50 rounded-2xl shadow-md">
-      <p className="text-4xl text-center pt-10 mb-10">
-        Corporate Volunteer Form
+    <div class="container mx-auto bg-primary-200 rounded-2xl shadow-md">
+      <p className="text-center pt-10 mb-10">
+        <h3>Corporate Volunteer Form</h3>
       </p>
-      <p className="text-center text-2xl">
+      <p className="text-center font-DM text-xl font-normal">
         Thank you for being interested in volunteering!
       </p>
-      <p className="text-center text-2xl">We will get back to you shortly!</p>
+      <p className="text-center font-DM text-xl font-normal">
+        We will get back to you shortly!
+      </p>
 
       <form>
         <div className="grid grid-cols-8 gap-10 mb-6 p-16">
