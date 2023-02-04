@@ -1,10 +1,8 @@
-import React from "react";
-import Accordion from "../Components/Our-Services/Accordian";
-import transportTable from "../Assets/firdaus/our_service/transport/Transport_Table.png";
-// import AccordionDataTransport from "../Components/Our-Services/AccordionData";
+import transportTable from "./Assets/firdaus/accordion/transport/Transport_Table.png"
+// import transportTable from "../Assets/firdaus/our_service/transport/Transport_Table.png";
 
-const OurServices = () => {
-  const accordionDataTransport = [
+
+export default accordionDataTransport = [
     {
       title: "Dial-A-Ride",
       content: `This scheme offers a convenient door-to-door transportation service for individuals with physical disabilities (PWDs) and the frail elderly, who may have difficulty using traditional public transportation. Our specially equipped mini-buses feature wheelchair accessibility, providing safe and reliable transportation for clients. Additionally, clients can book ad-hoc door-to-door trips in advance to meet their specific needs.`,
@@ -45,19 +43,3 @@ const OurServices = () => {
       content: `We sell assistive devices to help drivers with disabilities in operating their vehicle, either electronic or mechanical gadgets such as hand-controlled gadget, left foot accelerator (for manipulating the car’s accelerator and brake pedals), and steering knobs (which can be fixed onto the steering wheel, allowing drivers with a weak grip to steer the vehicle with ease).`,
     },
   ];
-  return (
-    <>
-    <div className="accordion text-center">
-      <h3 className="border-b">Types of Transport Services</h3>
-      
-      <div className="accordion content w-96">
-        {accordionDataTransport.map(({ title, content, image }) => (
-          <Accordion title={title} content={content} image={image} />
-        ))}
-      </div>
-    </div>
-    </>
-  );
-};
-
-export default OurServices;
