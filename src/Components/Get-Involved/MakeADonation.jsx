@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PaymentTabs from "./PaymentTabs";
 
 // to move to database
@@ -31,9 +31,22 @@ const donationCat = [
 ];
 
 const MakeADonation = () => {
+  const [activeDonation, setActiveDonation] = useState("");
+  const [activeCategory, setActiveCategory] = useState("");
+
   const donationTiers = tiers.map((ele, ind) => {
     return (
-      <button key={ind} className="text-center m-4 p-4 bg-white rounded-xl">
+      <button
+        key={ind}
+        className={`text-center m-4 p-4 rounded-xl ${
+          activeDonation === ind
+            ? "border-2 border-primary-800 bg-primary-200"
+            : " bg-white"
+        }`}
+        onClick={() => {
+          setActiveDonation(ind);
+        }}
+      >
         <h3 className="mt-5 ">${ele.amount}</h3>
         <p className="mt-3 font-DM text-base font-normal">{ele.text}</p>
       </button>
@@ -42,7 +55,17 @@ const MakeADonation = () => {
 
   const donationCategory = donationCat.map((ele, ind) => {
     return (
-      <button key={ind} className="text-center m-4 p-10 bg-white rounded-xl">
+      <button
+        key={ind}
+        className={`text-center m-4 p-10 rounded-xl ${
+          activeCategory === ind
+            ? "border-2 border-primary-800 bg-primary-200"
+            : " bg-white"
+        }`}
+        onClick={() => {
+          setActiveCategory(ind);
+        }}
+      >
         <h3 className="">{ele.type}</h3>
       </button>
     );
@@ -76,7 +99,6 @@ const MakeADonation = () => {
       {/* Tab for payment method */}
       {/* To refactor into a component that is mapped*/}
       <PaymentTabs />
-
 
       <p className="px-80 pt-20 font-DM text-xl font-normal">
         <span className="font-bold">Note:</span> IRAS will no longer accept

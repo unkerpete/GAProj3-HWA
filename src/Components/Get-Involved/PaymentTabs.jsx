@@ -9,8 +9,10 @@ const PaymentTabs = () => {
   const payments = paymentTypes.map((paymentType, i) => {
     return (
       <button
-        className={`font-DM text-xl font-normal p-4 bg-secondary-400 ${
-          activePayTab === i ? "bg-secondary-200" : "'"
+        className={`font-DM text-xl  p-4  ${
+          activePayTab === i
+            ? "bg-secondary-200 font-bold "
+            : "bg-secondary-400 font-normal"
         }`}
         onClick={() => setActivePayTab(i)}
       >
