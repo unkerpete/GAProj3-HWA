@@ -16,6 +16,7 @@ const Tabs = ({ setActiveTab, activeTab }) => {
         >
           Make a Donation
         </button>
+
         <button
           className={`p-4 ${
             activeTab === "tab2"

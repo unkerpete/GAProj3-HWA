@@ -1,4 +1,5 @@
 import React from "react";
+import PaymentTabs from "./PaymentTabs";
 
 // to move to database
 const tiers = [
@@ -32,25 +33,27 @@ const donationCat = [
 const MakeADonation = () => {
   const donationTiers = tiers.map((ele, ind) => {
     return (
-      <div key={ind} className="text-center m-4 p-4 bg-white rounded-xl">
+      <button key={ind} className="text-center m-4 p-4 bg-white rounded-xl">
         <h3 className="mt-5 ">${ele.amount}</h3>
         <p className="mt-3 font-DM text-base font-normal">{ele.text}</p>
-      </div>
+      </button>
     );
   });
 
   const donationCategory = donationCat.map((ele, ind) => {
     return (
-      <div key={ind} className="text-center m-4 p-10 bg-white rounded-xl">
+      <button key={ind} className="text-center m-4 p-10 bg-white rounded-xl">
         <h3 className="">{ele.type}</h3>
-      </div>
+      </button>
     );
   });
 
   return (
     <div className="text-primary-800">
       <div className="">
-        <h3 className="m-16 ">1/3 Select a donation Tier</h3>
+        <h3 className="m-16">
+          <span className="">1/3 </span>Select a donation Tier
+        </h3>
         <div className="grid grid-cols-4 bg-secondary-200 m-10 p-4 rounded-xl">
           {donationTiers}
           {/* Custom amount input */}
@@ -72,37 +75,8 @@ const MakeADonation = () => {
       <h3 className="m-16">3/3 Select a payment method</h3>
       {/* Tab for payment method */}
       {/* To refactor into a component that is mapped*/}
-      <div className="grid grid-cols-4 bg-secondary-200 text-center">
-        <div className="font-DM text-xl font-normal border-2 p-4">
-          Credit Card
-        </div>
-        <div className="font-DM text-xl font-normal p-4">PayNow</div>
-        <div className="font-DM text-xl font-normal p-4">GIRO</div>
-        <div className="font-DM text-xl font-normal p-4">Cheque</div>
-      </div>
+      <PaymentTabs />
 
-      <div className="col-start-1 col-end-3 bg-secondary-200 text-primary-800 border-2">
-        <div className="p-20">
-          <p className="font-DM text-xl font-normal mb-5">Personal Details</p>
-          <form>
-            <input
-              className="font-DM text-lg font-normal"
-              type="text"
-              placeholder="Name as per NRIC/FIN*"
-            />
-            <input type="text" placeholder="Email Address*" />
-            <input type="text" placeholder="Phone" />
-            <input type="checkbox" name="" id="" />
-            <label htmlFor="">I would like to Claim Tax Deduction</label>
-            <p className="font-DM text-xl font-normal mb-5">Card Details</p>
-            <input type="text" placeholder="Name on Card" />
-            <input type="text" placeholder="Card Number" />
-            <label htmlFor="">Expiration</label>
-            <label htmlFor="">CVV</label>
-          </form>
-          <button type="submit">Complete Donation</button>
-        </div>
-      </div>
 
       <p className="px-80 pt-20 font-DM text-xl font-normal">
         <span className="font-bold">Note:</span> IRAS will no longer accept
