@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PaymentTabs from "./PaymentTabs";
+import PaymentThru from "./PaymentThru";
 
 // to move to database
 const tiers = [
@@ -100,13 +101,26 @@ const MakeADonation = () => {
       {/* To refactor into a component that is mapped*/}
       <PaymentTabs />
 
-      <p className="px-80 pt-20 font-DM text-xl font-normal">
-        <span className="font-bold">Note:</span> IRAS will no longer accept
-        claims for tax deduction based on donation receipts. All individuals and
-        organisations donating are required to provide their tax reference
-        numbers (e.g. NRIC/FIN/UEN), to enjoy tax deductions on the donations.{" "}
-        <span className="underline">Terms and Conditions</span> apply.
-      </p>
+      {/* Thank You Message for payment via Paynow*/}
+      <div className="text-center mt-16">
+        <h1 className="text-primary-600">Thank you!</h1>
+      </div>
+
+      <div className="grid grid-cols-5 text-left mt-12">
+        <div className="col-start-2 col-end-5 font-DM text-xl font-normal">
+          <p>
+            <span className="font-bold">Note:</span> IRAS will no longer accept
+            claims for tax deduction based on donation receipts.
+          </p>
+          <p>
+            All individuals and organisations donating are required to provide
+            their tax reference numbers (e.g. NRIC/FIN/UEN), to enjoy tax
+            deductions on the donations.{" "}
+            <span className="underline">Terms and Conditions</span> apply.
+          </p>
+        </div>
+      </div>
+      <PaymentThru />
     </div>
   );
 };

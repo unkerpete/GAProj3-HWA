@@ -5,9 +5,9 @@ const Tabs = ({ setActiveTab, activeTab }) => {
 
   return (
     <>
-      <div className="grid grid-cols-2 text-center bg-primary-200 ">
+      <div className="grid grid-cols-2 text-center bg-primary-200 t">
         <button
-          className={`p-4  ${
+          className={`p-4 text-primary-800 ${
             activeTab === "tab1"
               ? "font-DM text-xl font-bold border-b-4 border-primary-800"
               : "font-DM text-xl font-normal"
@@ -18,7 +18,7 @@ const Tabs = ({ setActiveTab, activeTab }) => {
         </button>
 
         <button
-          className={`p-4 ${
+          className={`p-4 text-primary-800 ${
             activeTab === "tab2"
               ? "font-DM text-xl font-bold border-b-4 border-primary-800"
               : "font-DM text-xl font-normal"

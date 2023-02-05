@@ -1,6 +1,14 @@
 import React from "react";
+import Button1 from "./Button1";
+import PaymentThru from "./PaymentThru";
 
 const CreditPayment = () => {
+  // to trigger to payment page
+  const handleCreditSubmission = (e) => {
+    e.preventDefault();
+    console.log("Credit Submission");
+  };
+
   return (
     <div className="col-start-1 col-end-3 bg-secondary-200 text-primary-800 border-2">
       <div className="p-20">
@@ -21,7 +29,10 @@ const CreditPayment = () => {
           <label htmlFor="">Expiration</label>
           <label htmlFor="">CVV</label>
         </form>
-        <button type="submit">Complete Donation</button>
+        <Button1
+          text={"Complete Donation"}
+          handleSubmission={handleCreditSubmission}
+        />
       </div>
     </div>
   );
