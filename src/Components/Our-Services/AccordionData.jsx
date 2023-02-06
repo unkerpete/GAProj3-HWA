@@ -1,4 +1,4 @@
-import transportTable from "../Assets/firdaus/our_service/transport/Transport_Table.png";
+import transportTable from "/src/Assets/firdaus/our_service/transport/Transport_Table.png";
 
 export const AccordionDataTransport = [
   {
