@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import PaymentTabs from "./PaymentTabs";
+import PaymentThru from "./PaymentThru";
 
 // to move to database
 const tiers = [
@@ -30,27 +32,52 @@ const donationCat = [
 ];
 
 const MakeADonation = () => {
+  const [activeDonation, setActiveDonation] = useState("");
+  const [activeCategory, setActiveCategory] = useState("");
+
   const donationTiers = tiers.map((ele, ind) => {
     return (
-      <div key={ind} className="text-center m-4 p-4 bg-white rounded-xl">
+      <button
+        key={ind}
+        className={`text-center m-4 p-4 rounded-xl ${
+          activeDonation === ind
+            ? "border-2 border-primary-800 bg-primary-200"
+            : " bg-white"
+        }`}
+        onClick={() => {
+          setActiveDonation(ind);
+        }}
+      >
         <h3 className="mt-5 ">${ele.amount}</h3>
         <p className="mt-3 font-DM text-base font-normal">{ele.text}</p>
-      </div>
+      </button>
     );
   });
 
   const donationCategory = donationCat.map((ele, ind) => {
     return (
-      <div key={ind} className="text-center m-4 p-10 bg-white rounded-xl">
+      <button
+        key={ind}
+        className={`text-center m-4 p-10 rounded-xl ${
+          activeCategory === ind
+            ? "border-2 border-primary-800 bg-primary-200"
+            : " bg-white"
+        }`}
+        onClick={() => {
+          setActiveCategory(ind);
+        }}
+      >
         <h3 className="">{ele.type}</h3>
-      </div>
+      </button>
     );
   });
 
   return (
     <div className="text-primary-800">
       <div className="">
-        <h3 className="m-16 ">1/3 Select a donation Tier</h3>
+        <h3 className="m-16">
+          <span className="">1/3 </span>Select a donation Tier
+        </h3>
         <div className="grid grid-cols-4 bg-secondary-200 m-10 p-4 rounded-xl">
           {donationTiers}
           {/* Custom amount input */}
@@ -72,45 +99,28 @@ const MakeADonation = () => {
       <h3 className="m-16">3/3 Select a payment method</h3>
       {/* Tab for payment method */}
       {/* To refactor into a component that is mapped*/}
-      <div className="grid grid-cols-4 bg-secondary-200 text-center">
-        <div className="font-DM text-xl font-normal border-2 p-4">
-          Credit Card
-        </div>
-        <div className="font-DM text-xl font-normal p-4">PayNow</div>
-        <div className="font-DM text-xl font-normal p-4">GIRO</div>
-        <div className="font-DM text-xl font-normal p-4">Cheque</div>
+      <PaymentTabs />
+
+      {/* Thank You Message for payment via Paynow*/}
+      <div className="text-center mt-16">
+        <h1 className="text-primary-600">Thank you!</h1>
       </div>
 
-      <div className="col-start-1 col-end-3 bg-secondary-200 text-primary-800 border-2">
-        <div className="p-20">
-          <p className="font-DM text-xl font-normal mb-5">Personal Details</p>
-          <form>
-            <input
-              className="font-DM text-lg font-normal"
-              type="text"
-              placeholder="Name as per NRIC/FIN*"
-            />
-            <input type="text" placeholder="Email Address*" />
-            <input type="text" placeholder="Phone" />
-            <input type="checkbox" name="" id="" />
-            <label htmlFor="">I would like to Claim Tax Deduction</label>
-            <p className="font-DM text-xl font-normal mb-5">Card Details</p>
-            <input type="text" placeholder="Name on Card" />
-            <input type="text" placeholder="Card Number" />
-            <label htmlFor="">Expiration</label>
-            <label htmlFor="">CVV</label>
-          </form>
-          <button type="submit">Complete Donation</button>
+      <div className="grid grid-cols-5 text-left mt-12">
+        <div className="col-start-2 col-end-5 font-DM text-xl font-normal">
+          <p>
+            <span className="font-bold">Note:</span> IRAS will no longer accept
+            claims for tax deduction based on donation receipts.
+          </p>
+          <p>
+            All individuals and organisations donating are required to provide
+            their tax reference numbers (e.g. NRIC/FIN/UEN), to enjoy tax
+            deductions on the donations.{" "}
+            <span className="underline">Terms and Conditions</span> apply.
+          </p>
         </div>
       </div>
-
-      <p className="px-80 pt-20 font-DM text-xl font-normal">
-        <span className="font-bold">Note:</span> IRAS will no longer accept
-        claims for tax deduction based on donation receipts. All individuals and
-        organisations donating are required to provide their tax reference
-        numbers (e.g. NRIC/FIN/UEN), to enjoy tax deductions on the donations.{" "}
-        <span className="underline">Terms and Conditions</span> apply.
-      </p>
+      <PaymentThru />
     </div>
   );
 };
