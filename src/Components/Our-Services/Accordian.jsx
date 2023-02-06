@@ -4,9 +4,12 @@ const Accordion = ({ title, content, image }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className="justify-center text-center mb-2 border-b">
-      <div className="accordion-title mb-2" onClick={() => setIsActive(!isActive)}>
-        <div>
+    <div className="text-center mb-2 border-b px-20">
+      <div
+        className="flex justify-center mb-2"
+        onClick={() => setIsActive(!isActive)}
+      >
+        <div className="font-DM text-xl font-normal">
           {title}
           {isActive ? "-" : "+"}
         </div>
@@ -16,7 +19,7 @@ const Accordion = ({ title, content, image }) => {
           <br />
           {content}
 
-          <img className="w-96 object-center" src={image} />
+          <img className=" object-center" src={image} />
           <br />
         </div>
       )}
