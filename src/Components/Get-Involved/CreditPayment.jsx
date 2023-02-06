@@ -19,10 +19,12 @@ const CreditPayment = () => {
             type="text"
             placeholder="Name as per NRIC/FIN*"
           />
-          <input type="text" placeholder="Email Address*" />
-          <input type="text" placeholder="Phone" />
-          <input type="checkbox" name="" id="" />
-          <label htmlFor="">I would like to Claim Tax Deduction</label>
+          <input className="" type="text" placeholder="Email Address*" />
+          <input className="" type="text" placeholder="Phone" />
+          <input className="" type="checkbox" name="" id="" />
+          <label className="" htmlFor="">
+            I would like to Claim Tax Deduction
+          </label>
           <p className="font-DM text-xl font-normal mb-5">Card Details</p>
           <input type="text" placeholder="Name on Card" />
           <input type="text" placeholder="Card Number" />
