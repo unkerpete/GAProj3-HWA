@@ -6,7 +6,7 @@ const DrpdwnGetInvolved = (props) => {
   return (
     <>
       <div
-        className='bg-primary-200 h-52 z-10 absolute w-full rounded-b-lg flex'
+        className='bg-primary-200 h-52 z-20 absolute w-full rounded-b-lg flex'
         onMouseEnter={() => {
           props.handleMouseOver(props.setHover);
         }}
@@ -42,7 +42,7 @@ const DrpdwnGetInvolved = (props) => {
           </div>
         </div>
       </div>
-      <div className='w-full absolute top-52 h-screen bg-black opacity-50'></div>
+      <div className='w-full absolute top-52 h-screen bg-black opacity-50 z-10'></div>
     </>
   );
 };
