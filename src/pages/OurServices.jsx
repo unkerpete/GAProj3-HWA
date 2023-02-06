@@ -17,7 +17,7 @@ const OurServices = () => {
     <>
       <SectionHeader setActiveTab={setActiveTab} activeTab={activeTab} />
       {/* TabSwitching */}
-      <div>
+      <div className="mt-20">
         {activeTab === "tab1" && (
           <div>
             <Transport/>
