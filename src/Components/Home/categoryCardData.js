@@ -20,5 +20,4 @@ const categoryCardData = [
     body: "HWA's rehabilitation, home care, and transportation services caters to the distinct needs of the physically challenged. No one gets left behind",
   },
 ];
-
 export default categoryCardData;
