@@ -12,7 +12,7 @@ const Home = () => {
             Empowering and Enabling People with Disabilities since 1969
           </h1>
           <p className="font-DM text-lg font-normal">
-            Welcome to Handicaps Welfare Association
+            Welcome to Handicaps Welfare Association blah vlha
           </p>
           <Button />
         </div>
