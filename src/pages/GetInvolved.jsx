@@ -6,30 +6,21 @@ import Volunteers from "../Components/Get-Involved/Volunteers";
 import MakeADonation from "../Components/Get-Involved/MakeADonation";
 
 const GetInvolved = () => {
-  const [activeTab, setActiveTab] = useState("tab1");
+  const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
     console.log(index);
   };
   return (
     <div>
-      <SectionHeader setActiveTab={setActiveTab} activeTab={activeTab} />
-      {/* Tab Switching */}
-      <div className="p-3">
-        {activeTab === "tab1" && (
-          <div>
-            <MakeADonation />
-          </div>
-        )}
-        {activeTab === "tab2" && (
-          <div>
-            <Volunteers />
+      <SectionHeader toggleTab={toggleTab} />
 
-            <PictureCards />
-            <Form />
-          </div>
-        )}
-      </div>
+      <MakeADonation />
+
+      {/* <Volunteers />
+
+      <PictureCards />
+      <Form /> */}
     </div>
   );
 };

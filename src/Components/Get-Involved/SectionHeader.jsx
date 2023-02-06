@@ -1,9 +1,6 @@
 import React from "react";
-// import "tw-elements";
-import Tabs from "./Tabs";
-import getInvolvedImage from "/src/Assets/izhar/GetInvolved/GetInvolved_image.png";
 
-const SectionHeader = ({ setActiveTab, activeTab }) => {
+const SectionHeader = ({ toggleTab }) => {
   return (
     <>
       {/* MESSAGE + IMAGE */}
@@ -15,12 +12,23 @@ const SectionHeader = ({ setActiveTab, activeTab }) => {
             by volunteering or donating — every contribution makes an impact.
           </p>
         </div>
-        <div className="">
-          <img className="p-4" src={getInvolvedImage} alt="" width="600" />
-        </div>
+        <div className="">IMAGE HERE YO</div>
       </div>
       {/* TABS */}
-      <Tabs setActiveTab={setActiveTab} activeTab={activeTab} />
+      <div className="grid grid-cols-2 bg-primary-200 text-center mb-20">
+        <div
+          className="p-4 font-DM text-xl font-normal border-transparent hover:border-[#2b4435]"
+          onClick={() => toggleTab(1)}
+        >
+          Make a Donation
+        </div>
+        <div
+          className="p-4 font-DM text-xl font-normal border-transparent hover:border-[#2b4435]"
+          onClick={() => toggleTab(2)}
+        >
+          Become a Volunteer
+        </div>
+      </div>
     </>
   );
 };
