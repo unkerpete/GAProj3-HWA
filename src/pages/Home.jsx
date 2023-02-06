@@ -2,18 +2,21 @@ import React from "react";
 import Button from "../Components/Button";
 import categoryCardData from "../Components/Home/categoryCardData";
 import CategoryCard from "../Components/Home/CategoryCard";
-
 const Home = () => {
   return (
-    <>
-      <div className="hero-section">
-        <div>
-          <h1>Empowering and Enabling People with Disabilitiies since 1969</h1>
-          <p>Welcome to Handicaps Welfare Association</p>
+    <div>
+      <div className="flex flex-row bg-peach hero-section">
+        <div className="grid gap-4 p-10 content-center">
+          <h1 className="text-primary-800">
+            Empowering and Enabling People with Disabilities since 1969
+          </h1>
+          <p className="font-DM text-lg font-normal">
+            Welcome to Handicaps Welfare Association blah
+          </p>
           <Button />
         </div>
         <div>
-          <img src="" alt="" />
+          <img src="src/Assets/shujun/homepage/hero/hero_image.jpg" alt="" />
         </div>
       </div>
       <div className="category">
@@ -33,8 +36,7 @@ const Home = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
-
 export default Home;
