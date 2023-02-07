@@ -6,6 +6,7 @@ import serviceImage from "../Assets/firdaus/our_service/services/Service_image.p
 import { AccordionDataTransport } from "../Components/Our-Services/AccordionData";
 import SectionHeader from "../Components/Our-Services/SectionHeader";
 import Transport from "../Components/Our-Services/Transport";
+import Rehabilitation from "../Components/Our-Services/Rehabilitation";
 
 const OurServices = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -23,6 +24,22 @@ const OurServices = () => {
             <Transport/>
           </div>
         )}
+        {activeTab === "tab2" && (
+          <div>
+            <Rehabilitation/>
+          </div>
+        )}
+        {activeTab === "tab3" && (
+          <div>
+            {/* <Rehabilitation/> */}
+          </div>
+        )}
+        {activeTab === "tab4" && (
+          <div>
+            {/* <Rehabilitation/> */}
+          </div>
+        )}
+
       </div>
     </>
   );

@@ -8,7 +8,7 @@ const Transport = () => {
     const accordionDataOne = AccordionDataTransport;
 
     return (
-        <div>
+        <>
             <div className="flex justify-center mb-4">
         <img className="w-10 p-1" src={image1}></img>
         <h3>Transport</h3>
@@ -30,7 +30,7 @@ const Transport = () => {
         <img className="w-1/2 m-12 " src={image2} />
       </div>
       <div className="accordion text-center">
-        <h3 className="mb-2 border-b">Types of Transport Services</h3>
+        <h3 className="py-8 border-b">Types of Transport Services</h3>
         <div className="mx-48">
           <div className="accordion-list text-center">
             {accordionDataOne.map(({ title, content, image }) => (
@@ -39,7 +39,7 @@ const Transport = () => {
           </div>
         </div>
       </div>
-        </div>
+        </>
     );
 };
 
