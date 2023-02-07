@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../Components/Button";
 import categoryCardData from "../Components/Home/categoryCardData";
 import CategoryCard from "../Components/Home/CategoryCard";
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div>
@@ -13,7 +14,8 @@ const Home = () => {
           <p className="font-DM text-lg font-normal">
             Welcome to Handicaps Welfare Association blah
           </p>
-          <Button />
+
+          <Button text={"Read about Us"} link={`/About-Us`} />
         </div>
         <div>
           <img src="src/Assets/shujun/homepage/hero/hero_image.jpg" alt="" />
