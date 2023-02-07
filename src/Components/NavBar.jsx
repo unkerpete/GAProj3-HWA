@@ -95,7 +95,6 @@ const NavBar = () => {
                 }}
               >
                 <a href={item.url}>{item.itemName}</a>
-                <div>o</div>
               </div>
             );
           })}
