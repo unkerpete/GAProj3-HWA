@@ -26,13 +26,12 @@ const Footer = () => {
             className='h-10 w-1/4 mt-4 rounded-md'
             placeholder='Email'
           />
-          <div className='h-8 w-8 rounded-full text-3xl leading-6 text-center inline-block relative right-10 top-1 bg-primary-400 hover:cursor-pointer'>
+          <div className='h-8 w-8 rounded-full text-3xl leading-7 text-center inline-block relative right-10 top-1 bg-primary-400 hover:cursor-pointer'>
             ⇾
           </div>
         </div>
         <div className='pl-20 text-green-900'> info section </div>
         <div className='pl-20 text-green-900'>
-          {' '}
           social media icons and copyright
         </div>
       </div>
