@@ -78,14 +78,30 @@ const MakeADonation = () => {
         <h3 className="m-16">
           <span className="">1/3 </span>Select a donation Tier
         </h3>
-        <div className="grid grid-cols-4 bg-secondary-200 m-10 p-4 rounded-xl">
-          {donationTiers}
-          {/* Custom amount input */}
-          <input
-            className="col-start-2 col-end-4 rounded-lg p-3 m-7"
-            type="text"
-            placeholder="Custom Amount"
-          />
+        <div className=" bg-secondary-200 m-10 p-4 rounded-xl">
+          <div className="grid grid-cols-4">
+            {donationTiers}
+            {/* Custom amount input */}
+          </div>
+          <div class="relative flex py-4 px-4 items-center">
+            <div class="flex-grow border-t border-secondary-600"></div>
+            <span
+              class="flex-shrink mx-4 text-secondary-600"
+              font-DM
+              text-base
+              font-normal
+            >
+              OR
+            </span>
+            <div class="flex-grow border-t border-secondary-600"></div>
+          </div>
+          <div className="flex flex-row justify-center">
+            <input
+              className="rounded-lg p-3 m-7 flex-none w-1/2 "
+              type="text"
+              placeholder="Custom Amount"
+            />
+          </div>
         </div>
       </div>
 
