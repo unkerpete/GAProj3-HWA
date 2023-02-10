@@ -24,7 +24,7 @@ const DrpdwnGetInvolved = (props) => {
             <img
               src={makedonationLogo}
               alt='transport-logo'
-              className='w-20 mx-auto'
+              className='w-16 mx-auto'
             />
             <h6 className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
               Make a Donation
@@ -34,7 +34,7 @@ const DrpdwnGetInvolved = (props) => {
             <img
               src={volunteerLogo}
               alt='rehab-logo'
-              className='w-20 mx-auto'
+              className='w-16 mx-auto'
             />
             <h6 className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
               Become a Volunteer
