@@ -36,7 +36,7 @@ const DrpdwnOurServices = (props) => {
           <div className='inline-block mx-20'>
             <img src={rehabLogo} alt='rehab-logo' className='w-16 mx-auto' />
             <h6 className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
-              Rehabilitation
+              <NavLink to='/our-services#IDTOUPDATE'>Rehabilitation</NavLink>
             </h6>
           </div>
           <div className='inline-block mx-20'>
@@ -46,7 +46,7 @@ const DrpdwnOurServices = (props) => {
               className='w-16 mx-auto'
             />
             <h6 className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
-              Home Care
+              <NavLink to='/our-services#IDTOUPDATE'>Home Care</NavLink>
             </h6>
           </div>
           <div className='inline-block mx-20'>
@@ -56,7 +56,7 @@ const DrpdwnOurServices = (props) => {
               className='w-16 mx-auto'
             />
             <h6 className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
-              Social Services
+              <NavLink to='/our-services#IDTOUPDATE'>Social Services</NavLink>
             </h6>
           </div>
         </div>

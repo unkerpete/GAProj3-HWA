@@ -1,6 +1,7 @@
 import React from 'react';
 import makedonationLogo from '../assets/peter/header/Get_Involved_MakeADonation_icon.png';
 import volunteerLogo from '../assets/peter/header/Get_Involved_BecomeAVolunteer_icon.png';
+import { NavLink } from 'react-router-dom';
 
 const DrpdwnGetInvolved = (props) => {
   return (
@@ -27,7 +28,7 @@ const DrpdwnGetInvolved = (props) => {
               className='w-16 mx-auto'
             />
             <h6 className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
-              Make a Donation
+              <NavLink to='/get-involved#IDTOUPDATE'>Make a Donation</NavLink>
             </h6>
           </div>
           <div className='inline-block mx-20'>
@@ -37,7 +38,9 @@ const DrpdwnGetInvolved = (props) => {
               className='w-16 mx-auto'
             />
             <h6 className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
-              Become a Volunteer
+              <NavLink to='/get-involved#IDTOUPDATE'>
+                Become a Volunteer
+              </NavLink>
             </h6>
           </div>
         </div>

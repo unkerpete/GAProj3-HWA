@@ -1,13 +1,13 @@
-import "./App.css";
-import GetInvolved from "./pages/GetInvolved";
-import NavBar from "./Components/NavBar";
-import Footer from "./Components/Footer";
-import { Route, Routes, Navigate } from "react-router-dom";
-import Home from "./pages/Home";
-import AboutUs from "./pages/AboutUs";
-import OurServices from "./pages/OurServices";
-import CurrentEvents from "./pages/CurrentEvents";
-import ContactUs from "./pages/ContactUs";
+import './App.css';
+import GetInvolved from './pages/GetInvolved';
+import NavBar from './Components/NavBar';
+import Footer from './Components/Footer';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import OurServices from './pages/OurServices';
+import CurrentEvents from './pages/CurrentEvents';
+import ContactUs from './pages/ContactUs';
 
 function App() {
   return (
