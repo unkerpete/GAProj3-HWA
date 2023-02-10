@@ -15,7 +15,7 @@ const GetInvolved = () => {
     <div>
       <SectionHeader setActiveTab={setActiveTab} activeTab={activeTab} />
       {/* Tab Switching */}
-      <div className="p-3">
+      <div className="">
         {activeTab === "tab1" && (
           <div>
             <MakeADonation />

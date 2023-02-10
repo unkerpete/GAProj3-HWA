@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        15: "repeat(15, minmax(0, 1fr))",
+      },
       colors: {
         transparent: "transparent",
         current: "currentColor",
