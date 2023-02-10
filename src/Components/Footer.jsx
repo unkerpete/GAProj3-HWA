@@ -20,7 +20,7 @@ const Footer = () => {
             className='text-center mx-auto relative bottom-24 hover:cursor-pointer w-fit'
             onClick={scrollToTop}
           >
-            Back to top
+            <p>Back to top</p>
           </div>
         </div>
         <div className='pl-20 text-green-900'>
@@ -45,25 +45,67 @@ const Footer = () => {
           </div>
           <div className='w-1/5'>
             <p className='font-DM text-lg font-bold'>About Us</p>
-            <p className='mt-5 hover:cursor-pointer w-fit'>Who We Are</p>
-            <p className='mt-2 hover:cursor-pointer w-fit'>Our People</p>
+            <p className='mt-5 hover:cursor-pointer w-fit'>
+              <NavLink to='/about-us' onClick={scrollToTop}>
+                Who We Are
+              </NavLink>
+            </p>
+            <p className='mt-2 hover:cursor-pointer w-fit'>
+              <NavLink to='/about-us' onClick={scrollToTop}>
+                Our People
+              </NavLink>
+            </p>
             <p className='mt-2 w-28 hover:cursor-pointer'>
-              Governance & Financial
+              <NavLink to='/about-us' onClick={scrollToTop}>
+                Governance & Financial
+              </NavLink>
             </p>
           </div>
           <div className='w-1/5'>
             <p className='font-DM text-lg font-bold'>Our Services</p>
-            <p className='mt-5 hover:cursor-pointer w-fit'>Transport</p>
-            <p className='mt-2 hover:cursor-pointer w-fit'>Rehabilitation</p>
-            <p className='mt-2 hover:cursor-pointer w-fit'>Home Care</p>
-            <p className='mt-2 hover:cursor-pointer w-fit'>Social Services</p>
+            <p className='mt-5 hover:cursor-pointer w-fit'>
+              <NavLink to='/our-services' onClick={scrollToTop}>
+                Transport
+              </NavLink>
+            </p>
+            <p className='mt-2 hover:cursor-pointer w-fit'>
+              <NavLink to='/our-services' onClick={scrollToTop}>
+                Rehabilitation
+              </NavLink>
+            </p>
+            <p className='mt-2 hover:cursor-pointer w-fit'>
+              <NavLink to='/our-services' onClick={scrollToTop}>
+                Home Care
+              </NavLink>
+            </p>
+            <p className='mt-2 hover:cursor-pointer w-fit'>
+              <NavLink to='/our-services' onClick={scrollToTop}>
+                Social Services
+              </NavLink>
+            </p>
           </div>
           <div className='w-1/5'>
             <p className='font-DM text-lg font-bold'>Get Involved</p>
-            <p className='mt-5 hover:cursor-pointer w-fit'>Donate</p>
-            <p className='mt-2 hover:cursor-pointer w-fit'>Volunteer</p>
-            <p className='mt-2 hover:cursor-pointer w-fit'>Upcoming Events</p>
-            <p className='mt-2 hover:cursor-pointer w-fit'>Past Events</p>
+            <p className='mt-5 hover:cursor-pointer w-fit'>
+              <NavLink to='/get-involved' onClick={scrollToTop}>
+                Donate
+              </NavLink>
+            </p>
+            <p className='mt-2 hover:cursor-pointer w-fit'>
+              <NavLink to='/get-involved' onClick={scrollToTop}>
+                Volunteer
+              </NavLink>
+            </p>
+            <p className='mt-2 hover:cursor-pointer w-fit'>
+              <NavLink to='/get-involved' onClick={scrollToTop}>
+                Upcoming Events
+              </NavLink>
+            </p>
+            <p className='mt-2 hover:cursor-pointer w-fit'>
+              <NavLink to='/get-involved' onClick={scrollToTop}>
+                Past Events
+              </NavLink>
+            </p>
           </div>
         </div>
         <br />
