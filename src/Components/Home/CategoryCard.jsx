@@ -5,9 +5,9 @@ const CategoryCard = (props) => {
   return (
     <div className="category-card">
       <img src={props.img} alt={props.subheader} />
-      <h2>{props.subheader}</h2>
+      <h1>{props.subheader}</h1>
       <p>{props.body}</p>
-      <Button />
+      <Button text={props.text} link={props.link} />
     </div>
   );
 };

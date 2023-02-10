@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div>
-      <div className="flex flex-row bg-peach hero-section">
+      <div className="flex flex-row bg-peach hero">
         <div className="grid gap-4 p-10 content-center">
           <h1 className="text-primary-800">
             Empowering and Enabling People with Disabilities since 1969
@@ -27,16 +27,30 @@ const Home = () => {
           Everyone has a part to play to make society more safe and inclusive
           for everyone. Select the profile that best matches you.
         </p>
-        {categoryCardData.map((item, index) => {
-          return (
-            <CategoryCard
-              key={index}
-              img={item.img}
-              subheader={item.subheader}
-              body={item.body}
-            />
-          );
-        })}
+        <div className="flex flex-row">
+          {categoryCardData.map((item, index) => {
+            return (
+              <CategoryCard
+                key={index}
+                img={item.img}
+                subheader={item.subheader}
+                body={item.body}
+                text={item.text}
+                link={item.link}
+              />
+            );
+          })}
+        </div>
+      </div>
+      <div className="bg-secondary-200 usp">
+        <div>
+          <p className="font-DM text-3xl font-medium">
+            What makes us different?
+          </p>
+        </div>
+        <div>
+          <img src="src/Assets/shujun/homepage/usp/Stats_1.png" />
+        </div>
       </div>
     </div>
   );
