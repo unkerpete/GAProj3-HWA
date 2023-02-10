@@ -8,12 +8,12 @@ import AboutUs from './pages/AboutUs';
 import OurServices from './pages/OurServices';
 import CurrentEvents from './pages/CurrentEvents';
 import ContactUs from './pages/ContactUs';
+import Calender from './Components/Calendar';
 
 function App() {
   return (
     <div className="">
       <NavBar />
-
       <Routes>
         <Route path="/" element={<Navigate replace to="/Home" />} />
         <Route path="/Home" element={<Home />} />
