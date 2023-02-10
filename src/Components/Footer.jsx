@@ -1,9 +1,14 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import fbLogo from '../assets/peter/footer/Footer_FB_icon.svg';
 import instaLogo from '../assets/peter/footer/Footer_Instar_icon.svg';
 import ytbeLogo from '../assets/peter/footer/Footer_YT_icon.svg';
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
       <div className='bg-primary-200 mt-10'>
@@ -11,7 +16,10 @@ const Footer = () => {
           <div className='h-24 w-24 rounded-full text-center mx-auto relative bottom-6 bg-primary-200 -z-10'>
             ^
           </div>
-          <div className='text-center mx-auto relative bottom-24 hover:cursor-pointer'>
+          <div
+            className='text-center mx-auto relative bottom-24 hover:cursor-pointer w-fit'
+            onClick={scrollToTop}
+          >
             Back to top
           </div>
         </div>
@@ -45,8 +53,7 @@ const Footer = () => {
           </div>
           <div className='w-1/5'>
             <p className='font-DM text-lg font-bold'>Our Services</p>
-            <p className='mt-5 hover:cursor-pointer w-fit'>Who We Are</p>
-            <p className='mt-2 hover:cursor-pointer w-fit'>Transport</p>
+            <p className='mt-5 hover:cursor-pointer w-fit'>Transport</p>
             <p className='mt-2 hover:cursor-pointer w-fit'>Rehabilitation</p>
             <p className='mt-2 hover:cursor-pointer w-fit'>Home Care</p>
             <p className='mt-2 hover:cursor-pointer w-fit'>Social Services</p>

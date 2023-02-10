@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const DrpdwnAboutUs = (props) => {
   return (
@@ -21,19 +22,21 @@ const DrpdwnAboutUs = (props) => {
           <div className='p-10'>
             <p className='mb-2 text-green-800 font-bold'>Who We Are</p>
             <p className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
-              Mission / Objectives
+              <NavLink to='/about-us'>Mission / Objectives</NavLink>
             </p>
           </div>
           <div className='p-10'>
             <p className='mb-2 text-green-800 font-bold'>Our People</p>
             <p className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
-              Board Members
+              <NavLink to='/about-us#IDTOUPDATE'>Board Members</NavLink>
             </p>
             <p className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
-              Management
+              <NavLink to='/about-us#IDTOUPDATE'>Management</NavLink>
             </p>
             <p className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
-              Organisational Structure
+              <NavLink to='/about-us#IDTOUPDATE'>
+                Organisational Structure
+              </NavLink>
             </p>
           </div>
           <div className='p-10'>
@@ -41,13 +44,17 @@ const DrpdwnAboutUs = (props) => {
               Governance & Financials
             </p>
             <p className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
-              Corporate Governance
+              <NavLink to='/about-us#IDTOUPDATE'>Corporate Governance</NavLink>
             </p>
             <p className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
-              Annual Report & Financial Statement
+              <NavLink to='/about-us#IDTOUPDATE'>
+                Annual Report & Financial Statement
+              </NavLink>
             </p>
             <p className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
-              Organisational Structure
+              <NavLink to='/about-us#IDTOUPDATE'>
+                Yearly Performance Information
+              </NavLink>
             </p>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/peter/header/HWA_logo.png';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import DrpdwnAboutUs from './DrpdwnAboutUs';
 import DrpdwnOurServices from './DrpdwnOurServices';
 import DrpdwnGetInvolved from './DrpdwnGetInvolved';
@@ -94,7 +94,7 @@ const NavBar = () => {
                   setnavBarBackgroundColor(item.bgColor);
                 }}
               >
-                <a href={item.url}>{item.itemName}</a>
+                <NavLink to={item.url}>{item.itemName}</NavLink>
               </div>
             );
           })}

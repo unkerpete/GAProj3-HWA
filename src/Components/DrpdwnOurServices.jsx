@@ -3,6 +3,7 @@ import transportLogo from '../assets/peter/header/Our_Services_Transport_icon.pn
 import rehabLogo from '../assets/peter/header/Our_Services_Rehabilitation_icon.png';
 import homecareLogo from '../assets/peter/header/Our_Services_Homecare_icon.png';
 import socialserviceLogo from '../assets/peter/header/Our_Services_SocialService_icon.png';
+import { NavLink } from 'react-router-dom';
 
 const DrpdwnOurServices = (props) => {
   return (
@@ -26,14 +27,14 @@ const DrpdwnOurServices = (props) => {
             <img
               src={transportLogo}
               alt='transport-logo'
-              className='w-20 mx-auto'
+              className='w-16 mx-auto'
             />
             <h6 className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
-              Transport
+              <NavLink to='/our-services'>Transport</NavLink>
             </h6>
           </div>
           <div className='inline-block mx-20'>
-            <img src={rehabLogo} alt='rehab-logo' className='w-20 mx-auto' />
+            <img src={rehabLogo} alt='rehab-logo' className='w-16 mx-auto' />
             <h6 className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
               Rehabilitation
             </h6>
@@ -42,7 +43,7 @@ const DrpdwnOurServices = (props) => {
             <img
               src={homecareLogo}
               alt='homecare-logo'
-              className='w-20 mx-auto'
+              className='w-16 mx-auto'
             />
             <h6 className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
               Home Care
@@ -52,7 +53,7 @@ const DrpdwnOurServices = (props) => {
             <img
               src={socialserviceLogo}
               alt='socialservices-logo'
-              className='w-20 mx-auto'
+              className='w-16 mx-auto'
             />
             <h6 className='text-green-800 hover:text-green-600 hover:cursor-pointer'>
               Social Services
