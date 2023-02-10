@@ -1,9 +1,20 @@
+<<<<<<< Updated upstream
 import React from "react";
 import Accordion from "../Components/Our-Services/Accordian";
 import transportTable from "../Assets/firdaus/our_service/transport/Transport_Table.png";
 import image1 from "../Assets/firdaus/our_service/transport/Transport_icon.png";
 import image2 from "../Assets/firdaus/our_service/transport/Transport_image.png";
 import serviceImage from "../Assets/firdaus/our_service/services/Service_image.png";
+=======
+import React, { useState } from "react";
+import { AccordionDataTransport } from "../Components/Our-Services/AccordionData";
+import SectionHeader from "../Components/Our-Services/SectionHeader";
+import Transport from "../Components/Our-Services/Transport";
+import Rehabilitation from "../Components/Our-Services/Rehabilitation";
+import HomeCare from "../Components/Our-Services/HomeCare";
+import SocialService from "../Components/Our-Services/SocialService";
+
+>>>>>>> Stashed changes
 
 // import AccordionDataTransport from "../Components/Our-Services/AccordionData";
 
@@ -64,6 +75,7 @@ const OurServices = () => {
           <div>
             <img className="my-20" src={serviceImage}></img>
           </div>
+<<<<<<< Updated upstream
         </div>
         <div className="Subpages bg-sky-100 flex justify-between mb-10">
           <h3>Transport</h3>
@@ -94,6 +106,19 @@ const OurServices = () => {
       </div>
       <div className="accordion text-center">
         <h3 className="mb-2 border-b">Types of Transport Services</h3>
+=======
+        )}
+        {activeTab === "tab3" && (
+          <div>
+            <HomeCare/>
+          </div>
+        )}
+        {activeTab === "tab4" && (
+          <div>
+            <SocialService/>
+          </div>
+        )}
+>>>>>>> Stashed changes
 
         <div className="accordion-content text-center w-1/2">
           {accordionDataTransport.map(({ title, content, image }) => (

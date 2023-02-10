@@ -1,6 +1,10 @@
-import transportTable from "./Assets/firdaus/accordion/transport/Transport_Table.png"
-// import transportTable from "../Assets/firdaus/our_service/transport/Transport_Table.png";
-
+import transportTable from "/src/Assets/firdaus/our_service/transport/Transport_Table.png";
+import rehabMap1 from "/src/Assets/firdaus/our_service/rehabilitation/Rehabilitation_Map_1.png";
+import rehabMap2 from "/src/Assets/firdaus/our_service/rehabilitation/Rehabilitation_Map_2.png";
+import rehabTable1 from "/src/Assets/firdaus/our_service/rehabilitation/Rehabilitation_Table_1.png";
+import rehabTable2 from "/src/Assets/firdaus/our_service/rehabilitation/Rehabilitation_Table_2.png";
+import rehabTable3 from "/src/Assets/firdaus/our_service/rehabilitation/Rehabilitation_Table_3.1.png";
+import rehabTable4 from "/src/Assets/firdaus/our_service/rehabilitation/Rehabilitation_Table_3.png";
 
 export default accordionDataTransport = [
     {
@@ -37,9 +41,20 @@ export default accordionDataTransport = [
       content: `This service aims to improve the mobility and independence of PWDs with driving license. Enabling PWDs to operate their own vehicle with modifications either electronic or mechanical gadgets, these gadgets can be fitted onto most vehicles that are certified and approved by the Land Transport Authority (LTA).
 
       Clients must undergo Driving Assessment and Rehabilitation Programme (DARP) conducted by Tan Tok Seng Hosptal (TTSH) or Ng Teng Fong General Hospital (NTFGH). Lessons and examinations are conducted in ComfortDelGro Driving Centre in Ubi and Singapore Safety Driving Centre in Woodlands Industrial Park.`,
-    },
-    {
-      title: "Assistive Gadget for Sale",
-      content: `We sell assistive devices to help drivers with disabilities in operating their vehicle, either electronic or mechanical gadgets such as hand-controlled gadget, left foot accelerator (for manipulating the car’s accelerator and brake pedals), and steering knobs (which can be fixed onto the steering wheel, allowing drivers with a weak grip to steer the vehicle with ease).`,
-    },
-  ];
+  },
+  {
+    title: "Assistive Gadget for Sale",
+    content: `We sell assistive devices to help drivers with disabilities in operating their vehicle, either electronic or mechanical gadgets such as hand-controlled gadget, left foot accelerator (for manipulating the car’s accelerator and brake pedals), and steering knobs (which can be fixed onto the steering wheel, allowing drivers with a weak grip to steer the vehicle with ease).`,
+  },
+];
+
+export const AccordionDataRehab = [
+  {
+    title: "Charges for Rehabilitation sessions",
+    content: `HWA's rehabilitation centres are accredited by the Ministry of Health (MOH) for operational subvention, as a step-down care provider for subsidised community rehabilitation services. The rehabilitation and transportation fees are based on the MOH's Households Means Testing (HHMT), to determine the amount of subsidy each client is eligible for in using these services.
+
+    *Any subsequent fee depends on the HHMT's evaluation.
+    *Prices indicated are subject to change without prior notice; transportation will be subject to availability.`,
+    image: rehabTable1,
+  },
+];
