@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import Accordion from "../Components/Our-Services/Accordian";
-import image1 from "../Assets/firdaus/our_service/transport/Transport_icon.png";
-import image2 from "../Assets/firdaus/our_service/transport/Transport_image.png";
-import serviceImage from "../Assets/firdaus/our_service/services/Service_image.png";
 import { AccordionDataTransport } from "../Components/Our-Services/AccordionData";
 import SectionHeader from "../Components/Our-Services/SectionHeader";
 import Transport from "../Components/Our-Services/Transport";
 import Rehabilitation from "../Components/Our-Services/Rehabilitation";
+import HomeCare from "../Components/Our-Services/HomeCare";
+import SocialService from "../Components/Our-Services/SocialService";
+
 
 const OurServices = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -31,12 +30,12 @@ const OurServices = () => {
         )}
         {activeTab === "tab3" && (
           <div>
-            {/* <Rehabilitation/> */}
+            <HomeCare/>
           </div>
         )}
         {activeTab === "tab4" && (
           <div>
-            {/* <Rehabilitation/> */}
+            <SocialService/>
           </div>
         )}
 

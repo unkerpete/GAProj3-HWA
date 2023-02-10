@@ -7,7 +7,7 @@ const SectionHeader = ({ setActiveTab, activeTab }) => {
   return (
     <>
       {/* MESSAGE + IMAGE */}
-      <div className="grid grid-cols-2 bg-primary-200">
+      <div className="grid grid-cols-2 bg-secondary-200">
         <div className="p-20">
           <h3 className="text-primary-800">Our Services</h3>
           <p className="text-primary-800 mt-8 pr-20 font-DM text-xl font-normal">

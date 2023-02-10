@@ -5,7 +5,7 @@ const Tabs = ({ setActiveTab, activeTab }) => {
 
   return (
     <>
-      <div className="grid grid-cols-4 text-center bg-primary-200 t">
+      <div className="grid grid-cols-4 text-center bg-secondary-200 t">
         <button
           className={`p-4 text-primary-800 ${
             activeTab === "tab1"
