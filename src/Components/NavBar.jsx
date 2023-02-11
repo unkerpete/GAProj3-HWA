@@ -41,17 +41,14 @@ const NavBar = () => {
     setnavBarBackgroundColorByPage(getNavBarColor(currentPage)), [];
   });
 
-  const handleMouseOver = (navBarElementHover) => {
+  const handleMouseOver = (navBarElementHover, navBarBgColor) => {
     navBarElementHover(true);
-    setnavBarBackgroundColorByHover("");
+    setnavBarBackgroundColorByHover(navBarBgColor);
   };
   const handleMouseLeave = (navBarElementHover) => {
     navBarElementHover(false);
+    setnavBarBackgroundColorByHover(false);
   };
-
-  // const setHoverAboutUs = () => {
-  //   set
-  // }
 
   const navBarItems = [
     {
@@ -129,9 +126,10 @@ const NavBar = () => {
       {/* Conditional rendering for the dropdown menu */}
       {hoverAboutUs && (
         <DrpdwnAboutUs
-          handleMouseOver={handleMouseOver}
-          handleMouseLeave={handleMouseLeave}
+          handleMouseOver={handleMouseOver} //
+          handleMouseLeave={handleMouseLeave} // closes modal
           setHover={setHoverAboutUs}
+          navBarBgColor="bg-peach"
         />
       )}
       {hoverOurServices && (
@@ -139,6 +137,7 @@ const NavBar = () => {
           handleMouseOver={handleMouseOver}
           handleMouseLeave={handleMouseLeave}
           setHover={setHoverOurServices}
+          navBarBgColor="bg-secondary-200"
         />
       )}
       {hoverGetInvolved && (
@@ -146,6 +145,7 @@ const NavBar = () => {
           handleMouseOver={handleMouseOver}
           handleMouseLeave={handleMouseLeave}
           setHover={setHoverGetInvolved}
+          navBarBgColor="bg-primary-200"
         />
       )}
     </div>

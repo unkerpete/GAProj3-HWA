@@ -11,7 +11,7 @@ const DrpdwnOurServices = (props) => {
       <div
         className="bg-secondary-200 h-52 z-20 absolute w-full rounded-b-lg flex"
         onMouseEnter={() => {
-          props.handleMouseOver(props.setHover);
+          props.handleMouseOver(props.setHover, props.navBarBgColor);
         }}
         onMouseLeave={() => {
           props.handleMouseLeave(props.setHover);
