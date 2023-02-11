@@ -5,7 +5,7 @@ const Banner = () => {
     <div className="grid grid-cols-2  bg-peach">
       <div>
         <img
-          src="src/Assets/shujun/homepage/banner/woman.png"
+          src="../src/Assets/shujun/homepage/banner/woman.png"
           alt="Woman in wheelchair having coffee"
           className="object-cover w-full h-full"
         />

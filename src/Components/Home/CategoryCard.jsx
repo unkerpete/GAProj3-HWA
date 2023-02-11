@@ -7,7 +7,7 @@ const CategoryCard = (props) => {
       <div>
         <img src={props.img} alt={props.subheader} className="object-contain" />
         <h3 className=" text-primary-800 text-center">{props.subheader}</h3>
-        <p className="font-DM text-lg text-center font-normal mt-6">
+        <p className="font-DM text-base text-center font-normal mt-6">
           {props.body}
         </p>
       </div>

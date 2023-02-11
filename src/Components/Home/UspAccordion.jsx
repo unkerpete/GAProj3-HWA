@@ -39,7 +39,7 @@ const Accordion = (props) => {
       {isActive && (
         <div
           className={
-            "ifont-DM text-lg text-primary-800 font-normal pt-8 pl-6 w-2/3 border-l-4 border-primary-800"
+            "font-DM text-lg text-primary-800 font-normal pt-8 pl-6 w-2/3 border-l-4 border-primary-800"
           }
         >
           {props.body}

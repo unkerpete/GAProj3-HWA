@@ -15,13 +15,13 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="h-fit content-end">
+        <div className="h-fit content-end pb-10">
           <Button text={"Read about Us"} link={`/About-Us`} />
         </div>
       </div>
       <div>
         <img
-          src="src/Assets/shujun/homepage/hero/hero_image.jpg"
+          src="../src/Assets/shujun/homepage/hero/hero_image.jpg"
           alt="Man in wheelchair with family members"
           className="object-cover w-full h-full"
         />

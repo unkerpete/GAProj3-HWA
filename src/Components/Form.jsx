@@ -22,14 +22,14 @@ const Form = (props) => {
   };
 
   return (
-    <div className={`rounded-2xl shadow-md w-2/3 ${props.bgColour}`}>
+    <div className={`w-full rounded-2xl shadow-md ${props.bgColour}`}>
       <h3 className="text-center text-primary-800 pt-10 mb-10">
         {props.header}
       </h3>
-      <p className="text-center text-primary-800 font-DM text-xl font-normal">
+      <p className="text-center text-primary-800 font-DM text-lg font-normal">
         {props.message}
       </p>
-      <p className="text-center text-primary-800 font-DM text-xl font-normal">
+      <p className="text-center text-primary-800 font-DM text-lg font-normal">
         We will get back to you shortly!
       </p>
 
