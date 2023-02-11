@@ -85,6 +85,66 @@ const AboutUs = () => {
                     </div>
                   </div>
                 </section>
+                <section>
+                  <div className="flex ">
+                    <div className="w-2/12 bg-gray-300  flex-shrink-0">
+                      <div>
+                        <h3 className="text-primary-800">03</h3>
+                      </div>
+                    </div>
+                    <div className="w-10/12 bg-gray-400 flex-grow-1 ">
+                      <div>
+                        <h3 className="text-primary-800">
+                          Education Opportunities
+                        </h3>
+                        <p className="pt-5 pr-60 pb-20 text-primary-800">
+                          Enhance educational opportunities through bursaries,
+                          scholarships, grants, subsidies, and exchange programs
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section>
+                  <div className="flex ">
+                    <div className="w-2/12 bg-gray-300  flex-shrink-0">
+                      <div>
+                        <h3 className="text-primary-800">04</h3>
+                      </div>
+                    </div>
+                    <div className="w-10/12 bg-gray-400 flex-grow-1 ">
+                      <div>
+                        <h3 className="text-primary-800">
+                          Advocating for Rights
+                        </h3>
+                        <p className="pt-5 pr-60 pb-20 text-primary-800">
+                          Obtain necessary benefits and concessions for people
+                          with disabilities
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <section>
+                  <div className="flex ">
+                    <div className="w-2/12 bg-gray-300  flex-shrink-0">
+                      <div>
+                        <h3 className="text-primary-800">05</h3>
+                      </div>
+                    </div>
+                    <div className="w-10/12 bg-gray-400 flex-grow-1 ">
+                      <div>
+                        <h3 className="text-primary-800">
+                          Funding Independence
+                        </h3>
+                        <p className="pt-5 pr-60 pb-20 text-primary-800">
+                          Empower members through fundraising efforts, to
+                          enhance independence and improve quality of life
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
               </div>
             </div>
           </div>
