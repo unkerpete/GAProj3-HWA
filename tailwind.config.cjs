@@ -31,7 +31,7 @@ module.exports = {
         DM: ["DM Sans", "sans-serif"],
       },
       fontSize: {
-        "3xl": "32px",
+        "3xl": "26px",
         xl: "20px",
         lg: "18px",
         base: "16px",
