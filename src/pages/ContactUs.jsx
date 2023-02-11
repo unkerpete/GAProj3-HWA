@@ -1,16 +1,29 @@
 import React from "react";
 import Form from "../Components/Form";
 
+// const options = [
+//   { type: "Enquiry Type" },
+//   { type: "Social Service" },
+//   { type: "Transport" },
+//   { type: "Job Training/ Matching" },
+//   { type: "Personal Care" },
+//   { type: "Career" },
+//   { type: "General Enquiry" },
+//   { type: "Fund Raising" },
+//   { type: "Rehabilitation Service" },
+//   { type: "Media & Advertising" },
+// ];
+
 const options = [
-  { id: 1, type: "Social Service" },
-  { id: 2, type: "Transport" },
-  { id: 3, type: "Job Training/ Matching" },
-  { id: 4, type: "Personal Care" },
-  { id: 5, type: "Career" },
-  { id: 6, type: "General Enquiry" },
-  { id: 7, type: "Fund Raising" },
-  { id: 8, type: "Rehabilitation Service" },
-  { id: 9, type: "Media & Advertising" },
+  "Social Service",
+  "Transport",
+  "Job Training/ Matching",
+  "Personal Care",
+  "Career",
+  "General Enquiry",
+  "Fund Raising",
+  "Rehabilitation Service",
+  "Media & Advertising",
 ];
 
 const ContactUs = () => {
@@ -22,7 +35,6 @@ const ContactUs = () => {
         message="Should you require any information, feel free to send us a message."
         placeholder="Enquiry Type"
         options={options}
-        btnLink=""
       />
     </div>
   );

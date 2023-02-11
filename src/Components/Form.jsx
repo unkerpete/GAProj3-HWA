@@ -1,14 +1,24 @@
 import React, { Fragment, useState } from "react";
 import { Listbox } from "@headlessui/react";
+import { BsChevronExpand } from "react-icons/bs";
 import Button from "../Components/Button";
 
 const Form = (props) => {
   const [submittedInfo, setSubmittedInfo] = useState("");
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState(props.placeholder);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(e.target.value);
+  };
+
+  const relistOptions = () => {
+    setSelectedOption(props.placeholder);
+  };
+
+  const handleListboxOptionClick = (e) => {
+    setSelectedOption(e.target.innerText);
+    console.log(e.target.innerText);
   };
 
   return (
@@ -41,29 +51,44 @@ const Form = (props) => {
             placeholder="Contact Number"
           />
 
-          <Listbox value={selectedOption} onChange={setSelectedOption}>
-            <Listbox.Button className="text-secondary-600 col-start-4 col-end-9 rounded-2xl border p-7 bg-white text-start">
-              {props.placeholder}
+          <Listbox>
+            <Listbox.Button className="col-start-4 col-end-9 rounded-2xl border bg-white text-start relative pointer-events-none">
+              <div
+                className="pl-7 py-2 pointer-events-auto"
+                onClick={relistOptions}
+              >
+                {selectedOption === props.placeholder ? (
+                  <span className=" text-secondary-600 ">
+                    {props.placeholder}
+                  </span>
+                ) : (
+                  <span className="text-black">{selectedOption}</span>
+                )}
+                <BsChevronExpand className="float-right mr-5 text-black" />
+              </div>
+
+              <Listbox.Options className="overflow-auto z-10 w-full pointer-events-auto absolute">
+                {props.options.map((item, index) => (
+                  <Listbox.Option
+                    key={index}
+                    value={selectedOption}
+                    onClick={handleListboxOptionClick}
+                  >
+                    {({ active }) => (
+                      <div
+                        className={
+                          active
+                            ? "bg-secondary-600 text-black pl-7 py-2"
+                            : "bg-white text-black pl-7 py-2"
+                        }
+                      >
+                        {item}
+                      </div>
+                    )}
+                  </Listbox.Option>
+                ))}
+              </Listbox.Options>
             </Listbox.Button>
-            <Listbox.Options className="col-start-4 col-end-9  bg-white overflow-auto mt-1 z-10 relative">
-              {props.options.map((option) => (
-                <Listbox.Option
-                  key={option.id}
-                  value={option.type}
-                  as={Fragment}
-                >
-                  {({ active, selected }) => (
-                    <div
-                      className={
-                        active ? "bg-secondary-600 pl-7 " : "bg-white pl-7 "
-                      }
-                    >
-                      {option.type}
-                    </div>
-                  )}
-                </Listbox.Option>
-              ))}
-            </Listbox.Options>
           </Listbox>
 
           <textarea
