@@ -16,7 +16,7 @@ const NavBar = () => {
   const [navBarBackgroundColorByHover, setnavBarBackgroundColorByHover] =
     useState();
   const [currentPage, setCurrentPage] = useState("Home");
-  const location = useLocation();
+  const location = useLocation(); // returns an object with location info
 
   useEffect(() => {
     setCurrentPage(location.pathname.substring(1)), [location];
