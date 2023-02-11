@@ -3,7 +3,7 @@ import React from "react";
 import Tabs from "./Tabs";
 import ourServicesImage from "/src/Assets/firdaus/our_service/services/Service_image.png";
 
-const SectionHeader = ({ setActiveTab, activeTab }) => {
+const SectionHeader = () => {
   return (
     <>
       {/* MESSAGE + IMAGE */}
@@ -11,7 +11,7 @@ const SectionHeader = ({ setActiveTab, activeTab }) => {
         <div className="p-20">
           <h3 className="text-primary-800">Our Services</h3>
           <p className="text-primary-800 mt-8 pr-20 font-DM text-xl font-normal">
-          We empower people with physical disabilities through a range of
+            We empower people with physical disabilities through a range of
             programs and services including welfare assistance, social
             integration, driving instruction, and dedicated transportation
             services.
@@ -22,7 +22,7 @@ const SectionHeader = ({ setActiveTab, activeTab }) => {
         </div>
       </div>
       {/* TABS */}
-      <Tabs setActiveTab={setActiveTab} activeTab={activeTab} />
+      <Tabs />
     </>
   );
 };

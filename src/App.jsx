@@ -10,15 +10,21 @@ import OurServices from "./pages/OurServices";
 import CurrentEvents from "./pages/CurrentEvents";
 import ContactUs from "./pages/ContactUs";
 import Calender from "./Components/Calendar";
-import getInvolvedContext from "./context/getInvolvedContext";
+import tabContext from "./context/tabContext";
 
 function App() {
   const [getInvolvedActiveTab, setGetInvolvedActiveTab] = useState("tab1");
+  const [ourServiceActiveTab, setOurServiceActiveTab] = useState("tab1");
 
   return (
     <div className="">
-      <getInvolvedContext.Provider
-        value={{ getInvolvedActiveTab, setGetInvolvedActiveTab }}
+      <tabContext.Provider
+        value={{
+          getInvolvedActiveTab,
+          setGetInvolvedActiveTab,
+          ourServiceActiveTab,
+          setOurServiceActiveTab,
+        }}
       >
         <NavBar />
         <Routes>
@@ -32,7 +38,7 @@ function App() {
           <Route path="/contact-us/" element={<ContactUs />} />
         </Routes>
         <Footer />
-      </getInvolvedContext.Provider>
+      </tabContext.Provider>
     </div>
   );
 }

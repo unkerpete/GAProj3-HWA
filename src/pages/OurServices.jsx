@@ -1,44 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AccordionDataTransport } from "../Components/Our-Services/AccordionData";
 import SectionHeader from "../Components/Our-Services/SectionHeader";
 import Transport from "../Components/Our-Services/Transport";
 import Rehabilitation from "../Components/Our-Services/Rehabilitation";
 import HomeCare from "../Components/Our-Services/HomeCare";
 import SocialService from "../Components/Our-Services/SocialService";
-
+import tabContext from "../context/tabContext";
 
 const OurServices = () => {
-  const [activeTab, setActiveTab] = useState("tab1");
+  // const [activeTab, setActiveTab] = useState("tab1"); REMOVED BY PETER
+  const tabCtx = useContext(tabContext);
 
   const accordionDataOne = AccordionDataTransport;
   console.log(accordionDataOne);
 
   return (
     <>
-      <SectionHeader setActiveTab={setActiveTab} activeTab={activeTab} />
+      <SectionHeader />
       {/* TabSwitching */}
       <div className="mt-20">
-        {activeTab === "tab1" && (
+        {tabCtx.ourServiceActiveTab === "tab1" && (
           <div>
-            <Transport/>
+            <Transport />
           </div>
         )}
-        {activeTab === "tab2" && (
+        {tabCtx.ourServiceActiveTab === "tab2" && (
           <div>
-            <Rehabilitation/>
+            <Rehabilitation />
           </div>
         )}
-        {activeTab === "tab3" && (
+        {tabCtx.ourServiceActiveTab === "tab3" && (
           <div>
-            <HomeCare/>
+            <HomeCare />
           </div>
         )}
-        {activeTab === "tab4" && (
+        {tabCtx.ourServiceActiveTab === "tab4" && (
           <div>
-            <SocialService/>
+            <SocialService />
           </div>
         )}
-
       </div>
     </>
   );

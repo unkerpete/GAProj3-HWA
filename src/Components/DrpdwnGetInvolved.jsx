@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import makedonationLogo from "../assets/peter/header/Get_Involved_MakeADonation_icon.png";
 import volunteerLogo from "../assets/peter/header/Get_Involved_BecomeAVolunteer_icon.png";
 import { NavLink } from "react-router-dom";
-import getInvolvedContext from "../context/getInvolvedContext";
+import getInvolvedContext from "../context/tabContext";
 
 const DrpdwnGetInvolved = (props) => {
   const getInvolvedTabContext = useContext(getInvolvedContext);
@@ -31,7 +31,7 @@ const DrpdwnGetInvolved = (props) => {
             />
             <h6 className="text-green-800 hover:text-green-600 hover:cursor-pointer">
               <NavLink
-                to="/get-involved"
+                to="/get-involved/"
                 onClick={() => {
                   getInvolvedTabContext.setGetInvolvedActiveTab("tab1");
                 }}
