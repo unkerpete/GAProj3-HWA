@@ -11,8 +11,10 @@ const NavBar = () => {
   const [hoverAboutUs, setHoverAboutUs] = useState(false);
   const [hoverOurServices, setHoverOurServices] = useState(false);
   const [hoverGetInvolved, setHoverGetInvolved] = useState(false);
-  const [navBarBackgroundColor, setnavBarBackgroundColor] =
-    useState("bg-peach");
+  const [navBarBackgroundColorByPage, setnavBarBackgroundColorByPage] =
+    useState();
+  const [navBarBackgroundColorByHover, setnavBarBackgroundColorByHover] =
+    useState();
   const [currentPage, setCurrentPage] = useState("Home");
   const location = useLocation();
 
@@ -36,15 +38,20 @@ const NavBar = () => {
   };
 
   useEffect(() => {
-    setnavBarBackgroundColor(getNavBarColor(currentPage)), [];
+    setnavBarBackgroundColorByPage(getNavBarColor(currentPage)), [];
   });
 
-  const handleMouseOver = (hoverState) => {
-    hoverState(true);
+  const handleMouseOver = (navBarElementHover) => {
+    navBarElementHover(true);
+    setnavBarBackgroundColorByHover("");
   };
-  const handleMouseLeave = (hoverState) => {
-    hoverState(false);
+  const handleMouseLeave = (navBarElementHover) => {
+    navBarElementHover(false);
   };
+
+  // const setHoverAboutUs = () => {
+  //   set
+  // }
 
   const navBarItems = [
     {
@@ -68,7 +75,13 @@ const NavBar = () => {
   ];
 
   return (
-    <div className={`${navBarBackgroundColor} sticky top-0`}>
+    <div
+      className={`${
+        navBarBackgroundColorByHover
+          ? navBarBackgroundColorByHover
+          : navBarBackgroundColorByPage
+      } sticky top-0`}
+    >
       <div className="h-24 flex border-y-2 border">
         <div className="mr-80 pt-4 pl-20">
           <NavLink to="/home">
@@ -83,19 +96,14 @@ const NavBar = () => {
                 key={index}
                 onMouseEnter={() => {
                   handleMouseOver(item.setHover);
-                  console.log("before setting color");
-                  setnavBarBackgroundColor(item.bgColor);
-                  console.log("after setting color");
+                  setnavBarBackgroundColorByHover(item.bgColor);
                 }}
                 onMouseLeave={() => {
                   handleMouseLeave(item.setHover);
-                  // setnavBarBackgroundColor(navBarBackgroundColor.prevValue);
-                  // setnavBarBackgroundColor(() => {
-                  //   getNavBarColor(currentPage);
-                  // });
-                }}
-                onClick={() => {
-                  setnavBarBackgroundColor(item.bgColor);
+                  setnavBarBackgroundColorByPage(() => {
+                    getNavBarColor(currentPage);
+                  });
+                  setnavBarBackgroundColorByHover(null);
                 }}
               >
                 <NavLink to={item.url}>{item.itemName}</NavLink>
