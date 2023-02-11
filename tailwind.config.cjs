@@ -13,7 +13,7 @@ module.exports = {
       colors: {
         transparent: "transparent",
         current: "currentColor",
-        peach: "#fdf4d8",
+        peach: "#FDE5D8",
         primary: {
           800: "#2B4435",
           600: "#4F7F71",
