@@ -28,7 +28,7 @@ const DrpdwnGetInvolved = (props) => {
               className="w-16 mx-auto"
             />
             <h6 className="text-green-800 hover:text-green-600 hover:cursor-pointer">
-              <NavLink to="/get-involved#IDTOUPDATE">Make a Donation</NavLink>
+              <NavLink to="/get-involved/#IDTOUPDATE">Make a Donation</NavLink>
             </h6>
           </div>
           <div className="inline-block mx-20">
@@ -38,7 +38,7 @@ const DrpdwnGetInvolved = (props) => {
               className="w-16 mx-auto"
             />
             <h6 className="text-green-800 hover:text-green-600 hover:cursor-pointer">
-              <NavLink to="/get-involved#IDTOUPDATE">
+              <NavLink to="/get-involved/#IDTOUPDATE">
                 Become a Volunteer
               </NavLink>
             </h6>
