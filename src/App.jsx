@@ -17,10 +17,10 @@ function App() {
 
   return (
     <div className="">
-      <NavBar />
       <getInvolvedContext.Provider
         value={{ getInvolvedActiveTab, setGetInvolvedActiveTab }}
       >
+        <NavBar />
         <Routes>
           <Route path="/" element={<Navigate replace to="/Home" />} />
           <Route path="/Home" element={<Home />} />
@@ -31,8 +31,8 @@ function App() {
           <Route path="/current-events/" element={<CurrentEvents />} />
           <Route path="/contact-us/" element={<ContactUs />} />
         </Routes>
+        <Footer />
       </getInvolvedContext.Provider>
-      <Footer />
     </div>
   );
 }
