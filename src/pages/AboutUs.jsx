@@ -14,47 +14,47 @@ const AboutUs = () => {
               </ul>
             </div>
           </div>
-          <div className="w-9/12 bg-gray-400 flex-grow-1">
+          <div className="w-9/12 flex-grow-1">
             <div className="flex">
-              <div className="w-7/12 bg-gray-300 pr-48 flex-shrink-0">
-                <div className=" bg-gray-400">
-                  <h3 className="text-primary-600">
+              <div className="w-7/12  pr-20 flex-shrink-0">
+                <div className="">
+                  <h1 className="text-primary-600">
                     We believe in creating a world where people with
                     disabilities flourish.
-                  </h3>
+                  </h1>
                 </div>
               </div>
-              <div className="w-5/12 bg-gray-400 flex-grow-1">
+              <div className="w-5/12  flex-grow-1">
                 <div>
-                  <p className="text-primary-800">
+                  <p className="text-primary-800 p-2 pl-40">
                     That's why we provide resources, support, and advocacy for
                     their independence and full inclusion in society.
                   </p>
                 </div>
               </div>
             </div>
-            <section className="w-12/12  bg-gray-400 pt-20 pb-36">
-              <video width="100%" height="auto" controls>
+            <section className="w-12/12  pt-20 pb-36">
+              <video className="rounded-md" width="100%" height="auto" controls>
                 <source src="your-video-source.mp4" type="video/mp4" />
               </video>
             </section>
             <div className="flex ">
-              <div className="w-4/12 bg-gray-300 flex-shrink-0">
+              <div className="w-4/12  flex-shrink-0">
                 <div>
                   <h2 className="font-DM text-3xl font-medium text-primary-800">
                     Our Objectives
                   </h2>
                 </div>
               </div>
-              <div className="w-8/12 bg-gray-400  flex-grow-1 ">
+              <div className="w-8/12   flex-grow-1 ">
                 <section>
                   <div className="flex ">
-                    <div className="w-2/12 bg-gray-300 flex-shrink-0">
+                    <div className="w-2/12  flex-shrink-0">
                       <div>
                         <h3 className="text-primary-800">01</h3>
                       </div>
                     </div>
-                    <div className="w-10/12 bg-gray-400 flex-grow-1 ">
+                    <div className="w-10/12  flex-grow-1 ">
                       <div>
                         <h3 className="text-primary-800">
                           Building Strong Connections
@@ -69,12 +69,12 @@ const AboutUs = () => {
                 </section>
                 <section>
                   <div className="flex ">
-                    <div className="w-2/12 bg-gray-300  flex-shrink-0">
+                    <div className="w-2/12   flex-shrink-0">
                       <div>
                         <h3 className="text-primary-800">02</h3>
                       </div>
                     </div>
-                    <div className="w-10/12 bg-gray-400 flex-grow-1 ">
+                    <div className="w-10/12  flex-grow-1 ">
                       <div>
                         <h3 className="text-primary-800">Empowering Members</h3>
                         <p className="pt-5 pr-60 pb-20 text-primary-800">
@@ -87,12 +87,12 @@ const AboutUs = () => {
                 </section>
                 <section>
                   <div className="flex ">
-                    <div className="w-2/12 bg-gray-300  flex-shrink-0">
+                    <div className="w-2/12   flex-shrink-0">
                       <div>
                         <h3 className="text-primary-800">03</h3>
                       </div>
                     </div>
-                    <div className="w-10/12 bg-gray-400 flex-grow-1 ">
+                    <div className="w-10/12  flex-grow-1 ">
                       <div>
                         <h3 className="text-primary-800">
                           Education Opportunities
@@ -107,12 +107,12 @@ const AboutUs = () => {
                 </section>
                 <section>
                   <div className="flex ">
-                    <div className="w-2/12 bg-gray-300  flex-shrink-0">
+                    <div className="w-2/12   flex-shrink-0">
                       <div>
                         <h3 className="text-primary-800">04</h3>
                       </div>
                     </div>
-                    <div className="w-10/12 bg-gray-400 flex-grow-1 ">
+                    <div className="w-10/12  flex-grow-1 ">
                       <div>
                         <h3 className="text-primary-800">
                           Advocating for Rights
@@ -127,12 +127,12 @@ const AboutUs = () => {
                 </section>
                 <section>
                   <div className="flex ">
-                    <div className="w-2/12 bg-gray-300  flex-shrink-0">
+                    <div className="w-2/12   flex-shrink-0">
                       <div>
                         <h3 className="text-primary-800">05</h3>
                       </div>
                     </div>
-                    <div className="w-10/12 bg-gray-400 flex-grow-1 ">
+                    <div className="w-10/12  flex-grow-1 ">
                       <div>
                         <h3 className="text-primary-800">
                           Funding Independence

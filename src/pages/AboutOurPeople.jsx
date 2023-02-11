@@ -4,7 +4,6 @@ import image1 from "../Assets/Tyler/aboutus/our_people/OrganisationalStructure.p
 const AboutOurPeople = () => {
   return (
     <div>
-      <h1>our people</h1>
       <section className="p-20">
         <div id="PETER-ID-GOES-HERE" className="flex ">
           <div className="w-3/12 bg-gray-300 p-4 flex-shrink-0">
@@ -21,20 +20,20 @@ const AboutOurPeople = () => {
               </ul>
             </div>
           </div>
-          <div className="w-9/12 bg-gray-400 flex-grow-1">
-            <section className="w-12/12  bg-gray-400 pb-20 ">
+          <div className="w-9/12 flex-grow-1">
+            <section className="w-12/12  pb-20 ">
               <h3 className="text-primary-800  ">Board Members Information</h3>
               <p>(elected on AGM dated 18 September 2021)</p>
             </section>
             <Fragment>
               <div className="flex">
-                <div className="w-2/12 bg-gray-300 flex-shrink-0">
+                <div className="w-2/12 flex-shrink-0">
                   <div></div>
                 </div>
-                <div className="w-10/12 bg-gray-400  flex-grow-1 ">
+                <div className="w-10/12  flex-grow-1 ">
                   <section>
                     <div className="flex ">
-                      <div className="w-5/12 pb-20 bg-gray-300 flex-shrink-0">
+                      <div className="w-5/12 pb-20 flex-shrink-0">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Er. Hui Beng Hong, PBM
@@ -42,7 +41,7 @@ const AboutOurPeople = () => {
                           <p className="  text-primary-800">President</p>
                         </div>
                       </div>
-                      <div className="w-7/12 pb-20 bg-gray-400 flex-grow-1 ">
+                      <div className="w-7/12 pb-20 flex-grow-1 ">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Mr. Edgar Cheong
@@ -57,13 +56,13 @@ const AboutOurPeople = () => {
             </Fragment>
             <Fragment>
               <div className="flex">
-                <div className="w-2/12 bg-gray-300 flex-shrink-0">
+                <div className="w-2/12 flex-shrink-0">
                   <div></div>
                 </div>
-                <div className="w-10/12 bg-gray-400  flex-grow-1 ">
+                <div className="w-10/12 flex-grow-1 ">
                   <section>
                     <div className="flex ">
-                      <div className="w-5/12 pb-20 bg-gray-300 flex-shrink-0">
+                      <div className="w-5/12 pb-20 flex-shrink-0">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Ms. Michelle Siew Teok See
@@ -73,7 +72,7 @@ const AboutOurPeople = () => {
                           </p>
                         </div>
                       </div>
-                      <div className="w-7/12 pb-20 bg-gray-400 flex-grow-1 ">
+                      <div className="w-7/12 pb-20 flex-grow-1 ">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Ms. Heather Wong Liang Le
@@ -90,13 +89,13 @@ const AboutOurPeople = () => {
             </Fragment>
             <Fragment>
               <div className="flex">
-                <div className="w-2/12 bg-gray-300 flex-shrink-0">
+                <div className="w-2/12 flex-shrink-0">
                   <div></div>
                 </div>
-                <div className="w-10/12 bg-gray-400  flex-grow-1 ">
+                <div className="w-10/12  flex-grow-1 ">
                   <section>
                     <div className="flex ">
-                      <div className="w-5/12 pb-20 bg-gray-300 flex-shrink-0">
+                      <div className="w-5/12 pb-20 flex-shrink-0">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Dr. Navin Nair
@@ -106,7 +105,7 @@ const AboutOurPeople = () => {
                           </p>
                         </div>
                       </div>
-                      <div className="w-7/12 pb-20 bg-gray-400 flex-grow-1 ">
+                      <div className="w-7/12 pb-20 flex-grow-1 ">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Ms. Wee Toon Lin
@@ -123,13 +122,13 @@ const AboutOurPeople = () => {
             </Fragment>
             <Fragment>
               <div className="flex">
-                <div className="w-2/12 bg-gray-300 flex-shrink-0">
+                <div className="w-2/12 flex-shrink-0">
                   <div></div>
                 </div>
-                <div className="w-10/12 bg-gray-400  flex-grow-1 ">
+                <div className="w-10/12  flex-grow-1 ">
                   <section>
                     <div className="flex ">
-                      <div className="w-5/12 pb-20 bg-gray-300 flex-shrink-0">
+                      <div className="w-5/12 pb-20flex-shrink-0">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Mr. Palanisamy Avaday
@@ -137,10 +136,10 @@ const AboutOurPeople = () => {
                           <p className="  text-primary-800">Committee Member</p>
                         </div>
                       </div>
-                      <div className="w-7/12 pb-20 bg-gray-400 flex-grow-1 ">
+                      <div className="w-7/12 pb-20  flex-grow-1 ">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
-                            Ms. Wendy Lau Wong Hing{" "}
+                            Ms. Wendy Lau Wong Hing
                           </p>
                           <p className="  text-primary-800">Committee Member</p>
                         </div>
@@ -152,13 +151,13 @@ const AboutOurPeople = () => {
             </Fragment>
             <Fragment>
               <div className="flex">
-                <div className="w-2/12 bg-gray-300 flex-shrink-0">
+                <div className="w-2/12 flex-shrink-0">
                   <div></div>
                 </div>
-                <div className="w-10/12 bg-gray-400  flex-grow-1 ">
+                <div className="w-10/12 flex-grow-1 ">
                   <section>
                     <div className="flex ">
-                      <div className="w-5/12 pb-20 bg-gray-300 flex-shrink-0">
+                      <div className="w-5/12 pb-20  flex-shrink-0">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Mr. Alan Pek Kian Aik
@@ -166,7 +165,7 @@ const AboutOurPeople = () => {
                           <p className="  text-primary-800">Committee Member</p>
                         </div>
                       </div>
-                      <div className="w-7/12 pb-20 bg-gray-400 flex-grow-1 ">
+                      <div className="w-7/12 pb-20 flex-grow-1 ">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Ms. Wee Judy Anne, PBM
@@ -180,7 +179,7 @@ const AboutOurPeople = () => {
               </div>
             </Fragment>
 
-            <section className="w-12/12  bg-gray-400 pb-20 ">
+            <section className="w-12/12 pb-20 ">
               <hr className=" border-t-1 pb-20 border-primary-800" />
               <h3 className="text-primary-800  ">Management</h3>
               <p> (as of March 2022)</p>
@@ -190,13 +189,13 @@ const AboutOurPeople = () => {
             </section>
             <Fragment>
               <div className="flex">
-                <div className="w-2/12 bg-gray-300 flex-shrink-0">
+                <div className="w-2/12 flex-shrink-0">
                   <div></div>
                 </div>
-                <div className="w-10/12 bg-gray-400  flex-grow-1 ">
+                <div className="w-10/12  flex-grow-1 ">
                   <section>
                     <div className="flex ">
-                      <div className="w-5/12 pb-20 bg-gray-300 flex-shrink-0">
+                      <div className="w-5/12 pb-20 flex-shrink-0">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Mr. Subrata Banejee
@@ -206,7 +205,7 @@ const AboutOurPeople = () => {
                           </p>
                         </div>
                       </div>
-                      <div className="w-7/12 pb-20 bg-gray-400 flex-grow-1 ">
+                      <div className="w-7/12 pb-20 flex-grow-1 ">
                         <div></div>
                       </div>
                     </div>
@@ -215,20 +214,20 @@ const AboutOurPeople = () => {
               </div>
             </Fragment>
 
-            <section className="w-12/12  bg-gray-400 pb-20 ">
+            <section className="w-12/12  pb-20 ">
               <p className="font-DM text-3xl font-medium pt-20 text-primary-800">
                 Corporate Services Department
               </p>
             </section>
             <Fragment>
               <div className="flex">
-                <div className="w-2/12 bg-gray-300 flex-shrink-0">
+                <div className="w-2/12 flex-shrink-0">
                   <div></div>
                 </div>
-                <div className="w-10/12 bg-gray-400  flex-grow-1 ">
+                <div className="w-10/12   flex-grow-1 ">
                   <section>
                     <div className="flex ">
-                      <div className="w-5/12 pb-20 bg-gray-300 flex-shrink-0">
+                      <div className="w-5/12 pb-20 flex-shrink-0">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Ms. Joyce Wang
@@ -239,7 +238,7 @@ const AboutOurPeople = () => {
                           </p>
                         </div>
                       </div>
-                      <div className="w-7/12 pb-20 bg-gray-400 flex-grow-1 ">
+                      <div className="w-7/12 pb-20 flex-grow-1 ">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Mr. Jones Pung Teck Huat
@@ -257,13 +256,13 @@ const AboutOurPeople = () => {
             </Fragment>
             <Fragment>
               <div className="flex">
-                <div className="w-2/12 bg-gray-300 flex-shrink-0">
+                <div className="w-2/12 flex-shrink-0">
                   <div></div>
                 </div>
-                <div className="w-10/12 bg-gray-400  flex-grow-1 ">
+                <div className="w-10/12  flex-grow-1 ">
                   <section>
                     <div className="flex ">
-                      <div className="w-5/12 pb-20 bg-gray-300 flex-shrink-0">
+                      <div className="w-5/12 pb-20 flex-shrink-0">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Mr. Roumele Jay V. Baylocon
@@ -276,7 +275,7 @@ const AboutOurPeople = () => {
                           </p>
                         </div>
                       </div>
-                      <div className="w-7/12 pb-20 bg-gray-400 flex-grow-1 ">
+                      <div className="w-7/12 pb-20 flex-grow-1 ">
                         <div></div>
                       </div>
                     </div>
@@ -285,20 +284,20 @@ const AboutOurPeople = () => {
               </div>
             </Fragment>
 
-            <section className="w-12/12  bg-gray-400 pb-20 ">
+            <section className="w-12/12  pb-20 ">
               <p className="font-DM text-3xl font-medium pt-20 text-primary-800">
                 Core Services Department
               </p>
             </section>
             <Fragment>
               <div className="flex">
-                <div className="w-2/12 bg-gray-300 flex-shrink-0">
+                <div className="w-2/12  flex-shrink-0">
                   <div></div>
                 </div>
-                <div className="w-10/12 bg-gray-400  flex-grow-1 ">
+                <div className="w-10/12  flex-grow-1 ">
                   <section>
                     <div className="flex ">
-                      <div className="w-5/12 pb-20 bg-gray-300 flex-shrink-0">
+                      <div className="w-5/12 pb-20 flex-shrink-0">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Mr. Ponnusamy Kathirvel
@@ -314,7 +313,7 @@ const AboutOurPeople = () => {
                           </p>
                         </div>
                       </div>
-                      <div className="w-7/12 pb-20 bg-gray-400 flex-grow-1 ">
+                      <div className="w-7/12 pb-20 flex-grow-1 ">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Mr. Duraisamy Ramesh
@@ -337,13 +336,13 @@ const AboutOurPeople = () => {
             </Fragment>
             <Fragment>
               <div className="flex">
-                <div className="w-2/12 bg-gray-300 flex-shrink-0">
+                <div className="w-2/12 flex-shrink-0">
                   <div></div>
                 </div>
-                <div className="w-10/12 bg-gray-400  flex-grow-1 ">
+                <div className="w-10/12 flex-grow-1 ">
                   <section>
                     <div className="flex ">
-                      <div className="w-5/12 pb-20 bg-gray-300 flex-shrink-0">
+                      <div className="w-5/12 pb-20 flex-shrink-0">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Mr. Simon Ching Sheue Jyh
@@ -352,7 +351,7 @@ const AboutOurPeople = () => {
                           <p className="  text-primary-800">Transport</p>
                         </div>
                       </div>
-                      <div className="w-7/12 pb-20 bg-gray-400 flex-grow-1 ">
+                      <div className="w-7/12 pb-20 flex-grow-1 ">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Ms. Gan Chi Ching
@@ -369,20 +368,20 @@ const AboutOurPeople = () => {
               </div>
             </Fragment>
 
-            <section className="w-12/12  bg-gray-400 pb-20 ">
+            <section className="w-12/12  pb-20 ">
               <p className="font-DM text-3xl font-medium pt-20 text-primary-800">
                 Support Services Department
               </p>
             </section>
             <Fragment>
               <div className="flex">
-                <div className="w-2/12 bg-gray-300 flex-shrink-0">
+                <div className="w-2/12 flex-shrink-0">
                   <div></div>
                 </div>
-                <div className="w-10/12 bg-gray-400  flex-grow-1 ">
+                <div className="w-10/12   flex-grow-1 ">
                   <section>
                     <div className="flex ">
-                      <div className="w-5/12 pb-20 bg-gray-300 flex-shrink-0">
+                      <div className="w-5/12 pb-20 flex-shrink-0">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Ms. Angela Zhang Hui
@@ -391,7 +390,7 @@ const AboutOurPeople = () => {
                           <p className="  text-primary-800">Social Services</p>
                         </div>
                       </div>
-                      <div className="w-7/12 pb-20 bg-gray-400 flex-grow-1 ">
+                      <div className="w-7/12 pb-20  flex-grow-1 ">
                         <div>
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Er. Hui Beng Hong, PBM
@@ -405,7 +404,7 @@ const AboutOurPeople = () => {
               </div>
             </Fragment>
 
-            <section className="w-12/12  bg-gray-400  pb-36 ">
+            <section className="w-12/12   pb-36 ">
               <hr className=" border-t-1 border-primary-800" />
               <h3 className="text-primary-800 pt-20 pb-20 ">
                 Organisational Structure
