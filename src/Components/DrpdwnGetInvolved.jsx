@@ -48,7 +48,7 @@ const DrpdwnGetInvolved = (props) => {
             />
             <h6 className="text-green-800 hover:text-green-600 hover:cursor-pointer">
               <NavLink
-                to="/get-involved"
+                to="/get-involved/"
                 onClick={() => {
                   getInvolvedTabContext.setGetInvolvedActiveTab("tab2");
                 }}
