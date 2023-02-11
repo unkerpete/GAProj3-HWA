@@ -3,15 +3,18 @@ import UspAccordian from "./UspAccordian";
 
 const UspAccordianData = [
   {
-    subheader: "The support you need, all in one place.",
+    subheader1: "The support you need,",
+    subheader2: " all in one place.",
     body: "We help you to get real and reliable support with controlled costs. From rehabilitation, home care, transportation, and an empathetic network.",
   },
   {
-    subheader: "A community advocating for one another.",
+    subheader1: "A community advocating",
+    subheader2: "for one another.",
     body: "Fostering awareness, and building an inclusive and tight knit community that empowers through self-help and mutual support.",
   },
   {
-    subheader: "Let's discover your new normal",
+    subheader1: "Let's discover",
+    subheader2: "your new normal",
     body: "Our team encourages you to build abilities beyond limitations through comprehensive support and constant innovation.",
   },
 ];
@@ -31,7 +34,8 @@ const Usp = () => {
             return (
               <UspAccordian
                 key={index}
-                subheader={item.subheader}
+                subheader1={item.subheader1}
+                subheader2={item.subheader2}
                 body={item.body}
               />
             );
