@@ -10,8 +10,10 @@ const Banner = () => {
           className="object-cover w-full h-full"
         />
       </div>
-      <div>
-        <h3 className="text-primary-800">"I feel like myself again"</h3>
+      <div className="grid content-center">
+        <h3 className="text-primary-800 text-center">
+          "I feel like myself again"
+        </h3>
       </div>
     </div>
   );

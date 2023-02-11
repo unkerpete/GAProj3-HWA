@@ -1,7 +1,7 @@
 import React from "react";
-import UspAccordian from "./UspAccordian";
+import UspAccordion from "./UspAccordion";
 
-const UspAccordianData = [
+const UspAccordionData = [
   {
     subheader1: "The support you need,",
     subheader2: " all in one place.",
@@ -30,9 +30,9 @@ const Usp = () => {
         </div>
 
         <div className="place-content-center">
-          {UspAccordianData.map((item, index) => {
+          {UspAccordionData.map((item, index) => {
             return (
-              <UspAccordian
+              <UspAccordion
                 key={index}
                 subheader1={item.subheader1}
                 subheader2={item.subheader2}
