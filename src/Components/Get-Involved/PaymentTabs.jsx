@@ -4,7 +4,7 @@ import PayNowPayment from "./PayNowPayment";
 
 const PaymentTabs = () => {
   const paymentTypes = ["Credit Card", "PayNow", "GIRO", "Cheque"];
-  const [activePayTab, setActivePayTab] = useState(1);
+  const [activePayTab, setActivePayTab] = useState(0);
 
   const payments = paymentTypes.map((paymentType, i) => {
     return (

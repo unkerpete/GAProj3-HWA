@@ -83,17 +83,17 @@ const MakeADonation = () => {
             {donationTiers}
             {/* Custom amount input */}
           </div>
-          <div class="relative flex py-4 px-4 items-center">
-            <div class="flex-grow border-t border-secondary-600"></div>
+          <div className="relative flex py-4 px-4 items-center">
+            <div className="flex-grow border-t border-secondary-600"></div>
             <span
-              class="flex-shrink mx-4 text-secondary-600"
+              className="flex-shrink mx-4 text-secondary-600"
               font-DM
               text-base
               font-normal
             >
               OR
             </span>
-            <div class="flex-grow border-t border-secondary-600"></div>
+            <div className="flex-grow border-t border-secondary-600"></div>
           </div>
           <div className="flex flex-row justify-center">
             <input

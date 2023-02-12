@@ -26,12 +26,11 @@ const CreditPayment = () => {
   };
 
   return (
-    <div className="">
-      <form className="grid grid-cols-15 bg-secondary-200 text-primary-800 border-2">
+    <div className="credit-payment bg-secondary-200 text-primary-800 border-2">
+      <div className="m-24"></div>
+      <form className="grid grid-cols-15 bg-secondary-200 text-primary-800 border-2 ">
         <div className="col-span-8 px-20">
-          <p className="font-DM text-xl font-normal mb-5 mt-20 ">
-            Personal Details
-          </p>
+          <p className="font-DM text-xl font-normal mb-5">Personal Details</p>
           <input
             className="font-DM text-lg font-normal w-full p-5 rounded-2xl mb-6"
             type="text"
@@ -87,7 +86,7 @@ const CreditPayment = () => {
         </div>
 
         <div className="col-span-7 px-20">
-          <p className="font-DM text-xl font-normal mb-5 mt-20">Card Details</p>
+          <p className="font-DM text-xl font-normal mb-5">Card Details</p>
           <input
             className="font-DM text-lg font-normal w-full rounded-2xl p-5 mb-6"
             type="text"
