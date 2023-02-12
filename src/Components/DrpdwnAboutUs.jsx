@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const DrpdwnAboutUs = (props) => {
   return (
@@ -7,7 +7,7 @@ const DrpdwnAboutUs = (props) => {
       <div
         className="bg-peach h-52 z-20 absolute w-full rounded-b-lg flex"
         onMouseEnter={() => {
-          props.handleMouseOver(props.setHover);
+          props.handleMouseOver(props.setHover, props.navBarBgColor);
         }}
         onMouseLeave={() => {
           props.handleMouseLeave(props.setHover);

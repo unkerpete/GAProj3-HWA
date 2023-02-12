@@ -8,9 +8,9 @@ const SectionHeader = ({ setActiveTab, activeTab }) => {
     <>
       {/* MESSAGE + IMAGE */}
       <div className="grid grid-cols-2 bg-secondary-200">
-        <div className="p-20">
-          <h3 className="text-primary-800">Our Services</h3>
-          <p className="text-primary-800 mt-8 pr-20 font-DM text-xl font-normal">
+        <div className="p-36">
+          <h1 className="text-primary-800">Our Services</h1>
+          <p className="text-primary-800 mt-8 pr-80  font-DM text-xl font-normal">
           We empower people with physical disabilities through a range of
             programs and services including welfare assistance, social
             integration, driving instruction, and dedicated transportation
@@ -18,7 +18,7 @@ const SectionHeader = ({ setActiveTab, activeTab }) => {
           </p>
         </div>
         <div className="">
-          <img className="p-4" src={ourServicesImage} alt="" width="600" />
+          <img className="p-8" src={ourServicesImage} alt="" width="700" />
         </div>
       </div>
       {/* TABS */}
