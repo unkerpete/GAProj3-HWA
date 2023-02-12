@@ -15,6 +15,15 @@ const Form = (props) => {
     console.log(
       `Post data to backend:${name},${email},${tel},${selectedOption},${message}`
     );
+    clearInputs();
+  };
+
+  const clearInputs = () => {
+    setName("");
+    setEmail("");
+    setTel("");
+    setMessage("");
+    setSelectedOption(props.placeholder);
   };
 
   const handleSubmit = (e) => {
