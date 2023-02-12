@@ -26,11 +26,11 @@ const UspAccordionData = [
 ];
 
 const Usp = () => {
-  const [AccordionId, setAccordianId] = useState(1);
+  const [accordionId, setAccordianId] = useState(1);
 
   const handleObjId = (id) => {
     setAccordianId(id);
-    console.log(`id passed to parent: ${id}`);
+    console.log(`id passed to parent: ${accordionId}`);
   };
 
   return (
@@ -59,7 +59,13 @@ const Usp = () => {
         </div>
       </div>
       <div className="flex justify-center">
-        <img src="src/Assets/shujun/homepage/usp/Stats_1.png " />
+        <img
+          src={
+            accordionId == 2 || accordionId == 3
+              ? "src/Assets/shujun/homepage/usp/Stats_2.png"
+              : "src/Assets/shujun/homepage/usp/Stats_1.png"
+          }
+        />
       </div>
     </div>
   );
