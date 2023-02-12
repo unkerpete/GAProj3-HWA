@@ -8,7 +8,6 @@ import SocialService from "../Components/Our-Services/SocialService";
 import tabContext from "../context/tabContext";
 
 const OurServices = () => {
-  // const [activeTab, setActiveTab] = useState("tab1"); REMOVED BY PETER
   const tabCtx = useContext(tabContext);
 
   const accordionDataOne = AccordionDataTransport;
