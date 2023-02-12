@@ -6,15 +6,13 @@ const Accordion = ({ title, content, image }) => {
   return (
     <div className="text-justify my-6 px-80">
       <div
-        className="flex justify-between py-2 font-DM text-xl font-normal border-b-2"
+        className="flex justify-between py-2 font-DM text-xl font-normal border-b-2 "
         onClick={() => setIsActive(!isActive)}
       >
-        {/* <div className="font-DM text-xl font-normal flex justify-between"> */}
         <div className="float-left font-DM text-xl font-bold">{title}</div>
         <div className="float-right font-DM text-xl font-bold text-teal-400">
           {isActive ? "-" : "+"}
         </div>
-        {/* </div> */}
       </div>
       {isActive && (
         <div className="accordion contents font-DM text-base font-normal object-fill">
