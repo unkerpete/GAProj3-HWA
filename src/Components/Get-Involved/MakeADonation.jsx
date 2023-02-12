@@ -93,7 +93,7 @@ const MakeADonation = () => {
             >
               OR
             </span>
-            <div className="flex-grow border-t border-secondary-600"></div>
+            <div class="flex-grow border-t border-secondary-600"></div>
           </div>
           <div className="flex flex-row justify-center">
             <input
@@ -118,9 +118,6 @@ const MakeADonation = () => {
       <PaymentTabs />
 
       {/* Thank You Message for payment via Paynow*/}
-      <div className="text-center mt-16">
-        <h1 className="text-primary-600">Thank you!</h1>
-      </div>
 
       <div className="grid grid-cols-5 text-left mt-12">
         <div className="col-start-2 col-end-5 font-DM text-xl font-normal">
@@ -136,7 +133,6 @@ const MakeADonation = () => {
           </p>
         </div>
       </div>
-      <PaymentThru />
     </div>
   );
 };
