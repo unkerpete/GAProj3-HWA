@@ -1,12 +1,45 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import fbLogo from "../assets/peter/footer/Footer_FB_icon.svg";
 import instaLogo from "../assets/peter/footer/Footer_Instar_icon.svg";
 import ytbeLogo from "../assets/peter/footer/Footer_YT_icon.svg";
+import tabContext from "../context/tabContext";
 
 const Footer = () => {
+  const tabCtx = useContext(tabContext);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleDonateClick = () => {
+    scrollToTop();
+    tabCtx.setGetInvolvedActiveTab("tab1");
+  };
+
+  const handleVolunteerClick = () => {
+    scrollToTop();
+    tabCtx.setGetInvolvedActiveTab("tab2");
+  };
+
+  const handleTransportClick = () => {
+    scrollToTop();
+    tabCtx.setOurServiceActiveTab("tab1");
+  };
+
+  const handleRehabClick = () => {
+    scrollToTop();
+    tabCtx.setOurServiceActiveTab("tab2");
+  };
+
+  const handleHomeCareClick = () => {
+    scrollToTop();
+    tabCtx.setOurServiceActiveTab("tab3");
+  };
+
+  const handleSocialClick = () => {
+    scrollToTop();
+    tabCtx.setOurServiceActiveTab("tab4");
   };
 
   return (
@@ -64,22 +97,22 @@ const Footer = () => {
           <div className="w-1/5">
             <p className="font-DM text-lg font-bold">Our Services</p>
             <p className="mt-5 hover:cursor-pointer w-fit">
-              <NavLink to="/our-services" onClick={scrollToTop}>
+              <NavLink to="/our-services" onClick={handleTransportClick}>
                 Transport
               </NavLink>
             </p>
             <p className="mt-2 hover:cursor-pointer w-fit">
-              <NavLink to="/our-services" onClick={scrollToTop}>
+              <NavLink to="/our-services" onClick={handleRehabClick}>
                 Rehabilitation
               </NavLink>
             </p>
             <p className="mt-2 hover:cursor-pointer w-fit">
-              <NavLink to="/our-services" onClick={scrollToTop}>
+              <NavLink to="/our-services" onClick={handleHomeCareClick}>
                 Home Care
               </NavLink>
             </p>
             <p className="mt-2 hover:cursor-pointer w-fit">
-              <NavLink to="/our-services" onClick={scrollToTop}>
+              <NavLink to="/our-services" onClick={handleSocialClick}>
                 Social Services
               </NavLink>
             </p>
@@ -87,22 +120,22 @@ const Footer = () => {
           <div className="w-1/5">
             <p className="font-DM text-lg font-bold">Get Involved</p>
             <p className="mt-5 hover:cursor-pointer w-fit">
-              <NavLink to="/get-involved/" onClick={scrollToTop}>
+              <NavLink to="/get-involved/" onClick={handleDonateClick}>
                 Donate
               </NavLink>
             </p>
             <p className="mt-2 hover:cursor-pointer w-fit">
-              <NavLink to="/get-involved/" onClick={scrollToTop}>
+              <NavLink to="/get-involved/" onClick={handleVolunteerClick}>
                 Volunteer
               </NavLink>
             </p>
             <p className="mt-2 hover:cursor-pointer w-fit">
-              <NavLink to="/get-involved/" onClick={scrollToTop}>
+              <NavLink to="/current-events/" onClick={scrollToTop}>
                 Upcoming Events
               </NavLink>
             </p>
             <p className="mt-2 hover:cursor-pointer w-fit">
-              <NavLink to="/get-involved/" onClick={scrollToTop}>
+              <NavLink to="/current-events/" onClick={scrollToTop}>
                 Past Events
               </NavLink>
             </p>
