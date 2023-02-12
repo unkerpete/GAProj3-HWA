@@ -10,9 +10,9 @@ const GetInvolved = () => {
   // const [activeTab, setActiveTab] = useState("tab1"); RMV BY PETER
   const tabCtx = useContext(tabContext); // ADDED BY PETER
 
-  const toggleTab = (index) => {
-    console.log(index);
-  };
+  // const toggleTab = (index) => {
+  //   console.log(index);
+  // };
   return (
     <div>
       <SectionHeader />
@@ -26,7 +26,6 @@ const GetInvolved = () => {
         {tabCtx.getInvolvedActiveTab === "tab2" && (
           <div>
             <Volunteers />
-
             <PictureCards />
             <Form />
           </div>

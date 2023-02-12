@@ -24,9 +24,9 @@ const PictureCards = (props) => {
       case "Classes & Workshops":
         return "/current-events";
       case "Fundraiser":
-        return "bg-primary-400";
-      case "current-events":
-        return "bg-secondary-400";
+        return "/current-events";
+      case "Community Gatherings":
+        return "/current-events";
       default:
         return "current-events";
     }
