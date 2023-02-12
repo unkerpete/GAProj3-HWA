@@ -21,10 +21,10 @@ const UspAccordionData = [
 
 const Usp = () => {
   return (
-    <div className="grid grid-cols-2 bg-secondary-200 p-20">
+    <div className="grid grid-cols-2 bg-secondary-200 p-20 text-primary-800">
       <div className="grid">
         <div className="place-content-start">
-          <p className="text-primary-800 font-DM text-3xl font-medium">
+          <p className="font-DM text-3xl font-medium">
             What makes us different?
           </p>
         </div>

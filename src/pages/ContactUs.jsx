@@ -65,6 +65,7 @@ const ContactUs = () => {
         </p>
         <img
           src="../src/Assets/shujun/contactus/map_Jurong.png"
+          alt="Map of HWA's Jurong Point Rehabilitation Centre"
           className="my-7"
         />
         <div>

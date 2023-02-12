@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { Listbox } from "@headlessui/react";
 import { BsChevronExpand } from "react-icons/bs";
 import Button from "../Components/Button";
@@ -12,13 +12,12 @@ const Form = (props) => {
     console.log(e.target.value);
   };
 
-  const relistOptions = () => {
+  const relistListboxOptions = () => {
     setSelectedOption(props.placeholder);
   };
 
   const handleListboxOptionClick = (e) => {
     setSelectedOption(e.target.innerText);
-    console.log(e.target.innerText);
   };
 
   return (
@@ -55,7 +54,7 @@ const Form = (props) => {
             <Listbox.Button className="col-start-4 col-end-9 rounded-2xl border bg-white text-start relative pointer-events-none">
               <div
                 className="pl-7 py-2 pointer-events-auto"
-                onClick={relistOptions}
+                onClick={relistListboxOptions}
               >
                 {selectedOption === props.placeholder ? (
                   <span className=" text-secondary-600 ">
