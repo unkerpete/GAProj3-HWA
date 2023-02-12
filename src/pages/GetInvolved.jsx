@@ -7,8 +7,7 @@ import MakeADonation from "../Components/Get-Involved/MakeADonation";
 import tabContext from "../context/tabContext";
 
 const GetInvolved = () => {
-  // const [activeTab, setActiveTab] = useState("tab1"); RMV BY PETER
-  const tabCtx = useContext(tabContext); // ADDED BY PETER
+  const tabCtx = useContext(tabContext);
 
   // const toggleTab = (index) => {
   //   console.log(index);
