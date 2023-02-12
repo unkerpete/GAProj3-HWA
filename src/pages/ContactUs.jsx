@@ -95,6 +95,7 @@ const ContactUs = () => {
         message="Should you require any information, feel free to send us a message."
         placeholder="Enquiry Type"
         options={options}
+        menu
       />
     </div>
   );

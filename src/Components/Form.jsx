@@ -8,12 +8,13 @@ const Form = (props) => {
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState("");
   const [message, setMessage] = useState("");
+  const [companyName, setCompanyName] = useState("");
   const [selectedOption, setSelectedOption] = useState(props.placeholder);
 
   //CHANGE THIS TO POST TO BACKEND
   const postData = () => {
     console.log(
-      `Post data to backend:${name},${email},${tel},${selectedOption},${message}`
+      `Post data to backend:${name},${email},${tel},${selectedOption},${companyName},${message}`
     );
     clearInputs();
   };
@@ -24,6 +25,7 @@ const Form = (props) => {
     setTel("");
     setMessage("");
     setSelectedOption(props.placeholder);
+    setCompanyName("");
   };
 
   const handleSubmit = (e) => {
@@ -42,6 +44,8 @@ const Form = (props) => {
       setTel(inputVal);
     } else if (inputId === "message") {
       setMessage(inputVal);
+    } else if (inputId === "companyName") {
+      setCompanyName(inputVal);
     }
   };
 
@@ -97,44 +101,58 @@ const Form = (props) => {
             title="Contact Number must be 8 digits"
           />
 
-          <Listbox id="selectedOption" value={selectedOption}>
-            <Listbox.Button className="col-start-4 col-end-9 rounded-2xl border bg-white text-start relative pointer-events-none">
-              <div
-                className="pl-7 py-2 pointer-events-auto"
-                onClick={relistListboxOptions}
-              >
-                {selectedOption === props.placeholder ? (
-                  <span className=" text-secondary-600 ">
-                    {props.placeholder}
-                  </span>
-                ) : (
-                  <span className="text-black">{selectedOption}</span>
-                )}
-                <BsChevronExpand className="float-right mr-5 text-black" />
-              </div>
+          {props.menu ? (
+            <Listbox id="selectedOption" value={selectedOption}>
+              <Listbox.Button className="col-start-4 col-end-9 rounded-2xl border bg-white text-start relative pointer-events-none">
+                <div
+                  className="pl-7 py-2 pointer-events-auto"
+                  onClick={relistListboxOptions}
+                >
+                  {selectedOption === props.placeholder ? (
+                    <span className=" text-secondary-600 ">
+                      {props.placeholder}
+                    </span>
+                  ) : (
+                    <span className="text-black">{selectedOption}</span>
+                  )}
+                  <BsChevronExpand className="float-right mr-5 text-black" />
+                </div>
 
-              <Listbox.Options className="overflow-auto z-10 w-full pointer-events-auto absolute">
-                {props.options.map((item, index) => (
-                  <Listbox.Option
-                    key={index}
-                    onClick={handleListboxOptionClick}
-                  >
-                    {({ active }) => (
-                      <div
-                        className={
-                          active
-                            ? "bg-secondary-600 text-black pl-7 py-2"
-                            : "bg-white text-black pl-7 py-2"
-                        }
-                      >
-                        {item}
-                      </div>
-                    )}
-                  </Listbox.Option>
-                ))}
-              </Listbox.Options>
-            </Listbox.Button>
-          </Listbox>
+                <Listbox.Options className="overflow-auto z-10 w-full pointer-events-auto absolute">
+                  {props.options.map((item, index) => (
+                    <Listbox.Option
+                      key={index}
+                      onClick={handleListboxOptionClick}
+                    >
+                      {({ active }) => (
+                        <div
+                          className={
+                            active
+                              ? "bg-secondary-600 text-black pl-7 py-2"
+                              : "bg-white text-black pl-7 py-2"
+                          }
+                        >
+                          {item}
+                        </div>
+                      )}
+                    </Listbox.Option>
+                  ))}
+                </Listbox.Options>
+              </Listbox.Button>
+            </Listbox>
+          ) : (
+            <input
+              className="col-start-4 col-end-9 rounded-2xl border p-7"
+              type="text"
+              placeholder="Name of Company"
+              id="companyName"
+              value={companyName}
+              onChange={handleChange}
+              required
+              pattern="^[a-zA-Z ]{2,30}$"
+              title="Company name must be 2 to 30 letters only"
+            />
+          )}
 
           <textarea
             className="col-start-1 col-end-9 rounded-2xl border p-7 h-72 align-baseline"
