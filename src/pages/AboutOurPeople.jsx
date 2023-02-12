@@ -161,7 +161,9 @@ const AboutOurPeople = () => {
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Ms. Wee Judy Anne, PBM
                           </p>
-                          <p className="  text-primary-800">Committee Member</p>
+                          <p id="management" className="  text-primary-800">
+                            Committee Member
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -386,7 +388,9 @@ const AboutOurPeople = () => {
                           <p className="text-primary-800 font-DM text-xl font-bold">
                             Er. Hui Beng Hong, PBM
                           </p>
-                          <p className="  text-primary-800">President</p>
+                          <p id="org-structure" className="  text-primary-800">
+                            President
+                          </p>
                         </div>
                       </div>
                     </div>

@@ -1,9 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const SideNav = () => {
   const [dropDownWho, setDropDownWho] = useState(false);
   const [dropDownOur, setDropDownOur] = useState(false);
   const [dropDownGov, setDropDownGov] = useState(false);
+
+  useEffect(() => {
+    const path = window.location.pathname;
+    if (path === "/about-us") {
+      setDropDownWho(true);
+    }
+    if (path === "/about-us/our-people") {
+      setDropDownOur(true);
+    }
+    if (path === "/about-us/our-people#management") {
+      setDropDownOur(true);
+    }
+    if (path === "/about-us/our-people#org-structure") {
+      setDropDownOur(true);
+    }
+    if (path === "/about-us/governance") {
+      setDropDownGov(true);
+    }
+    if (path === "/about-us/governance#yearly-performance") {
+      setDropDownGov(true);
+    }
+  }, []);
 
   const toggleDropDownWho = () => {
     setDropDownWho(!dropDownWho);
@@ -34,7 +56,7 @@ const SideNav = () => {
         {dropDownWho && (
           <ul className="list-none ml-8">
             <li className="mb-2">
-              <a className="text-gray-700 hover:text-gray-900" href="#">
+              <a className="text-gray-700 hover:text-gray-900" href="/about-us">
                 Mission & Objectives
               </a>
             </li>
@@ -54,17 +76,26 @@ const SideNav = () => {
         {dropDownOur && (
           <ul className="list-none ml-8">
             <li className="mb-2">
-              <a className="text-gray-700 hover:text-gray-900" href="#">
+              <a
+                className="text-gray-700 hover:text-gray-900"
+                href="/about-us/our-people"
+              >
                 Board Members
               </a>
             </li>
             <li className="mb-2">
-              <a className="text-gray-700 hover:text-gray-900" href="#">
+              <a
+                className="text-gray-700 hover:text-gray-900"
+                href="#management"
+              >
                 Management
               </a>
             </li>
             <li className="mb-2">
-              <a className="text-gray-700 hover:text-gray-900" href="#">
+              <a
+                className="text-gray-700 hover:text-gray-900"
+                href="#org-structure"
+              >
                 Organisational Structure
               </a>
             </li>
@@ -84,17 +115,26 @@ const SideNav = () => {
         {dropDownGov && (
           <ul className="list-none ml-8">
             <li className="mb-2">
-              <a className="text-gray-700 hover:text-gray-900" href="#">
+              <a
+                className="text-gray-700 hover:text-gray-900"
+                href="/about-us/governance"
+              >
                 Corporate Governance
               </a>
             </li>
             <li className="mb-2">
-              <a className="text-gray-700 hover:text-gray-900" href="#">
+              <a
+                className="text-gray-700 hover:text-gray-900"
+                href="/about-us/governance"
+              >
                 Annual Report & Financial Statement
               </a>
             </li>
             <li className="mb-2">
-              <a className="text-gray-700 hover:text-gray-900" href="#">
+              <a
+                className="text-gray-700 hover:text-gray-900"
+                href="/about-us/governance#yearly-performance"
+              >
                 Yearly Performance Information
               </a>
             </li>

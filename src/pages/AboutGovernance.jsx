@@ -116,7 +116,9 @@ const AboutGovernance = () => {
               <p className="font-DM text-3xl font-medium pt-8 pb-2 text-primary-800">
                 Auditor
               </p>
-              <p>P G Wee Partnership LLPChartered Accountants of Singapore</p>
+              <p id="yearly-performance">
+                P G Wee Partnership LLPChartered Accountants of Singapore
+              </p>
               <hr className=" border-t-1 border-primary-800 my-20" />
             </section>
 
