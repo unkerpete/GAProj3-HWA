@@ -9,12 +9,12 @@ const HomeCare = () => {
 
   return (
     <>
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-center mt-24 mb-10">
         <img className="w-10 p-1" src={image1}></img>
         <h3>Home Care</h3>
       </div>
-      <div className="text-center px-24">
-        <p className="font-DM text-l font-normal">
+      <div className="text-center px-96">
+        <p className="font-DM text-xl font-normal">
           Our Home Care Services (HCS), formerly Personal Care Services, have
           been dedicated to enhancing the quality of life for elderly citizens
           and people with disabilities since April 2015. We aim to assist our
@@ -33,13 +33,13 @@ const HomeCare = () => {
       </div>
 
       <div className="flex justify-center">
-        <img className="w-3/4 m-12 " src={image2} />
+        <img className="w-1/2 m-12" src={image2} />
       </div>
 
-      <div className="typesOfRehabServices">
-        <h3 className="border-b py-8 px-20 text-center">How it Works</h3>
-        <p className="py-10 px-36 text-center">
-          Our home-based health care program offers a range of services
+      <div className="m-20">
+        <h3 className="border-b-2 py-8 px-20 text-center">How it Works</h3>
+        <p className="py-10 px-96 text-center font-DM text-xl font-normal">
+          Our home-based health care program offers a range of services {`\n`}
           including case management, medication management, counselling,
           therapy, personal and social care, transportation, and community
           integration services.Our nurses conduct a comprehensive assessment of
@@ -55,8 +55,8 @@ const HomeCare = () => {
         </p>
       </div>
       <div className="accordion text-center">
-        <h3 className="py-8 border-b">Types of Home Care Services</h3>
-        <div className="mx-36">
+        <h3 className="py-8 border-b-2">Types of Home Care Services</h3>
+        <div className="mx-48">
           <div className="accordion-list text-center">
             {accordionDataOne.map(({ title, content, image }) => (
               <Accordion title={title} content={content} image={image} />

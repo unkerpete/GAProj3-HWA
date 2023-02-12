@@ -9,12 +9,12 @@ const SocialService = () => {
 
   return (
     <>
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-center mb-8 ">
         <img className="w-10 p-1" src={image1}></img>
         <h3>Social Service</h3>
       </div>
-      <div className="text-center px-24">
-        <p className="font-DM text-l font-normal">
+      <div className="text-center px-96">
+        <p className="font-DM text-xl font-normal">
           Our organization aims to enhance the quality of life for people with
           physical disabilities by encouraging their full potential and
           participation in activities.
@@ -33,7 +33,7 @@ const SocialService = () => {
       </div>
       <div className="accordion text-center">
         <h3 className="py-8 border-b">Types of Social Services</h3>
-        <div className="mx-36">
+        <div className="mx-48">
           <div className="accordion-list text-center">
             {accordionDataOne.map(({ title, content, image }) => (
               <Accordion title={title} content={content} image={image} />

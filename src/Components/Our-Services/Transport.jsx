@@ -13,8 +13,8 @@ const Transport = () => {
         <img className="w-10 p-1" src={image1}></img>
         <h3>Transport</h3>
       </div>
-      <div className="text-center px-24">
-        <p className="font-DM text-l font-normal">
+      <div className="text-center px-96">
+        <p className="font-DM text-xl font-normal">
           Are you concerned about getting to your rehabilitation sessions?
           <br></br>
           Do you need assistance getting to places?
@@ -30,7 +30,7 @@ const Transport = () => {
         <img className="w-1/2 m-12 " src={image2} />
       </div>
       <div className="accordion text-center">
-        <h3 className="py-8 border-b">Types of Transport Services</h3>
+        <h3 className="py-8 border-b-2">Types of Transport Services</h3>
         <div className="mx-48">
           <div className="accordion-list text-center">
             {accordionDataOne.map(({ title, content, image }) => (
