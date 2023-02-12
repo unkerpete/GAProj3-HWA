@@ -30,7 +30,6 @@ const Usp = () => {
 
   const handleObjId = (id) => {
     setAccordianId(id);
-    console.log(`id passed to parent: ${accordionId}`);
   };
 
   return (
