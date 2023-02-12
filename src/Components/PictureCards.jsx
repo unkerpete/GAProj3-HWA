@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PictureCards = (props) => {
   const getTagClass = (tag) => {
@@ -16,6 +17,21 @@ const PictureCards = (props) => {
     }
   };
 
+  const getTagLink = (tag) => {
+    switch (tag) {
+      case "Talks":
+        return "/current-events";
+      case "Classes & Workshops":
+        return "/current-events";
+      case "Fundraiser":
+        return "bg-primary-400";
+      case "current-events":
+        return "bg-secondary-400";
+      default:
+        return "current-events";
+    }
+  };
+
   return (
     <div className="grid grid-cols-3 p-4 gap-16">
       {props.pictureInfo.map((obj, index) => {
@@ -30,12 +46,17 @@ const PictureCards = (props) => {
             />
             <p className={"font-DM text-base font-normal mt-3"}>
               {obj.tag ? (
-                <span className={`${getTagClass(obj.tag)}`}>{obj.tag}</span>
+                <Link to={`${getTagLink(obj.tag)}`}>
+                  <span className={`${getTagClass(obj.tag)} `}>{obj.tag}</span>
+                </Link>
               ) : (
                 <span className="text-white">no tag</span>
               )}
             </p>
-            <h3 className="py-3">{obj.title}</h3>
+            <Link to={obj.link}>
+              <h3 className="py-3">{obj.title}</h3>
+            </Link>
+
             <p className="font-DM text-xl font-normal">{obj.date}</p>
           </div>
         );

@@ -9,6 +9,7 @@ const pictureInfo = [
     tag: "Talks",
     url: "src/Assets/shujun/homepage/blog/blog1.png",
     alt: "Three elderly women",
+    link: "/current-events",
   },
   {
     title: "Garden of Hope - Flower Planting",
@@ -16,6 +17,7 @@ const pictureInfo = [
     tag: "Classes & Workshops",
     url: "src/Assets/shujun/homepage/blog/blog2.png",
     alt: "Grandmother and grandson",
+    link: "/current-events",
   },
   {
     title: "37th Annual Wheel, Walk or Jog 2021",
@@ -23,6 +25,7 @@ const pictureInfo = [
     tag: "Fundraiser",
     url: "src/Assets/shujun/homepage/blog/blog3.png",
     alt: "Man holding a basketball",
+    link: "/current-events",
   },
 ];
 
