@@ -7,25 +7,16 @@ import image5 from "../Assets/Tyler/aboutus/governance_financial/Information_1.p
 import image6 from "../Assets/Tyler/aboutus/governance_financial/Information_2.png";
 import image7 from "../Assets/Tyler/aboutus/governance_financial/Information_3.png";
 import image8 from "../Assets/Tyler/aboutus/governance_financial/Information_4.png";
+import SideNav from "../Components/SideNav";
 
 const AboutGovernance = () => {
   return (
     <div>
       <section className="p-20">
         <div id="PETER-ID-GOES-HERE" className="flex ">
-          <div className="w-3/12 bg-gray-300 p-4 flex-shrink-0">
-            <div className=" bg-gray-400">
-              <h3>About Us</h3>
-              <h3>Our People</h3>
-              <ul>
-                <li>Board Members</li>
-                <li>management</li>
-                <li>
-                  Organisational
-                  <br /> structure
-                </li>
-              </ul>
-            </div>
+          <div className="w-3/12 flex-shrink-0">
+            <h1 className="text-primary-800">About Us</h1>
+            <SideNav />
           </div>
           <div className="w-9/12 flex-grow-1">
             <section className="w-12/12  pb-5 ">

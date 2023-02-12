@@ -1,18 +1,14 @@
 import React, { useState } from "react";
+import SideNav from "../Components/SideNav";
 
 const AboutUs = () => {
   return (
     <div>
       <section className="p-20 bg-peach">
         <div id="PETER-ID-GOES-HERE" className="flex ">
-          <div className="w-3/12 bg-gray-300 p-4 flex-shrink-0">
-            <div className=" bg-gray-400">
-              <h3>About Us</h3>
-              <h3>Who We Are</h3>
-              <ul>
-                <li>Mission & Objectives</li>
-              </ul>
-            </div>
+          <div className="w-3/12 flex-shrink-0">
+            <h1 className="text-primary-800">About Us</h1>
+            <SideNav />
           </div>
           <div className="w-9/12 flex-grow-1">
             <div className="flex">
