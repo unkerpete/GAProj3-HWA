@@ -51,14 +51,14 @@ export const AccordionDataTransport = [
 ];
 
 export const AccordionDataRehab = [
-  {
-    title: "Charges for Rehabilitation sessions",
-    content: `HWA's rehabilitation centres are accredited by the Ministry of Health (MOH) for operational subvention, as a step-down care provider for subsidised community rehabilitation services. The rehabilitation and transportation fees are based on the MOH's Households Means Testing (HHMT), to determine the amount of subsidy each client is eligible for in using these services.
+  // {
+  //   title: "Charges for Rehabilitation sessions",
+  //   content: `HWA's rehabilitation centres are accredited by the Ministry of Health (MOH) for operational subvention, as a step-down care provider for subsidised community rehabilitation services. The rehabilitation and transportation fees are based on the MOH's Households Means Testing (HHMT), to determine the amount of subsidy each client is eligible for in using these services.
 
-    *Any subsequent fee depends on the HHMT's evaluation.
-    *Prices indicated are subject to change without prior notice; transportation will be subject to availability.`,
-    image: rehabTable1,
-  },
+  //   *Any subsequent fee depends on the HHMT's evaluation.
+  //   *Prices indicated are subject to change without prior notice; transportation will be subject to availability.`,
+  //   image: rehabTable1,
+  // },
   {
     title: "Whampoa Rehabilitation Centre",
     // content: `Opening hours: Mondays to Fridays: 9.00 am to 6.00 pm. Alternate Saturdays: 9.00am to 1.00pm`,
@@ -156,35 +156,36 @@ export const AccordionDataHomeCare = [
 export const AccordionDataSocialService = [
   {
     title: "Case Management and Counselling Services",
-    content: `The Social Services Department is a repertoire of information on social networks in the community available for our members to tap on. At the same time, it networks with other social service providers to meet members’ diverse needs.`,
+    content: `The Social Services Department provides counselling to members facing various issues with the goal of helping them cope better and resolve their issues. We aim to improve the quality of life of their members through case management, which is a client-focused service that respects the individual's dignity, rights, values, and choice. A case manager works closely with the member (and/or significant others) to achieve their goals through identifying needs, creating an individualised care plan and implementing it.`,
   },
-  {
-    title: "Mobility Aids Loan Scheme",
-    content: `HWA’ mobility aids loan scheme is implemented with the objective of helping members with short-term equipment loan. Singaporeans and PRs need to pay only token administrative charges on top of the deposits which cover the cost of the mobility aids.
-
-    HWA’ mobility aids loan scheme is implemented with the objective of helping members with short-term equipment loan. HWA members get to use the borrowed equipment free for six months. After that a monthly rent is payable for use of the equipment for a month or part of a month.
-    Deposit and Monthly Rent – The borrower has to pay a deposit (refundable) for each piece of equipment loaned. This deposit would be used to offset charges for repairs arising from damages or forfeited when the borrower failed to return the equipment. The table of deposits and monthly rent charges is shown in the following table:`,
-  },
+  
   {
     title: "Information and Referral of Community Services",
     content: `The Social Services Department is a repertoire of information on social networks in the community available for our members to tap on. At the same time, it networks with other social service providers to meet members’ diverse needs.`,
   },
-  {
-    title: "Social Integration",
-    content: `The Handicaps Welfare Association (HWA) encourages its members to lead active lifestyles and develop their fullest potentials by actively participating in various recreational, social, cultural, and life skills activities organized by different organizations including government bodies and schools. These activities not only provide opportunities for growth and development for HWA members but also serve as important avenues to raise public awareness about HWA's mission and the plight of its members.
+  // {
+  //   title: "Mobility Aids Loan Scheme",
+  //   content: `HWA’ mobility aids loan scheme is implemented with the objective of helping members with short-term equipment loan. Singaporeans and PRs need to pay only token administrative charges on top of the deposits which cover the cost of the mobility aids.
 
-    Sports Activities
-    
-    HWA places a strong emphasis on sports as an important tool for individuals with disabilities to improve their physical and mental well-being. In partnership with organizations such as Singapore Disability Sports Council (SDSC) and National Disability Sports Association (NDSA), HWA has organized various sporting activities for its members including table-tennis, sailing, bowling, and the Standard Chartered marathon. Through these partnerships, HWA aims to increase the number of individuals with disabilities involved in sports and raise public awareness about disability sports in the community.
-    
-    Bowling
-    
-    One specific activity that HWA is currently promoting is bowling. HWA encourages members from HWA, ID, and SAVH to participate in learn-to-bowl sessions every Thursday at Planet's Bowl, Tessensohn Rd from 10.00am – 12.00pm @ $1.80 per game. Once members are able to bowl well, they will be enrolled in a development program where they will be nurtured into an elite team that will represent Singapore in international games. The bowling association has been in existence since 2010 with its office at Tessensohn Rd.`,
-  },
-  {
-    title: "Membership",
-    content: `The Social Services Department helps to process, interview and recommend application which has satisfied entry criteria as laid down in the Constitution. It also manages membership data base and payment.
+  //   HWA’ mobility aids loan scheme is implemented with the objective of helping members with short-term equipment loan. HWA members get to use the borrowed equipment free for six months. After that a monthly rent is payable for use of the equipment for a month or part of a month.
+  //   Deposit and Monthly Rent – The borrower has to pay a deposit (refundable) for each piece of equipment loaned. This deposit would be used to offset charges for repairs arising from damages or forfeited when the borrower failed to return the equipment. The table of deposits and monthly rent charges is shown in the following table:`,
+  // },
+  // {
+  //   title: "Social Integration",
+  //   content: `The Handicaps Welfare Association (HWA) encourages its members to lead active lifestyles and develop their fullest potentials by actively participating in various recreational, social, cultural, and life skills activities organized by different organizations including government bodies and schools. These activities not only provide opportunities for growth and development for HWA members but also serve as important avenues to raise public awareness about HWA's mission and the plight of its members.
 
-    People with physical disabilities, between the age of 16 and 60, are welcome to join HWA as a member to participate in its activities and benefit from its welfare programs. There are three categories of membership:`,
-  },
+  //   Sports Activities
+    
+  //   HWA places a strong emphasis on sports as an important tool for individuals with disabilities to improve their physical and mental well-being. In partnership with organizations such as Singapore Disability Sports Council (SDSC) and National Disability Sports Association (NDSA), HWA has organized various sporting activities for its members including table-tennis, sailing, bowling, and the Standard Chartered marathon. Through these partnerships, HWA aims to increase the number of individuals with disabilities involved in sports and raise public awareness about disability sports in the community.
+    
+  //   Bowling
+    
+  //   One specific activity that HWA is currently promoting is bowling. HWA encourages members from HWA, ID, and SAVH to participate in learn-to-bowl sessions every Thursday at Planet's Bowl, Tessensohn Rd from 10.00am – 12.00pm @ $1.80 per game. Once members are able to bowl well, they will be enrolled in a development program where they will be nurtured into an elite team that will represent Singapore in international games. The bowling association has been in existence since 2010 with its office at Tessensohn Rd.`,
+  // },
+  // {
+  //   title: "Membership",
+  //   content: `The Social Services Department helps to process, interview and recommend application which has satisfied entry criteria as laid down in the Constitution. It also manages membership data base and payment.
+
+  //   People with physical disabilities, between the age of 16 and 60, are welcome to join HWA as a member to participate in its activities and benefit from its welfare programs. There are three categories of membership:`,
+  // },
 ];
