@@ -93,7 +93,7 @@ const MakeADonation = () => {
             >
               OR
             </span>
-            <div class="flex-grow border-t border-secondary-600"></div>
+            <div className="flex-grow border-t border-secondary-600"></div>
           </div>
           <div className="flex flex-row justify-center">
             <input
