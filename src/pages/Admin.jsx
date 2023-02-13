@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CreateEvent from "../Components/Admin/CreateEvents";
 import Login from "../Components/Admin/Login";
 
+
 const Admin = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [ACCESS_TOKEN, SET_ACCESS_TOKEN] = useState("");
@@ -9,7 +10,10 @@ const Admin = () => {
   return (
     <>
       {ACCESS_TOKEN === "" ? (
-        <Login SET_ACCESS_TOKEN={SET_ACCESS_TOKEN} ACCESS_TOKEN={ACCESS_TOKEN} />
+        <Login
+          SET_ACCESS_TOKEN={SET_ACCESS_TOKEN}
+          ACCESS_TOKEN={ACCESS_TOKEN}
+        />
       ) : (
         <div>
           <div class="flex justify-center">
@@ -22,6 +26,7 @@ const Admin = () => {
               </p>
             </div>
           </div>
+          
         </div>
       )}
     </>

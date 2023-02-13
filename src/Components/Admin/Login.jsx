@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Login = ( {SET_ACCESS_TOKEN }, ACCESS_TOKEN) => {
+const Login = ( {SET_ACCESS_TOKEN, ACCESS_TOKEN } ) => {
   const [login, setLogin] = useState({
     username: "",
     password: "",

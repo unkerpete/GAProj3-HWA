@@ -1,4 +1,5 @@
 import React from "react";
+import Card  from "react-bootstrap/Card";
 
 const DisplayEvents = () => {
   const fetchEvents = async () => {};
@@ -22,6 +23,7 @@ const DisplayEvents = () => {
           );
         })}
       </div>
+      
     </>
   );
 };
