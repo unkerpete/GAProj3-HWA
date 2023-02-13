@@ -3,7 +3,7 @@ import axios from "axios";
 
 axios.defaults.baseURL = "http://localhost:5001";
 
-const useAxios = (params) => {
+const useAxios = (params, executeOnMount = true) => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -12,7 +12,7 @@ const useAxios = (params) => {
     setLoading(true);
     try {
       const res = await axios.request(params);
-      setResponse(res.data);
+      setResponse(res);
     } catch (err) {
       setError(err);
     } finally {
@@ -20,11 +20,16 @@ const useAxios = (params) => {
     }
   };
 
-  useEffect(() => {
+  const makeRequest = () => {
+    // e.preventDefault();
     fetchData(params);
+  };
+
+  useEffect(() => {
+    if (executeOnMount) fetchData(params);
   }, []);
 
-  return { response, error, loading };
+  return { response, error, loading, makeRequest };
 };
 
 export default useAxios;
