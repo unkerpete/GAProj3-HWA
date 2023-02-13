@@ -3,7 +3,7 @@ import React from "react";
 import Tabs from "./Tabs";
 import getInvolvedImage from "/src/Assets/izhar/GetInvolved/GetInvolved_image.png";
 
-const SectionHeader = ({ setActiveTab, activeTab }) => {
+const SectionHeader = () => {
   return (
     <>
       {/* MESSAGE + IMAGE */}
@@ -20,7 +20,7 @@ const SectionHeader = ({ setActiveTab, activeTab }) => {
         </div>
       </div>
       {/* TABS */}
-      <Tabs setActiveTab={setActiveTab} activeTab={activeTab} />
+      <Tabs />
     </>
   );
 };

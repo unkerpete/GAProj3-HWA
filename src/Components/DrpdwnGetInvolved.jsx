@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import makedonationLogo from "../assets/peter/header/Get_Involved_MakeADonation_icon.png";
 import volunteerLogo from "../assets/peter/header/Get_Involved_BecomeAVolunteer_icon.png";
 import { NavLink } from "react-router-dom";
+import getInvolvedContext from "../context/tabContext";
 
 const DrpdwnGetInvolved = (props) => {
+  const getInvolvedTabContext = useContext(getInvolvedContext);
   return (
     <>
       <div
@@ -28,7 +30,14 @@ const DrpdwnGetInvolved = (props) => {
               className="w-16 mx-auto"
             />
             <h6 className="text-green-800 hover:text-green-600 hover:cursor-pointer">
-              <NavLink to="/get-involved/#IDTOUPDATE">Make a Donation</NavLink>
+              <NavLink
+                to="/get-involved/"
+                onClick={() => {
+                  getInvolvedTabContext.setGetInvolvedActiveTab("tab1");
+                }}
+              >
+                Make a Donation
+              </NavLink>
             </h6>
           </div>
           <div className="inline-block mx-20">
@@ -38,7 +47,12 @@ const DrpdwnGetInvolved = (props) => {
               className="w-16 mx-auto"
             />
             <h6 className="text-green-800 hover:text-green-600 hover:cursor-pointer">
-              <NavLink to="/get-involved/#IDTOUPDATE">
+              <NavLink
+                to="/get-involved/"
+                onClick={() => {
+                  getInvolvedTabContext.setGetInvolvedActiveTab("tab2");
+                }}
+              >
                 Become a Volunteer
               </NavLink>
             </h6>

@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import transportLogo from "../assets/peter/header/Our_Services_Transport_icon.png";
 import rehabLogo from "../assets/peter/header/Our_Services_Rehabilitation_icon.png";
 import homecareLogo from "../assets/peter/header/Our_Services_Homecare_icon.png";
 import socialserviceLogo from "../assets/peter/header/Our_Services_SocialService_icon.png";
 import { NavLink } from "react-router-dom";
+import tabContext from "../context/tabContext";
 
 const DrpdwnOurServices = (props) => {
+  const tabCtx = useContext(tabContext);
+
   return (
     <>
       <div
@@ -30,13 +33,27 @@ const DrpdwnOurServices = (props) => {
               className="w-16 mx-auto"
             />
             <h6 className="text-green-800 hover:text-green-600 hover:cursor-pointer">
-              <NavLink to="/our-services">Transport</NavLink>
+              <NavLink
+                to="/our-services"
+                onClick={() => {
+                  tabCtx.setOurServiceActiveTab("tab1");
+                }}
+              >
+                Transport
+              </NavLink>
             </h6>
           </div>
           <div className="inline-block mx-20">
             <img src={rehabLogo} alt="rehab-logo" className="w-16 mx-auto" />
             <h6 className="text-green-800 hover:text-green-600 hover:cursor-pointer">
-              <NavLink to="/our-services#IDTOUPDATE">Rehabilitation</NavLink>
+              <NavLink
+                to="/our-services"
+                onClick={() => {
+                  tabCtx.setOurServiceActiveTab("tab2");
+                }}
+              >
+                Rehabilitation
+              </NavLink>
             </h6>
           </div>
           <div className="inline-block mx-20">
@@ -46,7 +63,14 @@ const DrpdwnOurServices = (props) => {
               className="w-16 mx-auto"
             />
             <h6 className="text-green-800 hover:text-green-600 hover:cursor-pointer">
-              <NavLink to="/our-services#IDTOUPDATE">Home Care</NavLink>
+              <NavLink
+                to="/our-services"
+                onClick={() => {
+                  tabCtx.setOurServiceActiveTab("tab3");
+                }}
+              >
+                Home Care
+              </NavLink>
             </h6>
           </div>
           <div className="inline-block mx-20">
@@ -56,7 +80,14 @@ const DrpdwnOurServices = (props) => {
               className="w-16 mx-auto"
             />
             <h6 className="text-green-800 hover:text-green-600 hover:cursor-pointer">
-              <NavLink to="/our-services#IDTOUPDATE">Social Services</NavLink>
+              <NavLink
+                to="/our-services"
+                onClick={() => {
+                  tabCtx.setOurServiceActiveTab("tab4");
+                }}
+              >
+                Social Services
+              </NavLink>
             </h6>
           </div>
         </div>

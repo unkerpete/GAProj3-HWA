@@ -119,7 +119,7 @@ const NavBar = () => {
             <img src={searchIcon} alt="search-icon" />
           </div>
           <div className="relative bottom-3 right-10">
-            <Button text="Donate" link="/get-involved" />
+            <Button text="Donate" link="/get-involved/" />
           </div>
         </div>
       </div>
