@@ -18,21 +18,6 @@ const PictureCards = (props) => {
     }
   };
 
-  const getTagLink = (tag) => {
-    switch (tag) {
-      case "Talks":
-        return "/current-events";
-      case "Classes & Workshops":
-        return "/current-events";
-      case "Fundraiser":
-        return "/current-events";
-      case "Community Gatherings":
-        return "/current-events";
-      default:
-        return "current-events";
-    }
-  };
-
   return (
     <div
       className={`${
@@ -52,7 +37,7 @@ const PictureCards = (props) => {
             key={index}
           >
             {props.vertical ? (
-              <p className="font-DM text-3xl font-medium text-primary-800 mr-40">
+              <p className="font-DM text-3xl font-medium text-primary-800 mr-40 ">
                 {obj.dateStart}
               </p>
             ) : null}
@@ -65,28 +50,29 @@ const PictureCards = (props) => {
               />
             </div>
 
-            <div>
-              <p className={"font-DM text-base font-normal"}>
-                {obj.tag ? (
-                  <Link to={`${getTagLink(obj.tag)}`}>
+            <div className="grid content-between ">
+              <div>
+                <p className={"font-DM text-base font-normal"}>
+                  {obj.tag ? (
                     <span className={`${getTagClass(obj.tag)} `}>
                       {obj.tag}
                     </span>
-                  </Link>
-                ) : (
-                  <span className="text-white">no tag</span>
-                )}
-              </p>
-              <Link to={obj.action}>
-                <h3 className="py-3 w-3/4">{obj.title}</h3>
-              </Link>
-              <p className="font-DM text-xl font-normal">
-                {obj.dateStart} {obj.dateEnd ? "-" : null} {obj.dateEnd}
-                {obj.time ? ", " : null}
-                {obj.time}
-              </p>
+                  ) : (
+                    <span className="text-white">no tag</span>
+                  )}
+                </p>
+                <Link to={obj.action}>
+                  <h3 className="py-3 w-3/4">{obj.title}</h3>
+                </Link>
+                <p className="font-DM text-lg font-normal">
+                  {obj.dateStart} {obj.dateEnd ? "-" : null} {obj.dateEnd}
+                  {obj.time ? ", " : null}
+                  {obj.time}
+                </p>
+              </div>
+
               {props.vertical ? (
-                <div className="flex align-bottom">
+                <div>
                   <Button text="Learn More" link="" />
                 </div>
               ) : null}
