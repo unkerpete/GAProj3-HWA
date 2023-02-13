@@ -11,7 +11,7 @@ const Form = () => {
   };
 
   return (
-    <div class="container mx-auto bg-primary-200 rounded-2xl shadow-md">
+    <div className="container mx-auto bg-primary-200 rounded-2xl shadow-md">
       <p className="text-center pt-10 mb-10">
         <h3>Corporate Volunteer Form</h3>
       </p>

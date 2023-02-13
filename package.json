@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.10",
     "date-fns": "^2.29.3",
     "dayjs": "^1.11.7",
     "jjs": "^0.1.8",

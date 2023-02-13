@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import GetInvolved from "./pages/GetInvolved";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
@@ -14,23 +15,35 @@ import StyleGuide from "./pages/StyleGuide";
 import Calender from "./Components/Calendar";
 
 function App() {
+  const [getInvolvedActiveTab, setGetInvolvedActiveTab] = useState("tab1");
+  const [ourServiceActiveTab, setOurServiceActiveTab] = useState("tab1");
+
   return (
     <div className="">
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Navigate replace to="/Home" />} />
-        <Route path="/Home" element={<Home />} />
+      <tabContext.Provider
+        value={{
+          getInvolvedActiveTab,
+          setGetInvolvedActiveTab,
+          ourServiceActiveTab,
+          setOurServiceActiveTab,
+        }}
+      >
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Navigate replace to="/Home" />} />
+          <Route path="/Home" element={<Home />} />
 
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/about-us/our-people" element={<OurPeople />} />
-        <Route path="/about-us/governance" element={<Governance />} />
-        <Route path="/our-services" element={<OurServices />} />
-        <Route path="/get-involved/" element={<GetInvolved />} />
-        <Route path="/current-events/" element={<CurrentEvents />} />
-        <Route path="/contact-us/" element={<ContactUs />} />
-        <Route path="/styleguide" element={<StyleGuide />} />
-      </Routes>
-      <Footer />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/about-us/our-people" element={<OurPeople />} />
+          <Route path="/about-us/governance" element={<Governance />} />
+          <Route path="/our-services" element={<OurServices />} />
+          <Route path="/get-involved/" element={<GetInvolved />} />
+          <Route path="/current-events/" element={<CurrentEvents />} />
+          <Route path="/contact-us/" element={<ContactUs />} />
+          <Route path="/styleguide" element={<StyleGuide />} />
+        </Routes>
+        <Footer />
+      </tabContext.Provider>
     </div>
   );
 }

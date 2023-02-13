@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button1 from "./Button1";
 import PaymentThru from "./PaymentThru";
 
 const CreditPayment = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [inputValues, setInputValues] = useState({});
+  const navigate = useNavigate();
 
   const handleCheckBox = () => {
     setIsChecked(!isChecked);
@@ -23,15 +25,17 @@ const CreditPayment = () => {
   const handleCreditSubmission = (e) => {
     e.preventDefault();
     console.log("Credit Submission");
+    navigate("/Home");
+
+    //
   };
 
   return (
-    <div className="">
-      <form className="grid grid-cols-15 bg-secondary-200 text-primary-800 border-2">
-        <div className="col-span-8 px-20">
-          <p className="font-DM text-xl font-normal mb-5 mt-20 ">
-            Personal Details
-          </p>
+    <div className=" bg-secondary-200 text-primary-800 ">
+      <div className="p-14 bg-secondary-200  border border-secondary-200"></div>
+      <form className="grid grid-cols-15 bg-secondary-200 text-primary-800">
+        <div className="col-span-8 px-20 border-r-2 border-primary-600">
+          <p className="font-DM text-xl font-normal mb-5">Personal Details</p>
           <input
             className="font-DM text-lg font-normal w-full p-5 rounded-2xl mb-6"
             type="text"
@@ -87,7 +91,7 @@ const CreditPayment = () => {
         </div>
 
         <div className="col-span-7 px-20">
-          <p className="font-DM text-xl font-normal mb-5 mt-20">Card Details</p>
+          <p className="font-DM text-xl font-normal mb-5">Card Details</p>
           <input
             className="font-DM text-lg font-normal w-full rounded-2xl p-5 mb-6"
             type="text"
@@ -131,7 +135,7 @@ const CreditPayment = () => {
               onChange={handleInputChange}
             />
             <input
-              className="font-DM text-lg font-normal w-1/2 rounded-2xl p-5 mb-6 text-center"
+              className="font-DM text-lg font-normal w-1/2 rounded-2xl p-5 mb-6 text-center "
               type="text"
               placeholder="000"
               name="cvv"
@@ -141,11 +145,12 @@ const CreditPayment = () => {
           </div>
 
           <Button1
-            text={"Complete Donation"}
+            text={"Complete Donation XXX value"}
             handleSubmission={handleCreditSubmission}
           />
         </div>
       </form>
+      <div className="p-12 bg-secondary-200"></div>
     </div>
   );
 };
