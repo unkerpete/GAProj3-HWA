@@ -45,9 +45,8 @@ const CreateEvent = () => {
   return (
     <>
       <div className="w-1/2">
-        <h2>Create event</h2>
+        {/* <h2>Create event</h2> */}
         <form onSubmit={(e) => createEvent(e)}>
-            
           <input
             placeholder="title"
             name="title"
@@ -90,7 +89,7 @@ const CreateEvent = () => {
           <input
             placeholder="img"
             name="img"
-            type="text"
+            type="file"
             value={event.img}
             onChange={(e) => handleChange(e)}
           />
@@ -109,7 +108,7 @@ const CreateEvent = () => {
             onChange={(e) => handleChange(e)}
           />
 
-          <button className="bg-gray-200 p-2 rounded">SUBMIT</button>
+          {/* <button className="bg-gray-200 p-2 rounded">SUBMIT</button> */}
         </form>
       </div>
     </>
