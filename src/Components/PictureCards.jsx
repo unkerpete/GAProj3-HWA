@@ -36,7 +36,9 @@ const PictureCards = (props) => {
   return (
     <div
       className={`${
-        props.vertical ? "grid grid-rows-3" : "grid grid-cols-3 gap-8"
+        props.vertical
+          ? "grid grid-rows-3 py-20 pl-20 pr-60"
+          : "grid grid-cols-3 gap-8"
       }`}
     >
       {props.pictureInfo.map((obj, index) => {
@@ -44,7 +46,7 @@ const PictureCards = (props) => {
           <div
             className={
               props.vertical
-                ? "flex flex-row my-8"
+                ? "grid grid-cols-3 my-8"
                 : "col h-[459px] content-center"
             }
             key={index}
@@ -54,11 +56,9 @@ const PictureCards = (props) => {
                 {obj.dateStart}
               </p>
             ) : null}
-            <div>
+            <div className={props.vertical ? "mr-8" : "mb-3"}>
               <img
-                className={`${
-                  props.vertical ? "mr-7" : "mb-3"
-                } rounded-2xl border `}
+                className="rounded-2xl border"
                 src={obj.img}
                 width="431"
                 height="287"
@@ -81,7 +81,8 @@ const PictureCards = (props) => {
                 <h3 className="py-3 w-3/4">{obj.title}</h3>
               </Link>
               <p className="font-DM text-xl font-normal">
-                {obj.dateStart} {obj.dateEnd ? "-" : null} {obj.dateEnd},
+                {obj.dateStart} {obj.dateEnd ? "-" : null} {obj.dateEnd}
+                {obj.time ? ", " : null}
                 {obj.time}
               </p>
               {props.vertical ? (
