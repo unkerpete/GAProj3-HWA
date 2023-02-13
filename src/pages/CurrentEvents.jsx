@@ -1,4 +1,39 @@
 import React from "react";
+import PictureCards from "../Components/PictureCards";
+import TagsDisplay from "../Components/Current-Events/TagsDisplay";
+
+const pictureInfo = [
+  {
+    title: "Medical Talk - Essential Caregiving Skills",
+    dateStart: "21 Jan 2023",
+    dateEnd: "",
+    time: "9:00 am",
+    description: "",
+    img: "src/Assets/shujun/homepage/blog/blog1.png",
+    action: "/current-events",
+    tag: "Talks",
+  },
+  {
+    title: "Seniors Go Digital",
+    dateStart: "21 Jan 2023",
+    dateEnd: "23 Jan 2023",
+    time: "9 - 5:30 pm",
+    description: "",
+    img: "src/Assets/shujun/homepage/blog/blog2.png",
+    action: "/current-events",
+    tag: "Classes & Workshops",
+  },
+  {
+    title: "37th Annual Wheel, Walk or Jog 2021",
+    dateStart: "5 Feb 2023",
+    dateEnd: "28 Feb 2023",
+    time: "",
+    description: "",
+    img: "src/Assets/shujun/homepage/blog/blog3.png",
+    action: "/current-events",
+    tag: "Fundraiser",
+  },
+];
 
 const CurrentEvents = () => {
   // date-based API endpoints to filter to current, upcoming, past
@@ -8,10 +43,13 @@ const CurrentEvents = () => {
   // Date, image, category, title, time link -> all to be stored inside a state that will be mapped
 
   return (
-    <div>
+    <div className="p-20">
       {/* section header inclusive of filters */}
       {/* categorical filters */}
+
       {/* mapped out event cards  */}
+      <TagsDisplay />
+      <PictureCards pictureInfo={pictureInfo} vertical />
       {/* right side modal when button on card is clicked */}
     </div>
   );

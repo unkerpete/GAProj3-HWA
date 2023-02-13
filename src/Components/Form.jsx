@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Listbox } from "@headlessui/react";
 import { BsChevronExpand } from "react-icons/bs";
 import ButtonSubmit from "../Components/ButtonSubmit";
 
 const Form = (props) => {
+  const [formType, setFormType] = useState(props.header);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState("");
@@ -11,11 +12,59 @@ const Form = (props) => {
   const [companyName, setCompanyName] = useState("");
   const [selectedOption, setSelectedOption] = useState(props.placeholder);
 
-  //CHANGE THIS TO POST TO BACKEND
-  const postData = () => {
+  useEffect(() => {
+    setFormType(props.header);
+    console.log(`form type set on mount ${formType}`);
+  }, []);
+
+  const body = (formType) => {
+    formType === "Corporate Volunteer Form"
+      ? {
+          fullName: name,
+          email: email,
+          contact: tel,
+          company: companyName,
+          message: message,
+        }
+      : {
+          fullName: name,
+          email: email,
+          contact: tel,
+          selection: selectedOption,
+          message: message,
+        };
+  };
+
+  const url = (formType) => {
+    switch (formType) {
+      case "Corporate Volunteer Form":
+        return "http://127.0.0.1:5001/volunteer/create";
+      case "Enquiry form":
+        return "http://127.0.0.1:5001/contact/create";
+      case "Home Care Service Enquiry":
+        return "http://127.0.0.1:5001/homecare/create";
+      case "Transport Services Enquiry":
+        return "http://127.0.0.1:5001/transport/create";
+    }
+  };
+
+  //PUT TO BACKEND
+  const putData = () => {
     console.log(
       `Post data to backend:${name},${email},${tel},${selectedOption},${companyName},${message}`
     );
+    fetch(url(formType), {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+      .then((response) => response.json())
+      .then((results) => {
+        console.log(results);
+      })
+      .catch((error) => console.error(error));
     clearInputs();
   };
 
@@ -30,7 +79,7 @@ const Form = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    postData();
+    putData();
   };
 
   const handleChange = (e) => {

@@ -77,7 +77,7 @@ const NavBar = () => {
         navBarBackgroundColorByHover
           ? navBarBackgroundColorByHover
           : navBarBackgroundColorByPage
-      } sticky top-0`}
+      } sticky top-0 z-20`}
     >
       <div className="h-24 flex border-y-2 border">
         <div className="mr-80 pt-4 pl-20">
