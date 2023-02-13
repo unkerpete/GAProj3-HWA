@@ -17,23 +17,21 @@ const Form = (props) => {
     console.log(`form type set on mount ${formType}`);
   }, []);
 
-  const body = (formType) => {
-    formType === "Corporate Volunteer Form"
-      ? {
-          fullName: name,
-          email: email,
-          contact: tel,
-          company: companyName,
-          message: message,
-        }
-      : {
-          fullName: name,
-          email: email,
-          contact: tel,
-          selection: selectedOption,
-          message: message,
-        };
-  };
+  const body = props.menu
+    ? {
+        fullName: name,
+        email: email,
+        contact: tel,
+        selection: selectedOption,
+        message: message,
+      }
+    : {
+        fullName: name,
+        email: email,
+        contact: tel,
+        company: companyName,
+        message: message,
+      };
 
   const url = (formType) => {
     switch (formType) {
