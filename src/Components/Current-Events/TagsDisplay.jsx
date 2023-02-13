@@ -1,10 +1,10 @@
 import React from "react";
-import Tags from "./Tags";
+import Tag from "./Tag";
 
 const TagsDisplay = () => {
   return (
     <div>
-      <Tags text="blah" />
+      <Tag text="All" link="/current-events" />
     </div>
   );
 };
