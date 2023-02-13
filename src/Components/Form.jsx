@@ -53,7 +53,7 @@ const Form = (props) => {
     console.log(
       `Post data to backend:${name},${email},${tel},${selectedOption},${companyName},${message}`
     );
-    fetch(url, {
+    fetch(url(formType), {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
