@@ -13,7 +13,6 @@ const Accordion = (props) => {
 
   useEffect(() => {
     props.onSave(clickedId);
-    console.log(`clicked child id: ${clickedId}`);
   }, [isActive]);
 
   useEffect(() => {
