@@ -28,3 +28,19 @@ const useAxios = (params) => {
 };
 
 export default useAxios;
+
+// Documentation on what options available on setting up  the request config
+// https://axios-http.com/docs/req_config
+// decide if you want all 3 or just one of them such as response
+
+//   const { response, error, loading } = useAxios({
+//     method: "GET",
+//     url: "/admin/allusers",
+// headers: {
+
+// },
+// data: {
+//   // data is basically the body, but in axios syntax. Example below
+//   fullname: "ROBBIE",
+// }
+//   });

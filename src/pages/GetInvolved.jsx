@@ -10,9 +10,10 @@ import useAxios from "../Hooks/useAxios";
 const GetInvolved = () => {
   const tabCtx = useContext(tabContext);
 
-  // const toggleTab = (index) => {
-  //   console.log(index);
-  // };
+
+
+  console.log(response);
+
   return (
     <div>
       <SectionHeader />
