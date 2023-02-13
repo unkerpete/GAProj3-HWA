@@ -6,11 +6,13 @@ import Footer from "./Components/Footer";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
+import OurPeople from "./pages/AboutOurPeople";
+import Governance from "./pages/AboutGovernance";
 import OurServices from "./pages/OurServices";
 import CurrentEvents from "./pages/CurrentEvents";
 import ContactUs from "./pages/ContactUs";
+import StyleGuide from "./pages/StyleGuide";
 import Calender from "./Components/Calendar";
-import tabContext from "./context/tabContext";
 
 function App() {
   const [getInvolvedActiveTab, setGetInvolvedActiveTab] = useState("tab1");
@@ -32,10 +34,13 @@ function App() {
           <Route path="/Home" element={<Home />} />
 
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/about-us/our-people" element={<OurPeople />} />
+          <Route path="/about-us/governance" element={<Governance />} />
           <Route path="/our-services" element={<OurServices />} />
           <Route path="/get-involved/" element={<GetInvolved />} />
           <Route path="/current-events/" element={<CurrentEvents />} />
           <Route path="/contact-us/" element={<ContactUs />} />
+          <Route path="/styleguide" element={<StyleGuide />} />
         </Routes>
         <Footer />
       </tabContext.Provider>

@@ -13,7 +13,7 @@ module.exports = {
       colors: {
         transparent: "transparent",
         current: "currentColor",
-        peach: "#fed5d8",
+        peach: "#FDE5D8",
         primary: {
           800: "#2B4435",
           600: "#4F7F71",
@@ -31,7 +31,7 @@ module.exports = {
         DM: ["DM Sans", "sans-serif"],
       },
       fontSize: {
-        "3xl": "32px",
+        "3xl": "26px",
         xl: "20px",
         lg: "18px",
         base: "16px",
