@@ -1,9 +1,12 @@
 import { set } from "jjs";
 import React, { useState } from "react";
 import useAxios from "../../Hooks/useAxios";
+import MessageModal from "../MessageModal";
 
 // to change button into a separate component
 const Form = () => {
+  let [isOpen, setIsOpen] = useState(false);
+
   const [inputValues, setInputValues] = useState({
     fullName: "",
     email: "",
@@ -51,6 +54,7 @@ const Form = () => {
       company: "",
       message: "",
     });
+    setIsOpen(true);
   };
 
   return (
@@ -116,6 +120,20 @@ const Form = () => {
           </button>
         </div>
       </form>
+      {isOpen && response && (
+        <MessageModal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          text="Form Sent Successfully"
+        />
+      )}
+      {isOpen && !response && (
+        <MessageModal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          text="Form Failed to Send"
+        />
+      )}
     </div>
   );
 };
