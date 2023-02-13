@@ -28,15 +28,23 @@ const DrpdwnAboutUs = (props) => {
           <div className="p-10">
             <p className="mb-2 text-green-800 font-bold">Our People</p>
             <p className="text-green-800 hover:text-green-600 hover:cursor-pointer">
-              <NavLink to="/about-us#board-members">Board Members</NavLink>
+              <NavLink to="/about-us/our-people">Board Members</NavLink>
             </p>
             <p className="text-green-800 hover:text-green-600 hover:cursor-pointer">
-              <NavLink to="/about-us#management">Management</NavLink>
+              <a
+                className="text-green-800 hover:text-green-600 hover:cursor-pointer"
+                href="#management"
+              >
+                Management
+              </a>
             </p>
             <p className="text-green-800 hover:text-green-600 hover:cursor-pointer">
-              <NavLink to="/about-us#org-structure">
+              <a
+                className="text-green-800 hover:text-green-600 hover:cursor-pointer"
+                href="#org-structure"
+              >
                 Organisational Structure
-              </NavLink>
+              </a>
             </p>
           </div>
           <div className="p-10">
@@ -44,17 +52,20 @@ const DrpdwnAboutUs = (props) => {
               Governance & Financials
             </p>
             <p className="text-green-800 hover:text-green-600 hover:cursor-pointer">
-              <NavLink to="/about-us#IDTOUPDATE">Corporate Governance</NavLink>
+              <NavLink to="/about-us/governance">Corporate Governance</NavLink>
             </p>
             <p className="text-green-800 hover:text-green-600 hover:cursor-pointer">
-              <NavLink to="/about-us#IDTOUPDATE">
+              <NavLink to="/about-us/governance">
                 Annual Report & Financial Statement
               </NavLink>
             </p>
             <p className="text-green-800 hover:text-green-600 hover:cursor-pointer">
-              <NavLink to="/about-us#IDTOUPDATE">
+              <a
+                className="text-green-800 hover:text-green-600 hover:cursor-pointer"
+                href="/about-us/governance#yearly-performance"
+              >
                 Yearly Performance Information
-              </NavLink>
+              </a>
             </p>
           </div>
         </div>

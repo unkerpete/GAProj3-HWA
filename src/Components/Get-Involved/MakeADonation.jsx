@@ -119,7 +119,7 @@ const MakeADonation = () => {
 
       {/* Thank You Message for payment via Paynow*/}
 
-      <div className="grid grid-cols-5 text-left mt-12">
+      <div className="grid grid-cols-5 text-left mt-12 pb-20">
         <div className="col-start-2 col-end-5 font-DM text-xl font-normal">
           <p>
             <span className="font-bold">Note:</span> IRAS will no longer accept

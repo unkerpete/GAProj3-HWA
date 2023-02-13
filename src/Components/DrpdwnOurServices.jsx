@@ -60,7 +60,7 @@ const DrpdwnOurServices = (props) => {
             <img
               src={homecareLogo}
               alt="homecare-logo"
-              className="w-16 mx-auto"
+              className="w-16 mx-auto px-2"
             />
             <h6 className="text-green-800 hover:text-green-600 hover:cursor-pointer">
               <NavLink
