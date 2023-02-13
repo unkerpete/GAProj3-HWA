@@ -1,11 +1,16 @@
+import { set } from "jjs";
 import React, { useState } from "react";
 import useAxios from "../../Hooks/useAxios";
 
 // to change button into a separate component
 const Form = () => {
-  // temporarily keep the state here
-  const [isSubmitted, setSubmitted] = useState(false);
-  const [inputValues, setInputValues] = useState({});
+  const [inputValues, setInputValues] = useState({
+    fullName: "",
+    email: "",
+    contact: "",
+    company: "",
+    message: "",
+  });
 
   const { response, error, loading, makeRequest } = useAxios(
     {
@@ -20,12 +25,6 @@ const Form = () => {
         contact: inputValues.contact,
         company: inputValues.company,
         message: inputValues.message,
-
-        // fullName: "test",
-        // email: "test@example.com",
-        // contact: 1234,
-        // company: "company",
-        // message: "lol",
       },
     },
     false
@@ -41,16 +40,24 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    makeRequest();
+    makeRequest(); // we call API here through makeRequest()
     console.log(response);
-    console.log(error);
+    // console.log(error);
+
+    setInputValues({
+      fullName: "",
+      email: "",
+      contact: "",
+      company: "",
+      message: "",
+    });
   };
 
   return (
     <div className="container mx-auto bg-primary-200 rounded-2xl shadow-md">
-      <p className="text-center pt-10 mb-10">
+      <span className="text-center pt-10 mb-10">
         <h3>Corporate Volunteer Form</h3>
-      </p>
+      </span>
       <p className="text-center font-DM text-xl font-normal">
         Thank you for being interested in volunteering!
       </p>

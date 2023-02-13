@@ -12,7 +12,7 @@ const useAxios = (params, executeOnMount = true) => {
     setLoading(true);
     try {
       const res = await axios.request(params);
-      setResponse(res.data);
+      setResponse(res);
     } catch (err) {
       setError(err);
     } finally {
