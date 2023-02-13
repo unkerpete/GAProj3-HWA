@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Login = ({ setACCESS_TOKEN }) => {
+const Login = ( {SET_ACCESS_TOKEN }, ACCESS_TOKEN) => {
   const [login, setLogin] = useState({
     username: "",
     password: "",
@@ -23,11 +23,13 @@ const Login = ({ setACCESS_TOKEN }) => {
       },
       body: JSON.stringify(login),
     })
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((result) => {
         console.log(result.access);
-        setACCESS_TOKEN(result.access);
+        SET_ACCESS_TOKEN(result.access);
+        
       });
+
   };
 
   const createUser = (e) => {

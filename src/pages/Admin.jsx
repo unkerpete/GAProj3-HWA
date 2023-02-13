@@ -4,12 +4,12 @@ import Login from "../Components/Admin/Login";
 
 const Admin = () => {
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [ACCESS_TOKEN, setACCESS_TOKEN] = useState("");
+  const [ACCESS_TOKEN, SET_ACCESS_TOKEN] = useState("");
 
   return (
     <>
       {ACCESS_TOKEN === "" ? (
-        <Login setACCESS_TOKEN={setACCESS_TOKEN} />
+        <Login SET_ACCESS_TOKEN={SET_ACCESS_TOKEN} ACCESS_TOKEN={ACCESS_TOKEN} />
       ) : (
         <div>
           <div class="flex justify-center">
