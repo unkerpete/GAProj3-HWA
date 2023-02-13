@@ -186,7 +186,6 @@ const HomeCare = () => {
                 <br />
                 <br />
                 <div className="font-DM text-l font-bold">
-                 
                   PhysioTherapy services, including:
                 </div>
                 <div className="pl-6">

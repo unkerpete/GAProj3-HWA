@@ -1,6 +1,7 @@
 import React from "react";
 import PictureCards from "../Components/PictureCards";
 import TagsDisplay from "../Components/Current-Events/TagsDisplay";
+import EventsSectionHeader from "../Components/Current-Events/EventsSectionHeader";
 
 const pictureInfo = [
   {
@@ -43,12 +44,14 @@ const CurrentEvents = () => {
   // Date, image, category, title, time link -> all to be stored inside a state that will be mapped
 
   return (
-    <div className="p-20">
+    <div>
       {/* section header inclusive of filters */}
+      <EventsSectionHeader />
+
       {/* categorical filters */}
+      <TagsDisplay />
 
       {/* mapped out event cards  */}
-      <TagsDisplay />
       <PictureCards pictureInfo={pictureInfo} vertical />
       {/* right side modal when button on card is clicked */}
     </div>
