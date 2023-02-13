@@ -18,7 +18,7 @@ const Admin = () => {
     e.preventDefault();
     console.log("created user");
 
-    fetch("http://127.0.0.1:5001/HWA/admin/create", {
+    fetch("http://127.0.0.1:5001/admin/create", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
