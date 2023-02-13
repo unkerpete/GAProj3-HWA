@@ -10,10 +10,6 @@ import useAxios from "../Hooks/useAxios";
 const GetInvolved = () => {
   const tabCtx = useContext(tabContext);
 
-
-
-  console.log(response);
-
   return (
     <div>
       <SectionHeader />
