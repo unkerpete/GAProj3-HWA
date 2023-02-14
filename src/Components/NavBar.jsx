@@ -22,6 +22,10 @@ const NavBar = () => {
     setCurrentPage(location.pathname.substring(1)), [location];
   });
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const getNavBarColor = (currentPage) => {
     switch (currentPage) {
       case "Home":
@@ -81,7 +85,7 @@ const NavBar = () => {
     >
       <div className="h-24 flex border-y-2 border">
         <div className="mr-80 pt-4 pl-20">
-          <NavLink to="/home">
+          <NavLink to="/home" onClick={scrollToTop}>
             <img src={logo} alt="logo" width={160} />
           </NavLink>
         </div>
@@ -103,7 +107,9 @@ const NavBar = () => {
                   setnavBarBackgroundColorByHover(null);
                 }}
               >
-                <NavLink to={item.url}>{item.itemName}</NavLink>
+                <NavLink to={item.url} onClick={scrollToTop}>
+                  {item.itemName}
+                </NavLink>
               </div>
             );
           })}
@@ -138,6 +144,7 @@ const NavBar = () => {
           handleMouseLeave={handleMouseLeave}
           setHover={setHoverOurServices}
           navBarBgColor="bg-secondary-200"
+          scrollToTop={scrollToTop}
         />
       )}
       {hoverGetInvolved && (
@@ -146,6 +153,7 @@ const NavBar = () => {
           handleMouseLeave={handleMouseLeave}
           setHover={setHoverGetInvolved}
           navBarBgColor="bg-primary-200"
+          scrollToTop={scrollToTop}
         />
       )}
     </div>

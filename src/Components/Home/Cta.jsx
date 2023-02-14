@@ -8,7 +8,7 @@ const ctaCardData = [
     alt: "Heart icon",
     body: "Your gift helps keep our services accessible to those who need them most.",
     btnText: "Make a Donation",
-    btnLink: "/get-involved",
+    btnLink: "/get-involved/",
   },
   {
     type: "Corporate",
@@ -16,9 +16,13 @@ const ctaCardData = [
     alt: "Email icon",
     body: "Want to get in touch? We'd love to help.",
     btnText: "Get in Touch",
-    btnLink: "/contact-us",
+    btnLink: "/contact-us/",
   },
 ];
+
+const handleClick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 const Cta = () => {
   return (
@@ -39,7 +43,11 @@ const Cta = () => {
               </p>
             </div>
             <div className="flex justify-center mt-auto">
-              <Button text={item.btnText} link={item.btnLink} />
+              <Button
+                text={item.btnText}
+                link={item.btnLink}
+                handleClick={handleClick}
+              />
             </div>
           </div>
         );

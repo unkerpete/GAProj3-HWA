@@ -181,24 +181,31 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex pl-20 relative bottom-7">
-          <img
-            src={fbLogo}
-            width="20"
-            height="20"
-            className="m-2 hover:cursor-pointer"
-          ></img>
-          <img
-            src={instaLogo}
-            width="20"
-            height="20"
-            className="m-2 hover:cursor-pointer"
-          ></img>
-          <img
-            src={ytbeLogo}
-            width="20"
-            height="20"
-            className="m-2 hover:cursor-pointer"
-          ></img>
+          <a href="https://www.facebook.com/HWASingapore" target="_blank">
+            <img
+              src={fbLogo}
+              width="20"
+              height="20"
+              className="m-2 hover:cursor-pointer"
+            ></img>
+          </a>
+          <a href="https://www.instagram.com/hwa.sg/" target="_blank">
+            <img
+              src={instaLogo}
+              width="20"
+              height="20"
+              className="m-2 hover:cursor-pointer"
+            ></img>
+          </a>
+
+          <a href="https://www.youtube.com/@HWASingapore" target="_blank">
+            <img
+              src={ytbeLogo}
+              width="20"
+              height="20"
+              className="m-2 hover:cursor-pointer"
+            ></img>
+          </a>
         </div>
       </div>
     </>

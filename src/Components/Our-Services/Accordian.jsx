@@ -10,7 +10,7 @@ const Accordion = ({ title, content, image }) => {
         onClick={() => setIsActive(!isActive)}
       >
         <div className="float-left font-DM text-xl font-bold">{title}</div>
-        <div className="float-right font-DM text-xl font-bold text-teal-400">
+        <div className="float-right font-DM text-3xl font-bold text-primary-600">
           {isActive ? "-" : "+"}
         </div>
       </div>
