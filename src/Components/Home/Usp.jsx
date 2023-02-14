@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import UspAccordion from "./UspAccordion";
+import underline from "../../Assets/shujun/homepage/usp/underline-01.png";
 
 const UspAccordionData = [
   {
@@ -35,11 +36,11 @@ const Usp = () => {
   return (
     <div className="grid grid-cols-2 bg-secondary-200 p-20 text-primary-800">
       <div className="grid">
-        <div className="place-content-start bg-primary-400">
+        <div className="place-content-start">
           <p className="font-DM text-3xl font-medium">
             What makes us different?
           </p>
-          <img src="../../Assets/shujun/homepage/usp/underline-01.png" />
+          <img className="ml-40" src={underline} width="150" />
         </div>
 
         <div className="place-content-center">
