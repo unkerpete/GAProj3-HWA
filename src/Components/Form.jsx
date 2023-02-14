@@ -14,28 +14,26 @@ const Form = (props) => {
 
   useEffect(() => {
     setFormType(props.header);
-    console.log(`form type set on mount ${formType}`);
+    console.log(`Form type set on mount: ${formType}`);
   }, []);
 
-  const body = (formType) => {
-    formType === "Corporate Volunteer Form"
-      ? {
-          fullName: name,
-          email: email,
-          contact: tel,
-          company: companyName,
-          message: message,
-        }
-      : {
-          fullName: name,
-          email: email,
-          contact: tel,
-          selection: selectedOption,
-          message: message,
-        };
-  };
+  const body = props.menu
+    ? {
+        fullName: name,
+        email: email,
+        contact: tel,
+        selection: selectedOption,
+        message: message,
+      }
+    : {
+        fullName: name,
+        email: email,
+        contact: tel,
+        company: companyName,
+        message: message,
+      };
 
-  const url = (formType) => {
+  const getUrl = (formType) => {
     switch (formType) {
       case "Corporate Volunteer Form":
         return "http://127.0.0.1:5001/volunteer/create";
@@ -53,7 +51,7 @@ const Form = (props) => {
     console.log(
       `Post data to backend:${name},${email},${tel},${selectedOption},${companyName},${message}`
     );
-    fetch(url(formType), {
+    fetch(getUrl(formType), {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
