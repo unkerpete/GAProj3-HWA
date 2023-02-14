@@ -1,48 +1,23 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 import PictureCards from "../Components/PictureCards";
 import TagsDisplay from "../Components/Current-Events/TagsDisplay";
 import EventsSectionHeader from "../Components/Current-Events/EventsSectionHeader";
 import EventsModal from "../Components/Current-Events/EventsModal";
 export const ModalContext = createContext();
 
-const pictureInfo = [
-  {
-    title: "Medical Talk - Essential Caregiving Skills",
-    dateStart: "21 Jan 2023",
-    dateEnd: "",
-    time: "9:00 am",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-    img: "src/Assets/shujun/homepage/blog/blog1.png",
-    action: "/current-events",
-    tag: "Talks",
-  },
-  {
-    title: "Seniors Go Digital",
-    dateStart: "21 Jan 2023",
-    dateEnd: "23 Jan 2023",
-    time: "9 - 5:30 pm",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid",
-    img: "src/Assets/shujun/homepage/blog/blog2.png",
-    action: "/current-events",
-    tag: "Classes & Workshops",
-  },
-  {
-    title: "37th Annual Wheel, Walk or Jog 2021",
-    dateStart: "5 Feb 2023",
-    dateEnd: "28 Feb 2023",
-    time: "",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid",
-    img: "src/Assets/shujun/homepage/blog/blog3.png",
-    action: "/current-events",
-    tag: "Fundraiser",
-  },
-];
+//DELETE THIS LATER
+import dummyEvents from "../Components/Current-Events/dummyEvents";
 
 const CurrentEvents = () => {
   const [modalIsActive, setModalIsActive] = useState(false);
+  const [modalEvent, setModalEvent] = useState({});
+  const [dateRange, setDateRange] = useState("Current");
+  const [selectedTag, setSelectedTag] = useState("All");
+  const [pictureInfo, setPictureInfo] = useState(dummyEvents);
+
+  // const getUrl = (dateRange, selectedTag) => {
+  //   switch [data, selectedTag] {case ["All",]}
+  // }
 
   const changeModalStatus = () => {
     setModalIsActive(!modalIsActive);
@@ -57,17 +32,34 @@ const CurrentEvents = () => {
     document.getElementById(id).style.overflow = "auto";
   };
 
+  /////////FOR CHECKING ONLY LATER DELETE///////////////////////
+  console.log(`Date Range:${dateRange},Tag:${selectedTag}`);
+  useEffect(() => {
+    console.log(`Event Modal:${modalEvent}`);
+  }, [modalEvent]);
+  /////////FOR CHECKING ONLY LATER DELETE///////////////////////
+
   return (
     <ModalContext.Provider
-      value={{ modalIsActive, changeModalStatus, disableScroll, enableScroll }}
+      value={{
+        modalIsActive,
+        modalEvent,
+        dateRange,
+        selectedTag,
+        pictureInfo,
+        changeModalStatus,
+        disableScroll,
+        enableScroll,
+        setDateRange,
+        setSelectedTag,
+        setModalEvent,
+        setPictureInfo,
+      }}
     >
       <div>
         <EventsSectionHeader />
-
         <TagsDisplay />
-
         <PictureCards pictureInfo={pictureInfo} vertical />
-
         {modalIsActive && <EventsModal />}
       </div>
     </ModalContext.Provider>

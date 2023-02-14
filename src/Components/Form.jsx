@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Listbox } from "@headlessui/react";
 import { BsChevronExpand } from "react-icons/bs";
-import ButtonSubmit from "../Components/ButtonSubmit";
+import ButtonOther from "../Components/ButtonOther";
 
 const Form = (props) => {
   const [formType, setFormType] = useState(props.header);
@@ -212,7 +212,11 @@ const Form = (props) => {
           />
 
           <div className="col-start-1 col-end-9 flex justify-center">
-            <ButtonSubmit text="Submit" className="justify-center" />
+            <ButtonOther
+              type="submit"
+              text="Submit"
+              className="justify-center"
+            />
           </div>
         </div>
       </form>

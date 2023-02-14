@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Button from "./Button";
+import ButtonOther from "./ButtonOther";
 import { ModalContext } from "../pages/CurrentEvents";
 
 const PictureCards = (props) => {
   const modalCtx = useContext(ModalContext);
+
   const getTagClass = (tag) => {
     switch (tag) {
       case "Talks":
@@ -20,10 +21,10 @@ const PictureCards = (props) => {
     }
   };
 
-  const handleClick = () => {
+  const handleClick = (obj) => {
     modalCtx.changeModalStatus();
     modalCtx.disableScroll("root");
-    // modalCtx.enableScroll("modal");
+    modalCtx.setModalEvent(obj);
   };
 
   return (
@@ -31,16 +32,14 @@ const PictureCards = (props) => {
       className={`${
         props.vertical
           ? "grid grid-rows-3 py-20 pl-20 pr-60"
-          : "grid grid-cols-3 gap-8"
+          : "flex flex-row gap-8 overflow-x-auto flex-nowrap"
       }`}
     >
       {props.pictureInfo.map((obj, index) => {
         return (
           <div
             className={
-              props.vertical
-                ? "grid grid-cols-3 my-8"
-                : "col h-[459px] content-center"
+              props.vertical ? "grid grid-cols-3 my-8" : "flex flex-col"
             }
             key={index}
           >
@@ -49,7 +48,7 @@ const PictureCards = (props) => {
                 {obj.dateStart}
               </p>
             ) : null}
-            <div className={props.vertical ? "mr-8" : "mb-3"}>
+            <div className={props.vertical ? "mr-8" : "mb-3 w-96"}>
               <img
                 className="rounded-2xl border"
                 src={obj.img}
@@ -74,14 +73,16 @@ const PictureCards = (props) => {
                 </Link>
                 <p className="font-DM text-lg font-normal">
                   {obj.dateStart} {obj.dateEnd ? "-" : null} {obj.dateEnd}
-                  {obj.time ? ", " : null}
-                  {obj.time}
+                  {obj.timeString ? ", " : null}
+                  {obj.timeString}
                 </p>
               </div>
               {props.vertical ? (
-                <div onClick={handleClick}>
-                  <Button text="Learn More" link="" />
-                </div>
+                <ButtonOther
+                  text="Learn More"
+                  type="button"
+                  onClick={() => handleClick(obj)}
+                />
               ) : null}
             </div>
           </div>
