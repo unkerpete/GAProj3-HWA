@@ -14,10 +14,46 @@ const CurrentEvents = () => {
   const [dateRange, setDateRange] = useState("Current");
   const [selectedTag, setSelectedTag] = useState("All");
   const [pictureInfo, setPictureInfo] = useState(dummyEvents);
+  const [refresh, setRefresh] = useState(true);
+  const url = "http://127.0.0.1:5001/events/showbytagrange";
+
+  const getFilteredEvents = async () => {
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((results) => {
+        setPictureInfo(results);
+      })
+      .catch((error) => console.error(error));
+    setRefresh(false);
+  };
+
+  useEffect(() => {
+    if (refresh) {
+      getFilteredEvents();
+    }
+  }, [refresh]);
 
   // const getUrl = (dateRange, selectedTag) => {
-  //   switch [data, selectedTag] {case ["All",]}
-  // }
+  //   let url;
+  //   switch (true) {
+  //     case dateRange === "Current":
+  //     case dateRange === "Upcoming":
+  //     case dateRange === "Past":
+  //       url = "http://127.0.0.1:5001/events/";
+  //       break;
+  //     case selectedTag === "All":
+  //       url = getUrl(dateRange, "");
+  //       break;
+  //     default:
+  //       url = `http://127.0.0.1:5001/events?date=${dateRange}&tag=${selectedTag}`;
+  //   }
+  //   return url;
+  // };
 
   const changeModalStatus = () => {
     setModalIsActive(!modalIsActive);

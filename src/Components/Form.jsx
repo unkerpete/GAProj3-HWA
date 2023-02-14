@@ -34,16 +34,24 @@ const Form = (props) => {
       };
 
   const getUrl = (formType) => {
+    let url;
     switch (formType) {
       case "Corporate Volunteer Form":
-        return "http://127.0.0.1:5001/volunteer/create";
+        url = "http://127.0.0.1:5001/volunteer/create";
+        break;
       case "Enquiry form":
-        return "http://127.0.0.1:5001/contact/create";
+        url = "http://127.0.0.1:5001/contact/create";
+        break;
       case "Home Care Service Enquiry":
-        return "http://127.0.0.1:5001/homecare/create";
+        url = "http://127.0.0.1:5001/homecare/create";
+        break;
       case "Transport Services Enquiry":
-        return "http://127.0.0.1:5001/transport/create";
+        url = "http://127.0.0.1:5001/transport/create";
+        break;
+      default:
+        url = "";
     }
+    return url;
   };
 
   //PUT TO BACKEND

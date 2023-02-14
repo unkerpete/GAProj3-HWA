@@ -7,18 +7,24 @@ const PictureCards = (props) => {
   const modalCtx = useContext(ModalContext);
 
   const getTagClass = (tag) => {
+    let colour;
     switch (tag) {
       case "Talks":
-        return "bg-peach";
+        colour = "bg-peach";
+        break;
       case "Classes & Workshops":
-        return "bg-secondary-400";
+        colour = "bg-secondary-400";
+        break;
       case "Fundraiser":
-        return "bg-primary-400";
+        colour = "bg-primary-400";
+        break;
       case "Community Gatherings":
-        return "bg-secondary-400";
+        colour = "bg-secondary-400";
+        break;
       default:
-        return "bg-white";
+        colour = "bg-white";
     }
+    return colour;
   };
 
   const handleClick = (obj) => {
@@ -32,14 +38,16 @@ const PictureCards = (props) => {
       className={`${
         props.vertical
           ? "grid grid-rows-3 py-20 pl-20 pr-60"
-          : "flex flex-row gap-8 overflow-x-auto flex-nowrap"
+          : "grid grid-cols-3 gap-8 h-[459px] overflow-y-clip"
       }`}
     >
       {props.pictureInfo.map((obj, index) => {
         return (
           <div
             className={
-              props.vertical ? "grid grid-cols-3 my-8" : "flex flex-col"
+              props.vertical
+                ? "grid grid-cols-3 my-8"
+                : "col h-[459px] content-center"
             }
             key={index}
           >
@@ -48,7 +56,7 @@ const PictureCards = (props) => {
                 {obj.dateStart}
               </p>
             ) : null}
-            <div className={props.vertical ? "mr-8" : "mb-3 w-96"}>
+            <div className={props.vertical ? "mr-8" : "mb-3"}>
               <img
                 className="rounded-2xl border"
                 src={obj.img}
