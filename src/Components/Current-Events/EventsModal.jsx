@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { RxCross1 } from "react-icons/rx";
 import Button from "../Button";
+import { ModalContext } from "../../pages/CurrentEvents";
 
 const event = {
   title: "Seniors Go Digital",
@@ -29,11 +30,22 @@ const getBtnText = (tag) => {
 };
 
 const EventsModal = () => {
+  const modalCtx = useContext(ModalContext);
+
+  const handleModalClose = () => {
+    modalCtx.changeModalStatus();
+    onClose();
+  };
+
   return (
-    <div className="z-50 bg-white w-1/2 min-h-full absolute top-0 right-0 text-primary-800 p-8">
+    <div
+      className={`${
+        modalCtx.modalIsActive ? null : "hidden"
+      } z-50 bg-white w-1/2 min-h-full absolute top-0 right-0 text-primary-800 p-8`}
+    >
       <div className="flex flex-row justify-between">
         <h3>{event.title}</h3>
-        <div>
+        <div onClick={handleModalClose} style={{ cursor: "pointer" }}>
           <RxCross1 className="text-3xl" />
         </div>
       </div>
