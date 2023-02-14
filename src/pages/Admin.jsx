@@ -18,9 +18,9 @@ const Admin = () => {
         <div>{console.log("error. please login again")}</div>
       )}
       {ACCESS_TOKEN && (
-        <div>
-          <CreateEvent />
-          <DisplayEvents />
+        <div className="grid grid-cols-2">
+          <div className="col-span-1"><CreateEvent /></div>
+          <div className="col-span-1 mb-10"> <DisplayEvents /></div>
         </div>
       )}
     </>
