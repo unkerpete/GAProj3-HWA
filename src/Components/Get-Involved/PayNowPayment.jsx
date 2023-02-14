@@ -1,4 +1,5 @@
 import React from "react";
+import QR from "../../Assets/izhar/Donation/Donation_Paynow.png";
 
 const PayNowPayment = () => {
   return (
@@ -12,8 +13,8 @@ const PayNowPayment = () => {
           <p>
             4. For Tax Deduction, please don't forget to key in your NRIC under
             UEN / Bill reference.
-            <p>Enter NA if this is not applicable</p>
           </p>
+          Enter NA if this is not applicable
           <p>
             5. Press Next, verify your details: Handicaps Welfare Association
             UEN S69SS0057J
@@ -23,16 +24,14 @@ const PayNowPayment = () => {
             transferred!" appears.
           </p>
           <br />
-
           <p>Thank you very much for your donation!</p>
         </div>
-        <div className="basis-1/3 align-middle content-center">
-          <img
-            className="inline"
-            src="src/Assets/izhar/Donation/Donation_Paynow.png"
-            alt=""
-            width="201"
-          />
+        <div className="basis-1/3">
+          <div className="grid ">
+            <div>
+              <img className="pt-24" src={QR} alt="" width="201" />
+            </div>
+          </div>
         </div>
       </div>
       <div className="text-center mt-16">
