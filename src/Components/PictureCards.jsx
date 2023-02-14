@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
+import { ModalContext } from "../pages/CurrentEvents";
 
 const PictureCards = (props) => {
+  const modalCtx = useContext(ModalContext);
   const getTagClass = (tag) => {
     switch (tag) {
       case "Talks":
@@ -16,6 +18,11 @@ const PictureCards = (props) => {
       default:
         return "bg-white";
     }
+  };
+
+  const handleClick = () => {
+    modalCtx.changeModalStatus();
+    console.log(modalCtx.modalIsActive);
   };
 
   return (
@@ -70,9 +77,8 @@ const PictureCards = (props) => {
                   {obj.time}
                 </p>
               </div>
-
               {props.vertical ? (
-                <div>
+                <div onClick={handleClick}>
                   <Button text="Learn More" link="" />
                 </div>
               ) : null}

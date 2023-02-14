@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, createContext } from "react";
 import PictureCards from "../Components/PictureCards";
 import TagsDisplay from "../Components/Current-Events/TagsDisplay";
 import EventsSectionHeader from "../Components/Current-Events/EventsSectionHeader";
 import EventsModal from "../Components/Current-Events/EventsModal";
+export const ModalContext = createContext();
 
 const pictureInfo = [
   {
@@ -41,26 +42,29 @@ const pictureInfo = [
 ];
 
 const CurrentEvents = () => {
+  const [modalIsActive, setModalIsActive] = useState(true);
   // date-based API endpoints to filter to current, upcoming, past
   // Custom API call to filter through dates
   // Further API endpoints to sort based on categories
   // API endpoints return with
   // Date, image, category, title, time link -> all to be stored inside a state that will be mapped
 
+  const changeModalStatus = () => {
+    setModalIsActive(!modalIsActive);
+  };
+
   return (
-    <div>
-      {/* section header inclusive of filters */}
-      <EventsSectionHeader />
+    <ModalContext.Provider value={{ modalIsActive, changeModalStatus }}>
+      <div>
+        <EventsSectionHeader />
 
-      {/* categorical filters */}
-      <TagsDisplay />
+        <TagsDisplay />
 
-      {/* mapped out event cards  */}
-      <PictureCards pictureInfo={pictureInfo} vertical />
-      {/* right side modal when button on card is clicked */}
-      <EventsModal />
-    </div>
+        <PictureCards pictureInfo={pictureInfo} vertical />
+
+        <EventsModal />
+      </div>
+    </ModalContext.Provider>
   );
 };
-
 export default CurrentEvents;
