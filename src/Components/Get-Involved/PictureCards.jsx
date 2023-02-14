@@ -22,10 +22,10 @@ const pictureInfo = [
 ];
 // Mapping Function
 
-const mapped = pictureInfo.map((obj) => {
+const mapped = pictureInfo.map((obj, i) => {
   return (
     <>
-      <div className="col border h-[459px] content-center">
+      <div key={i} className="col border h-[459px] content-center">
         <img
           className="rounded-2xl "
           src={obj.url}
@@ -33,9 +33,9 @@ const mapped = pictureInfo.map((obj) => {
           width="431"
           height="287"
         />
-        <p className="font-DM text-base font-normal">
+        <span className="font-DM text-base font-normal">
           {obj.tag ? obj.tag : "no tag"}
-        </p>
+        </span>
         <h3 className="py-3">{obj.title}</h3>
         <p className="font-DM text-xl font-normal">{obj.date}</p>
       </div>

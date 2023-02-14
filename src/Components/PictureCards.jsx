@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import Button from "./Button";
+import { ModalContext } from "../pages/CurrentEvents";
 
 const PictureCards = (props) => {
+  const modalCtx = useContext(ModalContext);
   const getTagClass = (tag) => {
     switch (tag) {
       case "Talks":
@@ -17,47 +20,69 @@ const PictureCards = (props) => {
     }
   };
 
-  const getTagLink = (tag) => {
-    switch (tag) {
-      case "Talks":
-        return "/current-events";
-      case "Classes & Workshops":
-        return "/current-events";
-      case "Fundraiser":
-        return "/current-events";
-      case "Community Gatherings":
-        return "/current-events";
-      default:
-        return "current-events";
-    }
+  const handleClick = () => {
+    modalCtx.changeModalStatus();
+    console.log(modalCtx.modalIsActive);
   };
 
   return (
-    <div className="grid grid-cols-3 p-4 gap-16">
+    <div
+      className={`${
+        props.vertical
+          ? "grid grid-rows-3 py-20 pl-20 pr-60"
+          : "grid grid-cols-3 gap-8"
+      }`}
+    >
       {props.pictureInfo.map((obj, index) => {
         return (
-          <div className="col h-[459px] content-center" key={index}>
-            <img
-              className="rounded-2xl"
-              src={obj.url}
-              alt={obj.alt}
-              width="431"
-              height="287"
-            />
-            <p className={"font-DM text-base font-normal mt-3"}>
-              {obj.tag ? (
-                <Link to={`${getTagLink(obj.tag)}`}>
-                  <span className={`${getTagClass(obj.tag)} `}>{obj.tag}</span>
-                </Link>
-              ) : (
-                <span className="text-white">no tag</span>
-              )}
-            </p>
-            <Link to={obj.link}>
-              <h3 className="py-3">{obj.title}</h3>
-            </Link>
+          <div
+            className={
+              props.vertical
+                ? "grid grid-cols-3 my-8"
+                : "col h-[459px] content-center"
+            }
+            key={index}
+          >
+            {props.vertical ? (
+              <p className="font-DM text-3xl font-medium text-primary-800 mr-40 ">
+                {obj.dateStart}
+              </p>
+            ) : null}
+            <div className={props.vertical ? "mr-8" : "mb-3"}>
+              <img
+                className="rounded-2xl border"
+                src={obj.img}
+                width="431"
+                height="287"
+              />
+            </div>
 
-            <p className="font-DM text-xl font-normal">{obj.date}</p>
+            <div className="grid content-between ">
+              <div>
+                <p className={"font-DM text-base font-normal"}>
+                  {obj.tag ? (
+                    <span className={`${getTagClass(obj.tag)} `}>
+                      {obj.tag}
+                    </span>
+                  ) : (
+                    <span className="text-white">no tag</span>
+                  )}
+                </p>
+                <Link to={obj.action}>
+                  <h3 className="py-3 w-3/4">{obj.title}</h3>
+                </Link>
+                <p className="font-DM text-lg font-normal">
+                  {obj.dateStart} {obj.dateEnd ? "-" : null} {obj.dateEnd}
+                  {obj.time ? ", " : null}
+                  {obj.time}
+                </p>
+              </div>
+              {props.vertical ? (
+                <div onClick={handleClick}>
+                  <Button text="Learn More" link="" />
+                </div>
+              ) : null}
+            </div>
           </div>
         );
       })}

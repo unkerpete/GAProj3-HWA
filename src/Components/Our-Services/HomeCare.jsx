@@ -186,7 +186,6 @@ const HomeCare = () => {
                 <br />
                 <br />
                 <div className="font-DM text-l font-bold">
-                 
                   PhysioTherapy services, including:
                 </div>
                 <div className="pl-6">
@@ -333,10 +332,11 @@ const HomeCare = () => {
           <div className="px-64">
             <Form
               bgColour="bg-secondary-400"
-              header="Enquiry form"
+              header="Home Care Service Enquiry"
               message="Should you require any information, feel free to send us a message."
-              placeholder="Enquiry Type"
+              placeholder="Choose to Enquire"
               options={options}
+              menu
             />
           </div>
         </div>

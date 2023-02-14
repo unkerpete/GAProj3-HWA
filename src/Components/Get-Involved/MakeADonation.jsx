@@ -32,8 +32,9 @@ const donationCat = [
 ];
 
 const MakeADonation = () => {
-  const [activeDonation, setActiveDonation] = useState("");
-  const [activeCategory, setActiveCategory] = useState("");
+  const [activeDonation, setActiveDonation] = useState(null);
+  const [activeCategory, setActiveCategory] = useState(null);
+  const [customAmount, setCustomAmount] = useState("");
 
   const donationTiers = tiers.map((ele, ind) => {
     return (
@@ -45,7 +46,7 @@ const MakeADonation = () => {
             : " bg-white"
         }`}
         onClick={() => {
-          setActiveDonation(ind);
+          setActiveDonation(ind), console.log(ind);
         }}
       >
         <h3 className="mt-5 ">${ele.amount}</h3>
@@ -93,13 +94,17 @@ const MakeADonation = () => {
             >
               OR
             </span>
-            <div class="flex-grow border-t border-secondary-600"></div>
+            <div className="flex-grow border-t border-secondary-600"></div>
           </div>
           <div className="flex flex-row justify-center">
             <input
               className="rounded-lg p-3 m-7 flex-none w-1/2 "
-              type="text"
+              type="number"
               placeholder="Custom Amount"
+              value={customAmount}
+              onChange={(e) => {
+                setActiveDonation(""), setCustomAmount(e.target.value);
+              }}
             />
           </div>
         </div>
@@ -115,7 +120,9 @@ const MakeADonation = () => {
       <h3 className="m-16">3/3 Select a payment method</h3>
       {/* Tab for payment method */}
       {/* To refactor into a component that is mapped*/}
-      <PaymentTabs />
+      <PaymentTabs
+        amount={activeDonation ? tiers[activeDonation].amount : customAmount}
+      />
 
       {/* Thank You Message for payment via Paynow*/}
 

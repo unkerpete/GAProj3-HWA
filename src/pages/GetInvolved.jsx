@@ -9,9 +9,6 @@ import tabContext from "../context/tabContext";
 const GetInvolved = () => {
   const tabCtx = useContext(tabContext);
 
-  // const toggleTab = (index) => {
-  //   console.log(index);
-  // };
   return (
     <div>
       <SectionHeader />
