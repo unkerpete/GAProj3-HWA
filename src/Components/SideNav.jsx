@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const SideNav = () => {
   const [dropDownWho, setDropDownWho] = useState(false);
@@ -40,7 +41,7 @@ const SideNav = () => {
   };
 
   return (
-    <aside className="bg-transparent  p-6">
+    <aside className="bg-transparent sticky top-20 p-6">
       <nav className="">
         <h3
           className="text-lg font-medium mb-2 cursor-pointer"
@@ -48,15 +49,18 @@ const SideNav = () => {
         >
           Who We Are
           {dropDownWho ? (
-            <span className="ml-2 text-xs text-gray-600">&#9650;</span>
+            <span className="ml-2 text-xs text-primary-800">&#9650;</span>
           ) : (
-            <span className="ml-2 text-xs text-gray-600">&#9660;</span>
+            <span className="ml-2 text-xs text-primary-800">&#9660;</span>
           )}
         </h3>
         {dropDownWho && (
           <ul className="list-none ml-8">
             <li className="mb-2">
-              <a className="text-gray-700 hover:text-gray-900" href="/about-us">
+              <a
+                className="text-primary-800 hover:text-primary-600"
+                href="/about-us"
+              >
                 Mission & Objectives
               </a>
             </li>
@@ -68,16 +72,16 @@ const SideNav = () => {
         >
           Our People
           {dropDownOur ? (
-            <span className="ml-2 text-xs text-gray-600">&#9650;</span>
+            <span className="ml-2 text-xs text-primary-800">&#9650;</span>
           ) : (
-            <span className="ml-2 text-xs text-gray-600">&#9660;</span>
+            <span className="ml-2 text-xs text-primary-800">&#9660;</span>
           )}
         </h3>
         {dropDownOur && (
           <ul className="list-none ml-8">
             <li className="mb-2">
               <a
-                className="text-gray-700 hover:text-gray-900"
+                className="text-primary-800 hover:text-primary-600"
                 href="/about-us/our-people"
               >
                 Board Members
@@ -85,7 +89,7 @@ const SideNav = () => {
             </li>
             <li className="mb-2">
               <a
-                className="text-gray-700 hover:text-gray-900"
+                className="text-primary-800 hover:text-primary-600"
                 href="#management"
               >
                 Management
@@ -93,7 +97,7 @@ const SideNav = () => {
             </li>
             <li className="mb-2">
               <a
-                className="text-gray-700 hover:text-gray-900"
+                className="text-primary-800 hover:text-primary-600"
                 href="#org-structure"
               >
                 Organisational Structure
@@ -107,16 +111,16 @@ const SideNav = () => {
         >
           Governance & Financials
           {dropDownGov ? (
-            <span className="ml-2 text-xs text-gray-600">&#9650;</span>
+            <span className="ml-2 text-xs text-primary-800">&#9650;</span>
           ) : (
-            <span className="ml-2 text-xs text-gray-600">&#9660;</span>
+            <span className="ml-2 text-xs text-primary-800">&#9660;</span>
           )}
         </h3>
         {dropDownGov && (
           <ul className="list-none ml-8">
             <li className="mb-2">
               <a
-                className="text-gray-700 hover:text-gray-900"
+                className="text-primary-800 hover:text-primary-600"
                 href="/about-us/governance"
               >
                 Corporate Governance
@@ -124,7 +128,7 @@ const SideNav = () => {
             </li>
             <li className="mb-2">
               <a
-                className="text-gray-700 hover:text-gray-900"
+                className="text-primary-800 hover:text-primary-600"
                 href="/about-us/governance"
               >
                 Annual Report & Financial Statement
@@ -132,7 +136,7 @@ const SideNav = () => {
             </li>
             <li className="mb-2">
               <a
-                className="text-gray-700 hover:text-gray-900"
+                className="text-primary-800 hover:text-primary-600"
                 href="/about-us/governance#yearly-performance"
               >
                 Yearly Performance Information

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import UspAccordion from "./UspAccordion";
+import underline from "../../Assets/shujun/homepage/usp/underline-01.png";
 
 const UspAccordionData = [
   {
@@ -39,6 +40,7 @@ const Usp = () => {
           <p className="font-DM text-3xl font-medium">
             What makes us different?
           </p>
+          <img className="ml-40" src={underline} width="150" />
         </div>
 
         <div className="place-content-center">

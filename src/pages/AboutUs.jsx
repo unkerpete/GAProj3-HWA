@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SideNav from "../Components/SideNav";
+import video from "../Assets/tyler/aboutus/who_we_are/HWA_Impact.mp4";
 
 const AboutUs = () => {
   return (
@@ -31,7 +32,7 @@ const AboutUs = () => {
             </div>
             <section className="w-12/12  pt-20 pb-36">
               <video className="rounded-md" width="100%" height="auto" controls>
-                <source src="your-video-source.mp4" type="video/mp4" />
+                <source src={video} type="video/mp4" autoplay />
               </video>
             </section>
             <div className="flex ">
