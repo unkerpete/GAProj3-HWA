@@ -40,7 +40,6 @@ const categoryCardData = [
 const Category = () => {
   return (
     <div className="p-20">
-      <img src="Assets/shujun/homepage/categories/bg-01.png" />
       <div className="grid grid-rows-2 justify-items-center">
         <h1 className="text-primary-800 text-center w-1/3">
           We believe in the power of the collective
