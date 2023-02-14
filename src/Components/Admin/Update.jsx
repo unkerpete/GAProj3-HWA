@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import parse from "date-fns/parse";
 
 const Update = (props) => {
   const [updateButton, setUpdateButton] = useState(false);
@@ -22,8 +23,12 @@ const Update = (props) => {
     });
   };
 
-  const fetchUpdate = async () => {
-    const body = {
+  const fetchUpdate = (e) => {
+    // console.log(1);
+    e.preventDefault();
+
+    const bodybody = {
+      id: props.id,
       title: update.title,
       dateStart: update.dateStart,
       dateEnd: update.dateEnd,
@@ -32,36 +37,40 @@ const Update = (props) => {
       img: update.img,
       action: update.action,
       tag: update.tag,
-      id: props.id,
     };
-
-    // fetchUpdate(url, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(body),
-    // })
-    //   .then((response) => response.json())
-    //   .then((results) => {
-    //     console.log(results);
-    //   })
-    //   .catch((error) => console.error(error));
+    // console.log(2);
+    bodybody.dateStart = parse(bodybody.dateStart, "yyyy-MM-dd", new Date());
+    bodybody.dateEnd = parse(bodybody.dateEnd, "yyyy-MM-dd", new Date());
+    // console.log(3);
+    fetch("http://127.0.0.1:5001/events/update", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(bodybody),
+    })
+      .then((response) => response.json())
+      .then((results) => {
+        console.log(results);
+      })
+      .catch((error) => console.error(error));
   };
-
+  // console.log(4);
   return (
     <>
       <div className="bg-gray-200 border-2 border-gray-500">
         <button
-          className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+          className="mx-28 inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
           onClick={() => setUpdateButton(true)}
         >
           Update
         </button>
+
+        {/* when user clicked update button, to display the fomr */}
         {updateButton && (
           <div className="w-1/2">
             {/* <h2>Create event</h2> */}
-            <form onSubmit={(e) => createEvent(e)}>
+            <form onSubmit={(e) => fetchUpdate(e)}>
               <input
                 placeholder="title"
                 name="title"
@@ -123,13 +132,17 @@ const Update = (props) => {
                 onChange={(e) => handleChange(e)}
               />
 
-              <button className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+              <button className=" mx-28 inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
                 SUBMIT
               </button>
             </form>
+
             <button
-            className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-            onClick={() => setUpdateButton(false)}>Close</button>
+              className="mx-28 inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+              onClick={() => setUpdateButton(false)}
+            >
+              Close
+            </button>
           </div>
         )}
       </div>

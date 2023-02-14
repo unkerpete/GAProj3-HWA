@@ -6,8 +6,8 @@ const CreateEvent = () => {
 
   const [event, setEvent] = useState({
     title: "abc",
-    dateStart: "2023-02-14",
-    dateEnd: "2023-02-14",
+    dateStart: "",
+    dateEnd: "",
     time: "0900",
     description: "abc",
     img: "abc",
@@ -34,18 +34,29 @@ const CreateEvent = () => {
     body.dateEnd = parse(body.dateEnd, "yyyy-MM-dd", new Date());
     console.log(body.dateStart);
 
-    // fetch(url, {
-    //   method: "PUT",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(body),
-    // })
-    //   .then((response) => response.json())
-    //   .then((results) => {
-    //     console.log(results);
-    //   })
-    //   .catch((error) => console.error(error));
+    fetch("http://127.0.0.1:5001/events/create", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+      .then((response) => response.json())
+      .then((results) => {
+        console.log(results);
+      })
+      .catch((error) => console.error(error));
+
+    setEvent({
+      title: "",
+      dateStart: "",
+      dateEnd: "",
+      time: "",
+      description: "",
+      img: "",
+      action: "",
+      tag: "",
+    });
   };
 
   const handleToggle = () => {
@@ -64,7 +75,6 @@ const CreateEvent = () => {
         <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
           <p class="text-gray-700 text-base mb-4">
             <div className="w-1/2">
-             
               <form onSubmit={(e) => createEvent(e)}>
                 <input
                   placeholder="title"
