@@ -35,10 +35,11 @@ const Usp = () => {
   return (
     <div className="grid grid-cols-2 bg-secondary-200 p-20 text-primary-800">
       <div className="grid">
-        <div className="place-content-start">
+        <div className="place-content-start bg-primary-400">
           <p className="font-DM text-3xl font-medium">
             What makes us different?
           </p>
+          <img src="../../Assets/shujun/homepage/usp/underline-01.png" />
         </div>
 
         <div className="place-content-center">
