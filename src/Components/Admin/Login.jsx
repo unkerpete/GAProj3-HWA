@@ -55,7 +55,8 @@ const Login = ( {SET_ACCESS_TOKEN, ACCESS_TOKEN } ) => {
   };
 
   return (
-    <div>
+    <div className="flex justify-center">
+      <div>
       <h3>Enter Login Details</h3>
       <form className="m-4" onSubmit={(e) => loginUser(e)}>
         <input
@@ -91,6 +92,7 @@ const Login = ( {SET_ACCESS_TOKEN, ACCESS_TOKEN } ) => {
           create
         </button>
       </form>
+    </div>
     </div>
   );
 };

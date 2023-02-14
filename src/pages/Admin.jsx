@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import CreateEvent from "../Components/Admin/CreateEvents";
+import CreateEvent from "../Components/Admin/CreateEvent";
+import DisplayEvents from "../Components/Admin/DisplayEvents";
 import Login from "../Components/Admin/Login";
 
-
 const Admin = () => {
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [ACCESS_TOKEN, SET_ACCESS_TOKEN] = useState("");
+  const [updateClicked, setUpdateClicked] = useState(false);
 
   return (
     <>
@@ -15,18 +15,12 @@ const Admin = () => {
           ACCESS_TOKEN={ACCESS_TOKEN}
         />
       ) : (
-        <div>
-          <div class="flex justify-center">
-            <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
-              <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">
-                Create Event
-              </h5>
-              <p class="text-gray-700 text-base mb-4">
-                <CreateEvent />
-              </p>
-            </div>
-          </div>
-          
+        <div>{console.log("error. please login again")}</div>
+      )}
+      {ACCESS_TOKEN && (
+        <div class="">
+          <CreateEvent />
+          <DisplayEvents />
         </div>
       )}
     </>
