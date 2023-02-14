@@ -42,19 +42,25 @@ const pictureInfo = [
 ];
 
 const CurrentEvents = () => {
-  const [modalIsActive, setModalIsActive] = useState(true);
-  // date-based API endpoints to filter to current, upcoming, past
-  // Custom API call to filter through dates
-  // Further API endpoints to sort based on categories
-  // API endpoints return with
-  // Date, image, category, title, time link -> all to be stored inside a state that will be mapped
+  const [modalIsActive, setModalIsActive] = useState(false);
 
   const changeModalStatus = () => {
     setModalIsActive(!modalIsActive);
   };
 
+  const disableScroll = (id) => {
+    document.getElementById(id).style.overflow = "hidden";
+    document.getElementById(id).style.height = "100vh";
+  };
+
+  const enableScroll = (id) => {
+    document.getElementById(id).style.overflow = "auto";
+  };
+
   return (
-    <ModalContext.Provider value={{ modalIsActive, changeModalStatus }}>
+    <ModalContext.Provider
+      value={{ modalIsActive, changeModalStatus, disableScroll, enableScroll }}
+    >
       <div>
         <EventsSectionHeader />
 
@@ -62,7 +68,7 @@ const CurrentEvents = () => {
 
         <PictureCards pictureInfo={pictureInfo} vertical />
 
-        <EventsModal />
+        {modalIsActive && <EventsModal />}
       </div>
     </ModalContext.Provider>
   );

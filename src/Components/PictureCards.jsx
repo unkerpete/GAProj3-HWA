@@ -22,7 +22,8 @@ const PictureCards = (props) => {
 
   const handleClick = () => {
     modalCtx.changeModalStatus();
-    console.log(modalCtx.modalIsActive);
+    modalCtx.disableScroll("root");
+    // modalCtx.enableScroll("modal");
   };
 
   return (

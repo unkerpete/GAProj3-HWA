@@ -20,3 +20,11 @@ h3 {
   font-size: 32px;
   line-height: 2.25rem;
 }
+
+#modal-root {
+  z-index: 9999;
+}
+
+#root {
+  z-index: 1;
+}
