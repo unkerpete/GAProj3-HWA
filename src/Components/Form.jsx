@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Listbox } from "@headlessui/react";
 import { BsChevronExpand } from "react-icons/bs";
 import ButtonSubmit from "../Components/ButtonSubmit";
+import MessageModal from "./MessageModal";
 
 const Form = (props) => {
   const [formType, setFormType] = useState(props.header);
@@ -11,6 +12,9 @@ const Form = (props) => {
   const [message, setMessage] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [selectedOption, setSelectedOption] = useState(props.placeholder);
+
+  // for controlling modal FIXME: check this out later
+  // let [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setFormType(props.header);
@@ -78,6 +82,7 @@ const Form = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     putData();
+    // setIsOpen(true);
   };
 
   const handleChange = (e) => {
@@ -216,6 +221,21 @@ const Form = (props) => {
           </div>
         </div>
       </form>
+      {/* FIXME: check this out later */}
+      {/* {isOpen && response && (
+        <MessageModal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          text="Form Sent Successfully"
+        />
+      )}
+      {isOpen && !response && (
+        <MessageModal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          text="Form Failed to Send"
+        />
+      )} */}
     </div>
   );
 };
