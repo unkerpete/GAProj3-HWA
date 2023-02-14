@@ -1,15 +1,28 @@
-import React from 'react';
-import image1 from "/src/Assets/firdaus/our_service/transport/Transport_icon.png"
-import image2 from "/src/Assets/firdaus/our_service/transport/Transport_image.png"
-import { AccordionDataTransport } from "./AccordionData"
-import Accordion from './Accordian';
+import React from "react";
+import image1 from "/src/Assets/firdaus/our_service/transport/Transport_icon.png";
+import image2 from "/src/Assets/firdaus/our_service/transport/Transport_image.png";
+import { AccordionDataTransport } from "./AccordionData";
+import Accordion from "./Accordian";
+import Form from "../../Components/Form";
+
+const options = [
+  "Dial-A-Ride",
+  "Taxi Subsidy",
+  "Medical Escort",
+  "Rehabilitation Escort",
+  "Career",
+  "General Enquiry",
+  "Fund Raising",
+  "Rehabilitation Service",
+  "Media & Advertising",
+];
 
 const Transport = () => {
-    const accordionDataOne = AccordionDataTransport;
+  const accordionDataOne = AccordionDataTransport;
 
-    return (
-        <>
-            <div className="flex justify-center mb-4">
+  return (
+    <>
+      <div className="flex justify-center mb-4">
         <img className="w-10 p-1" src={image1}></img>
         <h3>Transport</h3>
       </div>
@@ -39,8 +52,19 @@ const Transport = () => {
           </div>
         </div>
       </div>
-        </>
-    );
+
+      <div className="px-64">
+        <Form
+          bgColour="bg-secondary-400"
+          header="Transport Services Enquiry"
+          message="Should you require any of the services above, feel free to send us a message."
+          placeholder="Enquiry Type"
+          options={options}
+          menu
+        />
+      </div>
+    </>
+  );
 };
 
 export default Transport;

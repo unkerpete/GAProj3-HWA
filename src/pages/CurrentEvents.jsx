@@ -2,6 +2,7 @@ import React from "react";
 import PictureCards from "../Components/PictureCards";
 import TagsDisplay from "../Components/Current-Events/TagsDisplay";
 import EventsSectionHeader from "../Components/Current-Events/EventsSectionHeader";
+import EventsModal from "../Components/Current-Events/EventsModal";
 
 const pictureInfo = [
   {
@@ -9,7 +10,8 @@ const pictureInfo = [
     dateStart: "21 Jan 2023",
     dateEnd: "",
     time: "9:00 am",
-    description: "",
+    description:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
     img: "src/Assets/shujun/homepage/blog/blog1.png",
     action: "/current-events",
     tag: "Talks",
@@ -19,7 +21,8 @@ const pictureInfo = [
     dateStart: "21 Jan 2023",
     dateEnd: "23 Jan 2023",
     time: "9 - 5:30 pm",
-    description: "",
+    description:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid",
     img: "src/Assets/shujun/homepage/blog/blog2.png",
     action: "/current-events",
     tag: "Classes & Workshops",
@@ -29,7 +32,8 @@ const pictureInfo = [
     dateStart: "5 Feb 2023",
     dateEnd: "28 Feb 2023",
     time: "",
-    description: "",
+    description:
+      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid",
     img: "src/Assets/shujun/homepage/blog/blog3.png",
     action: "/current-events",
     tag: "Fundraiser",
@@ -54,6 +58,7 @@ const CurrentEvents = () => {
       {/* mapped out event cards  */}
       <PictureCards pictureInfo={pictureInfo} vertical />
       {/* right side modal when button on card is clicked */}
+      <EventsModal />
     </div>
   );
 };
