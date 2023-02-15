@@ -30,8 +30,10 @@ const CurrentEvents = () => {
   const calRangeURL = "http://127.0.0.1:5001/events/showbyrange";
 
   // fetches these data on change of dateRange state or selectedTag state,
-
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     if (dateRange === "Current") {
       if (selectedTag === "All") {
         const getAllCurrentEvents = async () => {
@@ -52,12 +54,17 @@ const CurrentEvents = () => {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify(data),
+              signal: signal,
             });
             const results = await response.json();
             setPictureInfo(results);
             console.log(results);
           } catch (error) {
-            console.error(error);
+            if (error.name === "AbortError") {
+              console.log("fetch aborted");
+            } else {
+              console.error(error);
+            }
           }
           setIsLoading(false);
         };
@@ -77,12 +84,17 @@ const CurrentEvents = () => {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify(data),
+              signal: signal,
             });
             const results = await response.json();
             setPictureInfo(results);
             console.log(results);
           } catch (error) {
-            console.error(error);
+            if (error.name === "AbortError") {
+              console.log("fetch aborted");
+            } else {
+              console.error(error);
+            }
           }
           setIsLoading(false);
         };
@@ -109,12 +121,17 @@ const CurrentEvents = () => {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify(data),
+              signal: signal,
             });
             const results = await response.json();
             setPictureInfo(results);
             console.log(results);
           } catch (error) {
-            console.error(error);
+            if (error.name === "AbortError") {
+              console.log("fetch aborted");
+            } else {
+              console.error(error);
+            }
           }
           setIsLoading(false);
         };
@@ -134,12 +151,17 @@ const CurrentEvents = () => {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify(data),
+              signal: signal,
             });
             const results = await response.json();
             setPictureInfo(results);
             console.log(results);
           } catch (error) {
-            console.error(error);
+            if (error.name === "AbortError") {
+              console.log("fetch aborted");
+            } else {
+              console.error(error);
+            }
           }
           setIsLoading(false);
         };
@@ -167,12 +189,17 @@ const CurrentEvents = () => {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify(data),
+              signal: signal,
             });
             const results = await response.json();
             setPictureInfo(results);
             console.log(results);
           } catch (error) {
-            console.error(error);
+            if (error.name === "AbortError") {
+              console.log("fetch aborted");
+            } else {
+              console.error(error);
+            }
           }
           setIsLoading(false);
         };
@@ -192,12 +219,17 @@ const CurrentEvents = () => {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify(data),
+              signal: signal,
             });
             const results = await response.json();
             setPictureInfo(results);
             console.log(results);
           } catch (error) {
-            console.error(error);
+            if (error.name === "AbortError") {
+              console.log("fetch aborted");
+            } else {
+              console.error(error);
+            }
           }
           setIsLoading(false);
         };
