@@ -8,7 +8,7 @@ const CreateEvent = () => {
     title: "",
     dateStart: "",
     dateEnd: "",
-    time: "",
+    timeString: "",
     description: "",
     img: "",
     action: "",
@@ -51,7 +51,7 @@ const CreateEvent = () => {
       title: "",
       dateStart: "",
       dateEnd: "",
-      time: "",
+      timeString: "",
       description: "",
       img: "",
       action: "",
@@ -111,9 +111,9 @@ const CreateEvent = () => {
                 <input
                   className="border-2 border-lightgray-200 mx-auto rounded-sm p-1"
                   placeholder="time"
-                  name="time"
+                  name="timeString"
                   type="text"
-                  value={event.time}
+                  value={event.timeString}
                   onChange={(e) => handleChange(e)}
                 />
                 <label for="description">Description</label>

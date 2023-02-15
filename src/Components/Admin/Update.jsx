@@ -58,20 +58,30 @@ const Update = (props) => {
   // console.log(4);
   return (
     <>
-      <div className="bg-gray-200">
+      <div className="bg-primary-400 p-1 rounded-lg">
         <button
           className="mx-28 inline-block px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
           onClick={() => setUpdateButton(true)}
         >
           Update
         </button>
+        
 
         {/* when user clicked update button, to display the fomr */}
         {updateButton && (
+          
           <div className="w-1/2">
+             <button
+              className="mx-28 inline-block px-7 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
+              onClick={() => setUpdateButton(false)}
+            >
+              Close
+            </button>
             {/* <h2>Create event</h2> */}
             <form onSubmit={(e) => fetchUpdate(e)}>
+              <label for="title">Title</label>
               <input
+                className="border-2 border-lightgray-200 mx-auto rounded-sm p-1"
                 placeholder="title"
                 name="title"
                 type="text"
@@ -80,8 +90,10 @@ const Update = (props) => {
                   handleChange(e);
                 }}
               />
+              <label for="dateStart">Start Date</label>
               <input
                 placeholder="dateStart"
+                className="border-2 border-lightgray-200 mx-auto rounded-sm p-1"
                 name="dateStart"
                 type="date"
                 value={update.dateStart}
@@ -89,42 +101,54 @@ const Update = (props) => {
                   handleChange(e);
                 }}
               />
+              <label for="dateEnd">End Date</label>
               <input
+                className="border-2 border-lightgray-200 mx-auto rounded-sm p-1"
                 placeholder="dateEnd"
                 name="dateEnd"
                 type="date"
                 value={update.dateEnd}
                 onChange={(e) => handleChange(e)}
               />
+              <label for="time">Time</label>
               <input
+                className="border-2 border-lightgray-200 mx-auto rounded-sm p-1"
                 placeholder="time"
                 name="time"
                 type="text"
                 value={update.time}
                 onChange={(e) => handleChange(e)}
               />
+              <label for="description">Description</label>
               <input
+                className="border-2 border-lightgray-200 mx-auto rounded-sm p-1"
                 placeholder="description"
                 name="description"
                 type="text"
                 value={update.description}
                 onChange={(e) => handleChange(e)}
               />
+              <label for="img">Image</label>
               <input
+                className="border-2 border-lightgray-200 mx-auto rounded-sm p-1"
                 placeholder="img"
                 name="img"
                 type="text"
                 value={update.img}
                 onChange={(e) => handleChange(e)}
               />
+              <label for="action">Action</label>
               <input
+                className="border-2 border-lightgray-200 mx-auto rounded-sm p-1"
                 placeholder="action"
                 name="action"
                 type="text"
                 value={update.action}
                 onChange={(e) => handleChange(e)}
               />
+              <label for="tag">Tag</label>
               <input
+                className="border-2 border-lightgray-200 mx-auto rounded-sm p-1"
                 placeholder="tag"
                 name="tag"
                 type="text"
@@ -132,17 +156,12 @@ const Update = (props) => {
                 onChange={(e) => handleChange(e)}
               />
 
-              <button className=" mx-28 inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+              <button className=" mx-28 inline-block px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out">
                 SUBMIT
               </button>
             </form>
 
-            <button
-              className="mx-28 inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-              onClick={() => setUpdateButton(false)}
-            >
-              Close
-            </button>
+           
           </div>
         )}
       </div>

@@ -65,7 +65,7 @@ const DisplayEvents = () => {
         Fetch Events
       </button> */}
       <button
-        className="inline-block my-6 px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
+        className="inline-block ml-2 my-6 px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
         onClick={handleToggle}
       >
         Show/Hide Events
@@ -76,17 +76,17 @@ const DisplayEvents = () => {
         <div>
           {events.events.map((event) => {
             return (
-              <div className="block  p-6 rounded-lg shadow-lg bg-primary-200 m-2 max-w-sm">
-                <span className="text-gray-700 text-base mb-4">
+              <div className="block p-6 rounded-lg shadow-lg bg-primary-200 m-2 max-w-sm">
+                <span className="text-gray-700 mb-4">
                   <div className="each event">
-                    <p>Title : {event.title}</p>
-                    <p>Start Date : {event.dateStart}</p>
-                    <p>End Date: {event.dateEnd}</p>
-                    <p>Time: {event.time}</p>
-                    <p>Description: {event.description}</p>
-                    <p>Image : {event.img}</p>
-                    <p>Action : {event.action}</p>
-                    <p>Tags : {event.tag}</p>
+                    <p>Title :&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {event.title}</p>
+                    <p>Start Date :&nbsp; {event.dateStart.split("T")[0]}</p>
+                    <p>End Date: &nbsp; &nbsp; {event.dateEnd.split("T")[0]}</p>
+                    <p>Time: &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {event.timeString}</p>
+                    <p>Description: &nbsp; {event.description}</p>
+                    <p>Image :&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {event.img}</p>
+                    <p>Action :&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;   {event.action}</p>
+                    <p>Tags : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {event.tag}</p>
                     <Delete eventId={event._id} />
                     <Update
                       title={event.title}
