@@ -48,10 +48,17 @@ const DisplayEvents = () => {
   //   console.log(data);
   // };
 
+  const mapped = () => {
+    events.map((singleEvent, index) => {
+      console.log(singleEvent);
+    });
+  };
+
   const fetchEvents = async () => {
     try {
       const response = await axios.get("http://127.0.0.1:5001/events/showall");
       setEvents(response.data);
+      mapped();
       console.log(events);
     } catch (err) {
       console.log(err);
@@ -62,6 +69,12 @@ const DisplayEvents = () => {
     fetchEvents();
     setToggleShowEvents(!toggleShowEvents);
   };
+
+  // const mapped = () => {
+  //   events.map((singleEvent, index) => {
+  //     console.log(singleEvent);
+  //   });
+  // };
 
   // useEffect(()=> {
   //   handleToggle();;
@@ -114,6 +127,18 @@ const DisplayEvents = () => {
           })}
         </div>
       )} */}
+
+      {/* Updated mapping */}
+      {/* <div className="">
+        {events.map((event) => {
+          const base64string = Buffer.from(event.img.data.data).toString(
+            "base64"
+          );
+          return <img src={`data:image/jpg;base64,${base64string}`} />;
+        })}
+      </div> */}
+
+      {/* {mapped} */}
     </>
   );
 };
