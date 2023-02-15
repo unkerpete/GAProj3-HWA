@@ -12,6 +12,9 @@ const Form = (props) => {
   const [companyName, setCompanyName] = useState("");
   const [selectedOption, setSelectedOption] = useState(props.placeholder);
 
+  // for controlling modal FIXME: check this out later
+  // let [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     setFormType(props.header);
     console.log(`Form type set on mount: ${formType}`);
@@ -86,6 +89,7 @@ const Form = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     putData();
+    // setIsOpen(true);
   };
 
   const handleChange = (e) => {
@@ -228,6 +232,21 @@ const Form = (props) => {
           </div>
         </div>
       </form>
+      {/* FIXME: check this out later */}
+      {/* {isOpen && response && (
+        <MessageModal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          text="Form Sent Successfully"
+        />
+      )}
+      {isOpen && !response && (
+        <MessageModal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          text="Form Failed to Send"
+        />
+      )} */}
     </div>
   );
 };

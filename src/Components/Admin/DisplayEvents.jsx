@@ -1,93 +1,83 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Delete from "./Delete";
 import Update from "./Update";
+import axios from "axios";
+import useAxios from "../../Hooks/useAxios";
+import { Buffer } from "buffer";
 
 const DisplayEvents = () => {
   const [toggleShowEvents, setToggleShowEvents] = useState(false);
 
-  const [events, setEvents] = useState([
-    // {
-    //   title: "Garden of Hope - Flower planting",
-    //   date: "19 Feb 2023",
-    //   start: "9:00 am",
-    //   end: "11:00 am",
-    //   description: "Lorem ipsum dolor sit amet",
-    //   img: "Lorem ipsum dolor sit",
-    //   action: "Lorem Link",
-    //   tag: "Community Gathering",
-    // },
-    // {
-    //   title: "Medical Talk - Essential Caregiving Skills",
-    //   date: "21 Feb 2023",
-    //   start: "9:00 am",
-    //   end: "11:00 am",
-    //   description: "Lorem ipsum dolor sit amet",
-    //   img: "Lorem ipsum dolor sit",
-    //   action: "Lorem Link",
-    //   tag: "Talks",
-    // },
-    // {
-    //   title: "Seniors Go Digital",
-    //   date: "21 Feb 2023",
-    //   dateEnd: "23 Feb 2023",
-    //   start: "9:00 am",
-    //   end: "5:30 pm",
-    //   description: "Lorem ipsum dolor sit amet",
-    //   img: "Lorem ipsum dolor sit",
-    //   action: "Lorem Link",
-    //   tag: "Classes & Workshops",
-    // },
-  ]);
+  const [events, setEvents] = useState([]); // To store the array of events
 
   const fetchEvents = async () => {
-    const url = "http://127.0.0.1:5001/events/showall";
-    const res = await fetch(url);
-    const data = await res.json();
-    setEvents(data);
-    console.log(data);
+    try {
+      const res = await axios.get("http://127.0.0.1:5001/events/showall");
+      setEvents(res.data);
+      // mapped();
+      // console.log("events.data.events: ", events.data.events);
+      console.log("events ", events);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleFetchEvents = async () => {
+    try {
+      const res = await axios.get("http://127.0.0.1:5001/events/showall");
+      setEvents(res.data.events);
+      console.log("events: ", events);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleToggle = () => {
-    fetchEvents();
     setToggleShowEvents(!toggleShowEvents);
   };
 
-  // useEffect(()=> {
-  //   handleToggle();;
+  // const mapped = () => {
+  //   events.map((ele, index) => {
+  //     return <div>{ele.title}</div>;
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   mapped();
   // }, [events]);
-  
 
   return (
     <>
-      {/* <button
+      <button
         className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-        onClick={fetchEvents}
+        onClick={handleFetchEvents}
       >
         Fetch Events
-      </button> */}
+      </button>
+
       <button
-        className="inline-block px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+        className="inline-block ml-2 my-6 px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
         onClick={handleToggle}
       >
         Show/Hide Events
       </button>
 
       {/* MAPPING OF EVENTS */}
-      {events.events && toggleShowEvents && (
+      {/* {events.events && toggleShowEvents && (
         <div>
           {events.events.map((event) => {
             return (
-              <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
-                <span className="text-gray-700 text-base mb-4">
+              <div className="block p-6 rounded-lg shadow-lg bg-primary-200 m-2 max-w-sm">
+                <span className="text-gray-700 mb-4">
                   <div className="each event">
-                    <p>title: {event.title}</p>
-                    <p>dateStart: {event.dateStart}</p>
-                    <p>dateEnd: {event.dateEnd}</p>
-                    <p>time: {event.time}</p>
-                    <p>description:{event.description}</p>
-                    <p>img:{event.img}</p>
-                    <p>action:{event.action}</p>
-                    <p>tag:{event.tag}</p>
+                    <p>Title :&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {event.title}</p>
+                    <p>Start Date :&nbsp; {event.dateStart.split("T")[0]}</p>
+                    <p>End Date: &nbsp; &nbsp; {event.dateEnd.split("T")[0]}</p>
+                    <p>Time: &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {event.timeString}</p>
+                    <p>Description: &nbsp; {event.description}</p>
+                    <p>Image :&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {event.img}</p>
+                    <p>Action :&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;   {event.action}</p>
+                    <p>Tags : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {event.tag}</p>
                     <Delete eventId={event._id} />
                     <Update
                       title={event.title}
@@ -103,7 +93,19 @@ const DisplayEvents = () => {
             );
           })}
         </div>
-      )}
+      )} */}
+
+      {/* Updated mapping */}
+      <div className="">
+        {events.map((event) => {
+          const base64string = Buffer.from(event.img.data.data).toString(
+            "base64"
+          );
+          return <img src={`data:image/jpg;base64,${base64string}`} />;
+        })}
+      </div>
+
+      {/* {mapped ? mapped : ""} */}
     </>
   );
 };

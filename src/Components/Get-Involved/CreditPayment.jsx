@@ -25,7 +25,7 @@ const CreditPayment = ({ amount }) => {
   const handleCreditSubmission = (e) => {
     e.preventDefault();
     console.log("Credit Submission");
-    navigate("/Home");
+    navigate("/payment");
 
     //
   };
