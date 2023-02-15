@@ -63,20 +63,28 @@ const DisplayEvents = () => {
       </button>
 
       {/* MAPPING OF EVENTS */}
-      {/* {events.events && toggleShowEvents && (
+      {events.events && toggleShowEvents && (
         <div>
-          {events.events.map((event) => {
+          {events.map((event) => {
             return (
               <div className="block p-6 rounded-lg shadow-lg bg-primary-200 m-2 max-w-sm">
                 <span className="text-gray-700 mb-4">
                   <div className="each event">
-                    <p>Title :&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {event.title}</p>
+                    <p>
+                      Title :&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{" "}
+                      {event.title}
+                    </p>
                     <p>Start Date :&nbsp; {event.dateStart.split("T")[0]}</p>
                     <p>End Date: &nbsp; &nbsp; {event.dateEnd.split("T")[0]}</p>
-                    <p>Time: &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {event.timeString}</p>
+                    <p>
+                      Time: &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{" "}
+                      {event.timeString}
+                    </p>
                     <p>Description: &nbsp; {event.description}</p>
-                    <p>Image :&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {event.img}</p>
-                    <p>Action :&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;   {event.action}</p>
+                    <p>Image :&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {event.img}</p>
+                    <p>
+                      Action :&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; {event.action}
+                    </p>
                     <p>Tags : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {event.tag}</p>
                     <Delete eventId={event._id} />
                     <Update
@@ -93,17 +101,42 @@ const DisplayEvents = () => {
             );
           })}
         </div>
-      )} */}
+      )}
 
       {/* Updated mapping */}
-      <div className="">
-        {events.map((event) => {
-          const base64string = Buffer.from(event.img.data.data).toString(
-            "base64"
-          );
-          return <img src={`data:image/jpg;base64,${base64string}`} />;
-        })}
-      </div>
+      {events.map((event) => {
+        const base64string = Buffer.from(event.img.data.data).toString(
+          "base64"
+        );
+
+        return (
+          <div className="block p-6 rounded-lg shadow-lg bg-primary-200 m-2 max-w-sm">
+            <img src={`data:image/jpg;base64,${base64string}`} />
+            <span className="text-gray-700 mb-4">
+              <p>
+                Title :&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {event.title}
+              </p>
+
+              <p>
+                Time: &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{" "}
+                {event.timeString}
+              </p>
+              <p>Description: &nbsp; {event.description}</p>
+              <p>Action :&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; {event.action}</p>
+              <p>Tags : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {event.tag}</p>
+              <Delete eventId={event._id} />
+              <Update
+                title={event.title}
+                description={event.description}
+                img={event.img}
+                action={event.img}
+                tag={event.tag}
+                id={event._id}
+              />
+            </span>
+          </div>
+        );
+      })}
 
       {/* {mapped ? mapped : ""} */}
     </>

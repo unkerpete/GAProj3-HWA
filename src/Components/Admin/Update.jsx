@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import parse from "date-fns/parse";
+import axios from "axios";
 
 const Update = (props) => {
   const [updateButton, setUpdateButton] = useState(false);
+  const [file, setFile] = useState(null);
 
   const [update, setUpdate] = useState({
     title: props.title,
@@ -10,7 +12,6 @@ const Update = (props) => {
     dateEnd: "",
     time: "",
     description: props.description,
-    img: props.img,
     action: props.action,
     tag: props.tag,
     id: props.id,
@@ -23,39 +24,39 @@ const Update = (props) => {
     });
   };
 
-  const fetchUpdate = (e) => {
+  // Function to update the events
+  const fetchUpdate = async (e) => {
     // console.log(1);
     e.preventDefault();
+    const formData = new FormData(); // create an empty form data object
 
-    const bodybody = {
-      id: props.id,
-      title: update.title,
-      dateStart: update.dateStart,
-      dateEnd: update.dateEnd,
-      time: update.time,
-      description: update.description,
-      img: update.img,
-      action: update.action,
-      tag: update.tag,
-    };
-    // console.log(2);
-    bodybody.dateStart = parse(bodybody.dateStart, "yyyy-MM-dd", new Date());
-    bodybody.dateEnd = parse(bodybody.dateEnd, "yyyy-MM-dd", new Date());
-    // console.log(3);
-    fetch("http://127.0.0.1:5001/events/update", {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(bodybody),
-    })
-      .then((response) => response.json())
-      .then((results) => {
-        console.log(results);
-      })
-      .catch((error) => console.error(error));
+    formData.append("title", update.title);
+    formData.append("dateStart", update.dateStart);
+    formData.append("dateEnd", update.dateEnd);
+    formData.append("timeString", update.timeString);
+    formData.append("description", update.description);
+    formData.append("action", update.action);
+    formData.append("tag", update.tag);
+    formData.append("eventImg", file);
+    formData.append("id", update.id);
+
+    // pass the form data object to the server endpoint
+    try {
+      const response = await axios.patch(
+        "http://localhost:5001/events/update",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log(response);
+    } catch (err) {
+      console.error(err);
+    }
   };
-  // console.log(4);
+
   return (
     <>
       <div className="bg-primary-400 p-1 rounded-lg">
@@ -65,13 +66,11 @@ const Update = (props) => {
         >
           Update
         </button>
-        
 
         {/* when user clicked update button, to display the fomr */}
         {updateButton && (
-          
           <div className="w-1/2">
-             <button
+            <button
               className="mx-28 inline-block px-7 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
               onClick={() => setUpdateButton(false)}
             >
@@ -114,9 +113,9 @@ const Update = (props) => {
               <input
                 className="border-2 border-lightgray-200 mx-auto rounded-sm p-1"
                 placeholder="time"
-                name="time"
+                name="timeString"
                 type="text"
-                value={update.time}
+                value={update.timeString}
                 onChange={(e) => handleChange(e)}
               />
               <label for="description">Description</label>
@@ -133,9 +132,8 @@ const Update = (props) => {
                 className="border-2 border-lightgray-200 mx-auto rounded-sm p-1"
                 placeholder="img"
                 name="img"
-                type="text"
-                value={update.img}
-                onChange={(e) => handleChange(e)}
+                type="file"
+                onChange={(e) => setFile(e.target.files[0])}
               />
               <label for="action">Action</label>
               <input
@@ -160,8 +158,6 @@ const Update = (props) => {
                 SUBMIT
               </button>
             </form>
-
-           
           </div>
         )}
       </div>

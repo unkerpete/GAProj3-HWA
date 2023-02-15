@@ -13,7 +13,6 @@ const CreateEvent = () => {
     dateEnd: "",
     timeString: "",
     description: "",
-    img: "",
     action: "",
     tag: "",
   });
@@ -24,43 +23,6 @@ const CreateEvent = () => {
       [e.target.name]: e.target.value,
     });
   };
-
-  // const createEvent = (e) => {
-  //   e.preventDefault();
-
-  //   // convert date string to date object
-  //   const body = event;
-  //   console.log(body);
-  //   // 13/02/2023 -> date  object using date-fns
-  //   // date is formatted as "2023-02-14" when clicked on calendar
-  //   body.dateStart = parse(body.dateStart, "yyyy-MM-dd", new Date());
-  //   body.dateEnd = parse(body.dateEnd, "yyyy-MM-dd", new Date());
-  //   console.log(body.dateStart);
-
-  //   fetch("http://127.0.0.1:5001/events/create", {
-  //     method: "PUT",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(body),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((results) => {
-  //       console.log(results);
-  //     })
-  //     .catch((error) => console.error(error));
-
-  //   setEvent({
-  //     title: "",
-  //     dateStart: "",
-  //     dateEnd: "",
-  //     time: "",
-  //     description: "",
-  //     img: "",
-  //     action: "",
-  //     tag: "",
-  //   });
-  // };
 
   const createEvent = async (e) => {
     e.preventDefault();
@@ -121,8 +83,8 @@ const CreateEvent = () => {
         Create Event
       </button>
       {toggleCreate && (
-        <div class=" block p-6 rounded-lg shadow-lg bg-primary-200 max-w-sm">
-          <p class="text-gray-700 text-base mb-4">
+        <div className=" block p-6 rounded-lg shadow-lg bg-primary-200 max-w-sm">
+          <span className="text-gray-700 text-base mb-4">
             <div className="w-1/2">
               <form onSubmit={(e) => createEvent(e)}>
                 <label for="title">Title</label>
