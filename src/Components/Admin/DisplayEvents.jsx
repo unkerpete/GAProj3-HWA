@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Delete from "./Delete";
 import Update from "./Update";
+import axios from "axios";
 
 const DisplayEvents = () => {
   const [toggleShowEvents, setToggleShowEvents] = useState(false);
@@ -39,12 +40,22 @@ const DisplayEvents = () => {
     // },
   ]);
 
+  // const fetchEvents = async () => {
+  //   const url = "http://127.0.0.1:5001/events/showall";
+  //   const res = await fetch(url);
+  //   const data = await res.json();
+  //   setEvents(data);
+  //   console.log(data);
+  // };
+
   const fetchEvents = async () => {
-    const url = "http://127.0.0.1:5001/events/showall";
-    const res = await fetch(url);
-    const data = await res.json();
-    setEvents(data);
-    console.log(data);
+    try {
+      const response = await axios.get("http://127.0.0.1:5001/events/showall");
+      setEvents(response.data);
+      console.log(events);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleToggle = () => {
@@ -55,16 +66,15 @@ const DisplayEvents = () => {
   // useEffect(()=> {
   //   handleToggle();;
   // }, [events]);
-  
 
   return (
     <>
-      {/* <button
+      <button
         className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
         onClick={fetchEvents}
       >
         Fetch Events
-      </button> */}
+      </button>
       <button
         className="inline-block px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
         onClick={handleToggle}
@@ -73,7 +83,7 @@ const DisplayEvents = () => {
       </button>
 
       {/* MAPPING OF EVENTS */}
-      {events.events && toggleShowEvents && (
+      {/* {events.events && toggleShowEvents && (
         <div>
           {events.events.map((event) => {
             return (
@@ -103,7 +113,7 @@ const DisplayEvents = () => {
             );
           })}
         </div>
-      )}
+      )} */}
     </>
   );
 };

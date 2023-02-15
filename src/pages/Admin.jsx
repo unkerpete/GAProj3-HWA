@@ -26,7 +26,6 @@ const Admin = () => {
           <CreateEvent />
         </div>
         <div className="col-span-1 mb-10">
-          {" "}
           <DisplayEvents />
         </div>
       </div>
