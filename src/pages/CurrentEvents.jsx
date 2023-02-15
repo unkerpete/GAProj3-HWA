@@ -3,6 +3,7 @@ import PictureCards from "../Components/PictureCards";
 import TagsDisplay from "../Components/Current-Events/TagsDisplay";
 import EventsSectionHeader from "../Components/Current-Events/EventsSectionHeader";
 import EventsModal from "../Components/Current-Events/EventsModal";
+import CalendarModal from "../Components/Current-Events/CalendarModal";
 export const ModalContext = createContext();
 
 //DELETE THIS LATER
@@ -11,32 +12,33 @@ import dummyEvents from "../Components/Current-Events/dummyEvents";
 const CurrentEvents = () => {
   const [modalIsActive, setModalIsActive] = useState(false);
   const [modalEvent, setModalEvent] = useState({});
+  const [calendarIsActive, setCalendarIsActive] = useState(false);
   const [dateRange, setDateRange] = useState("Current");
   const [selectedTag, setSelectedTag] = useState("All");
   const [pictureInfo, setPictureInfo] = useState(dummyEvents);
-  const [refresh, setRefresh] = useState(true);
-  const url = "http://127.0.0.1:5001/events/showbytagrange";
+  // const [refresh, setRefresh] = useState(true);
+  // const url = "http://127.0.0.1:5001/events/showbytagrange";
 
-  const getFilteredEvents = async () => {
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((results) => {
-        setPictureInfo(results);
-      })
-      .catch((error) => console.error(error));
-    setRefresh(false);
-  };
+  // const getFilteredEvents = async () => {
+  //   fetch(url, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((response) => response.json())
+  //     .then((results) => {
+  //       setPictureInfo(results);
+  //     })
+  //     .catch((error) => console.error(error));
+  //   setRefresh(false);
+  // };
 
-  useEffect(() => {
-    if (refresh) {
-      getFilteredEvents();
-    }
-  }, [refresh]);
+  // useEffect(() => {
+  //   if (refresh) {
+  //     getFilteredEvents();
+  //   }
+  // }, [refresh]);
 
   // const getUrl = (dateRange, selectedTag) => {
   //   let url;
@@ -57,6 +59,10 @@ const CurrentEvents = () => {
 
   const changeModalStatus = () => {
     setModalIsActive(!modalIsActive);
+  };
+
+  const changeCalendarStatus = () => {
+    setCalendarIsActive(!calendarIsActive);
   };
 
   const disableScroll = (id) => {
@@ -83,6 +89,7 @@ const CurrentEvents = () => {
         dateRange,
         selectedTag,
         pictureInfo,
+        calendarIsActive,
         changeModalStatus,
         disableScroll,
         enableScroll,
@@ -90,6 +97,8 @@ const CurrentEvents = () => {
         setSelectedTag,
         setModalEvent,
         setPictureInfo,
+        changeCalendarStatus,
+        // getFilteredEvents,
       }}
     >
       <div>
@@ -97,6 +106,7 @@ const CurrentEvents = () => {
         <TagsDisplay />
         <PictureCards pictureInfo={pictureInfo} vertical />
         {modalIsActive && <EventsModal />}
+        {calendarIsActive && <CalendarModal />}
       </div>
     </ModalContext.Provider>
   );
