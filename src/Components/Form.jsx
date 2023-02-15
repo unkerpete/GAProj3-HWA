@@ -13,7 +13,7 @@ const Form = (props) => {
   const [companyName, setCompanyName] = useState("");
   const [selectedOption, setSelectedOption] = useState(props.placeholder);
 
-  // for controlling modal FIXME: check this out later
+  // for controlling modal
   const [isOpen, setIsOpen] = useState(false);
   const [response, setResponse] = useState(null);
 
@@ -238,7 +238,6 @@ const Form = (props) => {
           </div>
         </div>
       </form>
-      {/* FIXME: check this out later */}
 
       {isOpen && response && (
         <MessageModal
