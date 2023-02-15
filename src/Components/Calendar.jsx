@@ -1,17 +1,19 @@
-import dayjs from 'dayjs';
-import React, { useState } from 'react';
-import { generateDate, months } from './util/calendar';
-import cn from './util/cn';
-import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
+import dayjs from "dayjs";
+import React, { useState } from "react";
+import { generateDate, months } from "./util/calendar";
+import cn from "./util/cn";
+import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 
 export default function Calendar() {
-  const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+  const days = ["S", "M", "T", "W", "T", "F", "S"];
   const currentDate = dayjs();
   const [today, setToday] = useState(currentDate);
+
   const [selectDate, setSelectDate] = useState(currentDate);
+
   return (
-    <div className="p-20 flex gap-10 sm:divide-x justify-center  mx-auto  w-screen items-center sm:flex-row flex-col">
-      <div className="w-200 h-200 ">
+    <div className="flex rounded-2xl border justify-center bg-secondary-400 items-center w-full ">
+      <div className="w-400 h-400 ">
         <div className="flex justify-between items-center">
           <h1 className="select-none font-semibold">
             {months[today.month()]}, {today.year()}
@@ -62,13 +64,13 @@ export default function Calendar() {
                 >
                   <h1
                     className={cn(
-                      currentMonth ? '' : 'text-gray-400',
-                      today ? 'bg-red-600 text-white' : '',
+                      currentMonth ? "" : "text-gray-400",
+                      today ? "bg-red-600 text-white" : "",
                       selectDate.toDate().toDateString() ===
                         date.toDate().toDateString()
-                        ? 'bg-black text-white'
-                        : '',
-                      'h-10 w-10 rounded-full grid place-content-center hover:bg-black hover:text-white transition-all cursor-pointer select-none'
+                        ? "bg-black text-white"
+                        : "",
+                      "h-10 w-10 rounded-full grid place-content-center hover:bg-primary-400 hover:text-white transition-all cursor-pointer select-none"
                     )}
                     onClick={() => {
                       setSelectDate(date);
