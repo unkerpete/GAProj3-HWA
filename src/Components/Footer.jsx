@@ -4,36 +4,28 @@ import fbLogo from "../assets/peter/footer/Footer_FB_icon.svg";
 import instaLogo from "../assets/peter/footer/Footer_Instar_icon.svg";
 import ytbeLogo from "../assets/peter/footer/Footer_YT_icon.svg";
 import tabContext from "../context/tabContext";
-import useAxios from "../Hooks/useAxios";
+// import useAxios from "../Hooks/useAxios";
+import axios from "axios";
 
 const Footer = () => {
   const tabCtx = useContext(tabContext);
-  const [subEmail, setSubEmail] = useState(null);
-  const subEmailRef = useRef("");
+  const [subEmail, setSubEmail] = useState("");
 
-  const { response, error, loading, makeRequest } = useAxios(
-    {
-      method: "PUT",
-      url: "/subs/create",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: {
+  const createSubscriber = async () => {
+    try {
+      const res = await axios.put("http://localhost:5001/subs/create", {
         email: subEmail,
-      },
-    },
-    false
-  );
-
-  const handleInputSubmit = () => {
-    setSubEmail(subEmailRef.current.value);
+      });
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
-  // when subEmail state gets updated, API call is made.
-  useEffect(() => {
-    makeRequest();
-    console.log(error);
-  }, [subEmail]);
+  const handleInputSubmit = () => {
+    createSubscriber();
+    setSubEmail("Thank you for subscribing");
+  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -90,8 +82,10 @@ const Footer = () => {
           <input
             className="h-10 w-1/4 mt-4 rounded-md pl-2"
             placeholder="Email"
-            ref={subEmailRef}
-            value={subEmail && "Thank you for subscribing"}
+            // ref={subEmailRef}
+            // value={subEmail && "Thank you for subscribing"}
+            value={subEmail}
+            onChange={(e) => setSubEmail(e.target.value)}
           />
           <div
             className="h-8 w-8 rounded-full text-3xl leading-7 text-center inline-block relative right-10 top-1 bg-primary-400 hover:cursor-pointer"
