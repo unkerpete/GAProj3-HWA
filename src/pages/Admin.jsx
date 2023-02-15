@@ -18,7 +18,7 @@ const Admin = () => {
       )}
 
       {/* HAVE ACCESS TOKEN, THEN DISPLAY THIS */}
-      {/* {ACCESS_TOKEN && ( */}
+      {ACCESS_TOKEN && (
 
       <div className="">
         <div className="grid grid-cols-2">
@@ -31,14 +31,15 @@ const Admin = () => {
           </div>
           <div className="col-span-1 mx-auto my-20">
             <div className="border-2 border-gray-200 p-16 m-20 rounded-3xl">
-              <h3 className="mx-28 pl-4">Display Events</h3>
-              <p className="pl-28 font-DM text-xl font-normal">Display events in database
+              <h3 className="mx-36 pl-4">Display Events</h3>
+              <p className="pl-36 font-DM text-xl font-normal">Display events in database
               <br/>Update and Delete here</p>
               <DisplayEvents />
             </div>
           </div>
         </div>
       </div>
+      )}
     </>
   );
 };
