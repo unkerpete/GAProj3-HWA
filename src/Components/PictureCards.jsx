@@ -62,7 +62,7 @@ const PictureCards = (props) => {
             >
               {props.vertical ? (
                 <p className="font-DM text-3xl font-medium text-primary-800 mr-40 ">
-                  {obj.dateStart}
+                  {formattedDate}
                 </p>
               ) : null}
 
