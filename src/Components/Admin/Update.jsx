@@ -60,20 +60,22 @@ const Update = (props) => {
   return (
     <>
       <div className="bg-primary-400 rounded-lg">
-        <button
-          className="mx-48 px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
-          onClick={() => setUpdateButton(true)}
-        >
-          Update
-        </button>
+        <div className="flex flex-col">
+          <button
+            className="flex justify-center px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
+            onClick={() => setUpdateButton(true)}
+          >
+            Update
+          </button>
+        </div>
 
         {/* when user clicked update button, to display the fomr */}
         {updateButton && (
-          <div className="block py-6 rounded-lg shadow-lg bg-primary-400 ">
+          <div className="block py-6 px-2 rounded-lg shadow-lg bg-primary-400 max-w-sm">
             <span className="font-DM text-base font-normal">
-              <div className="pl-28 w-1/2">
+              <div className="pl-20 w-1/2">
                 <button
-                  className="mx-20 my-1 inline-block px-7 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
+                  className="mx-14 inline-block px-7 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
                   onClick={() => setUpdateButton(false)}
                 >
                   Close
@@ -81,7 +83,7 @@ const Update = (props) => {
                 <form className="" onSubmit={(e) => fetchUpdate(e)}>
                   <label for="title">Title</label>
                   <input
-                    className="border-2 border-lightgray-200 mx-auto mb-2 rounded-lg p-1"
+                    className="border-2 border-lightgray-200 mb-2 rounded-lg p-1"
                     placeholder="title"
                     name="title"
                     type="text"
@@ -92,8 +94,8 @@ const Update = (props) => {
                   />
                   <label for="dateStart">Start Date</label>
                   <input
-                    placeholder="dateStart"
                     className="border-2 border-lightgray-200 pr-8 mb-2 rounded-lg p-1"
+                    placeholder="dateStart"
                     name="dateStart"
                     type="date"
                     value={update.dateStart}
@@ -154,7 +156,7 @@ const Update = (props) => {
                     onChange={(e) => handleChange(e)}
                   />
 
-                  <button className="mx-20 my-2 inline-block px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out">
+                  <button className="mt-3 mx-14 inline-block px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out">
                     SUBMIT
                   </button>
                 </form>

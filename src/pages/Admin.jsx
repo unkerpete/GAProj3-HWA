@@ -22,18 +22,17 @@ const Admin = () => {
 
       <div className="">
         <div className="grid grid-cols-2">
-          <div className="col-span-1 mx-auto my-20 border-1 border-primary-800">
-            <div className="border-2 border-gray-200 p-20 m-20 rounded-3xl">
+          <div className="col-span-1 mx-auto mt-2 border-1 border-primary-800">
+            <div className="border-2 border-gray-200 p-20 my-10 rounded-3xl">
               <h3 className="mx-24 pl-2" >Create Event</h3>
               <p className="pl-6 font-DM text-xl font-normal">Creating events for upcoming events</p>
               <CreateEvent />
             </div>
           </div>
-          <div className="col-span-1 mx-auto my-20">
-            <div className="border-2 border-gray-200 p-16 m-20 rounded-3xl">
-              <h3 className="mx-36 pl-4">Display Events</h3>
-              <p className="pl-36 font-DM text-xl font-normal">Display events in database
-              <br/>Update and Delete here</p>
+          <div className="col-span-1 mx-auto mt-2 border-1 border-primary-800">
+            <div className="border-2 border-gray-200 p-20 my-10 rounded-3xl">
+              <h3 className="mx-36 pl-6">Display Events</h3>
+              <p className="pl-32 font-DM text-xl font-normal">Display, Update & Delete here</p>
               <DisplayEvents />
             </div>
           </div>
