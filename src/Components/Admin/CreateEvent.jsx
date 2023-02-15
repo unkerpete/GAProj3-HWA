@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import parse from "date-fns/parse";
 import axios from "axios";
-import { buffer } from "buffer";
+import { Buffer } from "buffer";
 
 const CreateEvent = () => {
   const [toggleCreate, setToggleCreate] = useState(false);
