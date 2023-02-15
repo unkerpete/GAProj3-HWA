@@ -5,7 +5,6 @@ import Login from "../Components/Admin/Login";
 
 const Admin = () => {
   const [ACCESS_TOKEN, SET_ACCESS_TOKEN] = useState("");
-  const [updateClicked, setUpdateClicked] = useState(false);
 
   return (
     <>
@@ -19,8 +18,20 @@ const Admin = () => {
       )}
       {ACCESS_TOKEN && (
         <div className="grid grid-cols-2">
-          <div className="col-span-1"><CreateEvent /></div>
-          <div className="col-span-1 mb-10"> <DisplayEvents /></div>
+          <div className="col-span-1 mx-auto my-20 border-1 border-primary-800">
+            <div className="border-2 border-gray-200 p-20 m-20 rounded-3xl">
+              <h3>Create Event</h3>
+              <p>Creating events for upcoming events</p>
+              <CreateEvent />
+            </div>
+          </div>
+          <div className="col-span-1 mx-auto my-20">
+            <div className="border-2 border-gray-200 p-20 m-20 rounded-3xl">
+              <h3>Display Event</h3>
+              <p>Display events in database. Update and Delete here</p>
+              <DisplayEvents />
+            </div>
+          </div>
         </div>
       )}
     </>

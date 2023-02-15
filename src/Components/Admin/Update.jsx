@@ -58,9 +58,9 @@ const Update = (props) => {
   // console.log(4);
   return (
     <>
-      <div className="bg-gray-200 border-2 border-gray-500">
+      <div className="bg-gray-200">
         <button
-          className="mx-28 inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+          className="mx-28 inline-block px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
           onClick={() => setUpdateButton(true)}
         >
           Update
