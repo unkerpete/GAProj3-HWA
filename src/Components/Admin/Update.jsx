@@ -58,6 +58,8 @@ const Update = (props) => {
     } catch (err) {
       console.error(err);
     }
+
+    setUpdateButton(false);
   };
 
   return (
