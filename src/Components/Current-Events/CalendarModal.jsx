@@ -3,7 +3,7 @@ import { RxCross1 } from "react-icons/rx";
 import ButtonOther from "../ButtonOther";
 import ReactDOM from "react-dom";
 import { ModalContext } from "../../pages/CurrentEvents";
-import Calendar from "../Calendar";
+import Calendar from "../CalendarDELETE";
 
 const CalendarModal = () => {
   const modalCtx = useContext(ModalContext);

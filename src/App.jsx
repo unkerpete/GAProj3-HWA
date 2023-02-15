@@ -12,7 +12,6 @@ import OurServices from "./pages/OurServices";
 import CurrentEvents from "./pages/CurrentEvents";
 import ContactUs from "./pages/ContactUs";
 import StyleGuide from "./pages/StyleGuide";
-import Calender from "./Components/Calendar";
 import tabContext from "./context/tabContext";
 
 function App() {
