@@ -9,15 +9,18 @@ const Admin = () => {
 
   return (
     <>
-      {/* {ACCESS_TOKEN === "" ? (
+      {/* NO ACCESS TOKEN, THEN DISPLAY THIS */}
+      {!ACCESS_TOKEN && (
         <Login
           SET_ACCESS_TOKEN={SET_ACCESS_TOKEN}
           ACCESS_TOKEN={ACCESS_TOKEN}
         />
-      ) : (
-        <div>{console.log("error. please login again")}</div>
       )}
-      {ACCESS_TOKEN && (
+
+      {/* HAVE ACCESS TOKEN, THEN DISPLAY THIS */}
+      {/* {ACCESS_TOKEN && ( */}
+
+      <div className="">
         <div className="grid grid-cols-2">
           <div className="col-span-1 mx-auto my-20 border-1 border-primary-800">
             <div className="border-2 border-gray-200 p-20 m-20 rounded-3xl">
