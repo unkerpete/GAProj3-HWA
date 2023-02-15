@@ -24,24 +24,21 @@ const Admin = () => {
         <div className="grid grid-cols-2">
           <div className="col-span-1 mx-auto my-20 border-1 border-primary-800">
             <div className="border-2 border-gray-200 p-20 m-20 rounded-3xl">
-              <h3>Create Event</h3>
-              <p>Creating events for upcoming events</p>
+              <h3 className="mx-24 pl-2" >Create Event</h3>
+              <p className="pl-6 font-DM text-xl font-normal">Creating events for upcoming events</p>
               <CreateEvent />
             </div>
           </div>
           <div className="col-span-1 mx-auto my-20">
-            <div className="border-2 border-gray-200 p-20 m-20 rounded-3xl">
-              <h3>Display Event</h3>
-              <p>Display events in database. Update and Delete here</p>
+            <div className="border-2 border-gray-200 p-16 m-20 rounded-3xl">
+              <h3 className="mx-28 pl-4">Display Events</h3>
+              <p className="pl-28 font-DM text-xl font-normal">Display events in database
+              <br/>Update and Delete here</p>
               <DisplayEvents />
             </div>
           </div>
         </div>
-        <div className="col-span-1 mb-10">
-          <DisplayEvents />
-        </div>
       </div>
-      {/* )} */}
     </>
   );
 };
