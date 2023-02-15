@@ -2,29 +2,28 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import ButtonOther from "./ButtonOther";
 import { ModalContext } from "../pages/CurrentEvents";
+import { Buffer } from "buffer";
 
 const PictureCards = (props) => {
   const modalCtx = useContext(ModalContext);
 
   const getTagClass = (tag) => {
-    let colour;
     switch (tag) {
       case "Talks":
-        colour = "bg-peach";
-        break;
+        return "bg-peach";
+
       case "Classes & Workshops":
-        colour = "bg-secondary-400";
-        break;
+        return "bg-secondary-400";
+
       case "Fundraiser":
-        colour = "bg-primary-400";
-        break;
+        return "bg-primary-400";
+
       case "Community Gatherings":
-        colour = "bg-secondary-400";
-        break;
+        return "bg-secondary-400";
+
       default:
-        colour = "bg-white";
+        return "bg-white";
     }
-    return colour;
   };
 
   const handleClick = (obj) => {
@@ -48,6 +47,10 @@ const PictureCards = (props) => {
           const month = date.toLocaleString("default", { month: "short" });
           const year = date.getFullYear();
           const formattedDate = `${day} ${month} ${year}`;
+          const base64string = Buffer.from(obj.img.data.data).toString(
+            "base64"
+          );
+
           return (
             <div
               className={
@@ -66,7 +69,7 @@ const PictureCards = (props) => {
               <div className={props.vertical ? "mr-8" : "mb-3"}>
                 <img
                   className="rounded-2xl border"
-                  src={obj.img}
+                  src={`data:image/jpg;base64,${base64string}`}
                   width="431"
                   height="287"
                 />

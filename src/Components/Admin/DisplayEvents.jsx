@@ -7,7 +7,6 @@ import { Buffer } from "buffer";
 
 const DisplayEvents = () => {
   const [events, setEvents] = useState([]); // To store the array of events
-
   const handleFetchEvents = async () => {
     try {
       const res = await axios.get("http://127.0.0.1:5001/events/showall");
