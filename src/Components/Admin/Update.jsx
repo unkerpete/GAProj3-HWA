@@ -61,7 +61,7 @@ const Update = (props) => {
     <>
       <div className="bg-primary-400 rounded-lg">
         <button
-          className="mx-40 px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
+          className="mx-48 px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
           onClick={() => setUpdateButton(true)}
         >
           Update
@@ -69,11 +69,11 @@ const Update = (props) => {
 
         {/* when user clicked update button, to display the fomr */}
         {updateButton && (
-          <div className="block py-6 px-2 rounded-lg shadow-lg bg-primary-200 max-w-sm">
+          <div className="block py-6 rounded-lg shadow-lg bg-primary-400 ">
             <span className="font-DM text-base font-normal">
-              <div className="pl-20 w-1/2">
+              <div className="pl-28 w-1/2">
                 <button
-                  className="ml-14 my-1 inline-block px-7 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
+                  className="mx-20 my-1 inline-block px-7 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
                   onClick={() => setUpdateButton(false)}
                 >
                   Close
@@ -154,7 +154,7 @@ const Update = (props) => {
                     onChange={(e) => handleChange(e)}
                   />
 
-                  <button className="ml-16 my-2 inline-block px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out">
+                  <button className="mx-20 my-2 inline-block px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out">
                     SUBMIT
                   </button>
                 </form>

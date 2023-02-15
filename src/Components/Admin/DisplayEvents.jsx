@@ -20,7 +20,7 @@ const DisplayEvents = () => {
   return (
     <>
       <button
-        className="my-5 ml-40 inline-block px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
+        className="my-5 ml-44 inline-block px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
         onClick={handleFetchEvents}
       >
         Fetch Events
@@ -33,7 +33,7 @@ const DisplayEvents = () => {
         );
 
         return (
-          <div className="flex flex-col font-DM text-base font-normal block p-8 rounded-lg shadow-lg bg-primary-200 max-w-lg">
+          <div className="m-2 flex flex-col font-DM text-base font-normal block p-8 rounded-lg shadow-lg bg-primary-200 max-w-lg">
             <img src={`data:image/jpg;base64,${base64string}`} />
             <span className="text-gray-700 mb-4">
               <p>
@@ -54,15 +54,16 @@ const DisplayEvents = () => {
               <div className="flex justify-center">
                 <Delete eventId={event._id} />
               </div>
-              <div className="flex justify-center">
-                <Update
-                  title={event.title}
-                  description={event.description}
-                  img={event.img}
-                  action={event.img}
-                  tag={event.tag}
-                  id={event._id}
-                />
+
+              <div className="flex justify-center ">
+              <Update
+                title={event.title}
+                description={event.description}
+                img={event.img}
+                action={event.img}
+                tag={event.tag}
+                id={event._id}
+              />
               </div>
             </span>
           </div>
