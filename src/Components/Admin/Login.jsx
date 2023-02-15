@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import tabContext from "../../context/tabContext";
 
-const Login = ({ SET_ACCESS_TOKEN, ACCESS_TOKEN }) => {
+const Login = (
+  // { SET_ACCESS_TOKEN, ACCESS_TOKEN }
+  ) => {
+    const ctx = useContext(tabContext);
+
   const [login, setLogin] = useState({
     username: "",
     password: "",
@@ -26,7 +31,7 @@ const Login = ({ SET_ACCESS_TOKEN, ACCESS_TOKEN }) => {
       .then((response) => response.json())
       .then((result) => {
         console.log(result.access);
-        SET_ACCESS_TOKEN(result.access);
+        ctx.SET_ACCESS_TOKEN(result.access);
       });
   };
 

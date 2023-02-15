@@ -19,6 +19,8 @@ import Payment from "./pages/Payment";
 function App() {
   const [getInvolvedActiveTab, setGetInvolvedActiveTab] = useState("tab1");
   const [ourServiceActiveTab, setOurServiceActiveTab] = useState("tab1");
+  const [ACCESS_TOKEN, SET_ACCESS_TOKEN] = useState("");
+
 
   return (
     <div className="">
@@ -28,6 +30,8 @@ function App() {
           setGetInvolvedActiveTab,
           ourServiceActiveTab,
           setOurServiceActiveTab,
+          ACCESS_TOKEN,
+          SET_ACCESS_TOKEN
         }}
       >
         <NavBar />

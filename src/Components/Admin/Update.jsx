@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import parse from "date-fns/parse";
 import axios from "axios";
+import tabContext from "../../context/tabContext";
 
 const Update = (props) => {
+  const ctx = useContext(tabContext)
   const [updateButton, setUpdateButton] = useState(false);
   const [file, setFile] = useState(null);
 
@@ -48,6 +50,7 @@ const Update = (props) => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${ctx.ACCESS_TOKEN}`,
           },
         }
       );
