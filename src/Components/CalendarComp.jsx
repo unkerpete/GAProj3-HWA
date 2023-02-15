@@ -8,28 +8,22 @@ function App() {
 
   return (
     <div className="wrapper">
-      <div>
-        <Calendar
-          onChange={setDate}
-          value={date}
-          onClickDay={() => setShowTime(true)}
-        />
+      <div className="app">
+        <div>
+          <Calendar onChange={setDate} value={date} selectRange={true} />
+        </div>
+        {date.length > 0 ? (
+          <p>
+            <span>Start:</span> {date[0].toDateString()}
+            &nbsp; to &nbsp;
+            <span>End:</span> {date[1].toDateString()}
+          </p>
+        ) : (
+          <p>
+            <span>Default selected date:</span> {date.toDateString()}
+          </p>
+        )}
       </div>
-
-      {date.length > 0 ? (
-        <p>
-          <span>Start:</span>
-          {date[0].toDateString()}
-          &nbsp; &nbsp;
-          <span>End:</span>
-          {date[1].toDateString()}
-        </p>
-      ) : (
-        <p>
-          <span>Default selected date:</span>
-          {date.toDateString()}
-        </p>
-      )}
     </div>
   );
 }
