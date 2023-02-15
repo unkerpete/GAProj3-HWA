@@ -5,9 +5,10 @@ import EventsSectionHeader from "../Components/Current-Events/EventsSectionHeade
 import EventsModal from "../Components/Current-Events/EventsModal";
 import CalendarModal from "../Components/Current-Events/CalendarModal";
 export const ModalContext = createContext();
-
+import axios from "axios";
 //DELETE THIS LATER
 import dummyEvents from "../Components/Current-Events/dummyEvents";
+import spinner from "../Components/Get-Involved/loadingspinner.svg";
 
 const CurrentEvents = () => {
   const [modalIsActive, setModalIsActive] = useState(false);
@@ -17,11 +18,16 @@ const CurrentEvents = () => {
   const [selectedTag, setSelectedTag] = useState("All");
   const [pictureInfo, setPictureInfo] = useState([]);
   // const [refresh, setRefresh] = useState(true);
+  ////////////////////////////////////////////////////////////////
+  // FIXME: calendar
+  const [calRange, setCalRange] = useState(new Date());
+  const [isLoading, setIsLoading] = useState(false);
 
   // The 2 APIs, one showing today + 3 days, the other showing everything else after that.
   const currentEventsUrl = "http://127.0.0.1:5001/events/currentevents";
   const upcomingEventsUrl = "http://127.0.0.1:5001/events/upcomingevents";
   const pastEventsUrl = "http://127.0.0.1:5001/events/pastevents";
+  const calRangeURL = "http://127.0.0.1:5001/events/showbyrange";
 
   // fetches these data on change of dateRange state or selectedTag state,
 
@@ -212,6 +218,29 @@ const CurrentEvents = () => {
     console.log(`Event Modal:${modalEvent}`);
   }, [modalEvent]);
   /////////FOR CHECKING ONLY LATER DELETE///////////////////////
+  ////////////////////////////////
+  // FIXME: FETCHING CALENDAR RANGE AND UPDATING INTO STATE////
+
+  const handleCalendarRange = async () => {
+    setIsLoading(true);
+    const startDate = calRange[0].toISOString().split("T");
+    const endDate = calRange[1].toISOString().split("T");
+
+    try {
+      const res = await axios.post(calRangeURL, {
+        startDate: startDate[0],
+        endDate: endDate[0],
+        // startDate: new Date("2023-02-17"),
+        // endDate: new Date("2023-02-18"),
+      });
+      setPictureInfo(res.data);
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <ModalContext.Provider
@@ -231,11 +260,15 @@ const CurrentEvents = () => {
         setPictureInfo,
         changeCalendarStatus,
         // getFilteredEvents,
+        calRange, // FIXME:
+        setCalRange,
+        handleCalendarRange,
       }}
     >
       <div>
         <EventsSectionHeader />
         <TagsDisplay />
+        {isLoading && <img src={spinner} />}
         <PictureCards pictureInfo={pictureInfo} vertical />
         {modalIsActive && <EventsModal />}
         {calendarIsActive && <CalendarModal />}

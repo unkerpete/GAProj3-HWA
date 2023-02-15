@@ -1,33 +1,40 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Calendar from "react-calendar";
 import "../App.css";
+import { ModalContext } from "../pages/CurrentEvents";
 
 function App() {
-  const [date, setDate] = useState(new Date());
+  // const [date, setDate] = useState(new Date());
   const [showTime, setShowTime] = useState(false);
+
+  // FIXME:
+  const modalCtx = useContext(ModalContext);
+  // modalCtx.calRange
+  // modalCtx.setCalRange
 
   return (
     <div className="wrapper">
       <div>
         <Calendar
-          onChange={setDate}
-          value={date}
+          onChange={modalCtx.setCalRange}
+          value={modalCtx.calRange}
           onClickDay={() => setShowTime(true)}
+          selectRange={true}
         />
       </div>
 
-      {date.length > 0 ? (
+      {modalCtx.calRange.length > 0 ? (
         <p>
           <span>Start:</span>
-          {date[0].toDateString()}
+          {modalCtx.calRange[0].toDateString()}
           &nbsp; &nbsp;
           <span>End:</span>
-          {date[1].toDateString()}
+          {modalCtx.calRange[1].toDateString()}
         </p>
       ) : (
         <p>
           <span>Default selected date:</span>
-          {date.toDateString()}
+          {modalCtx.calRange.toDateString()}
         </p>
       )}
     </div>

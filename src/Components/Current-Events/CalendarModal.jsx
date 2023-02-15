@@ -15,6 +15,7 @@ const CalendarModal = () => {
 
   const handleApplyDates = () => {
     console.log("applying dates");
+    modalCtx.handleCalendarRange();
     handleCalendarClose();
   };
   return (
