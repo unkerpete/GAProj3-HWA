@@ -1,61 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ModalContext } from "../../pages/CurrentEvents";
 
-const filterByCurrent = () => {
-  //FILTER FROM DATABASE
-  console.log("filterByCurrent");
-};
-
-const filterByUpcoming = () => {
-  //FILTER FROM DATABASE
-  console.log("filterByUpComing");
-};
-
-const filterByPast = () => {
-  // FILTER FROM DATABASE
-  console.log("filterByPast");
-};
-
-const pullCalendar = () => {
-  console.log("pullCalendar");
-};
+const filterTypes = ["Current", "Upcoming", "Past", "Filter Dates →"];
 
 const EventsSectionHeader = () => {
+  const modalCtx = useContext(ModalContext);
+
+  const handleClick = (e) => {
+    modalCtx.setDateRange(e.target.value);
+  };
+
   return (
     <div className="grid h-[329px] bg-peach pl-20 text-primary-800  content-end">
       <h1 className="mb-20">Events</h1>
       <div className="flex flex-row">
-        <button
-          className={
-            "p-4 font-DM text-xl font-normal focus:font-bold border-b-4 border-peach focus:border-primary-800 "
-          }
-          onClick={filterByCurrent}
-        >
-          Current
-        </button>
-        <button
-          className={
-            "p-4 font-DM text-xl font-normal focus:font-bold border-b-4 border-peach focus:border-primary-800 "
-          }
-          onClick={filterByUpcoming}
-        >
-          Upcoming
-        </button>
-        <button
-          className={
-            "p-4  font-DM text-xl font-normal focus:font-bold border-b-4 border-peach focus:border-primary-800 "
-          }
-          onClick={filterByPast}
-        >
-          Past
-        </button>
-        <button
-          className={
-            "p-4  font-DM text-xl font-normal focus:font-bold border-b-4 border-peach focus:border-primary-800 "
-          }
-          onClick={pullCalendar}
-        >
-          Filter Dates &rarr;
-        </button>
+        {filterTypes.map((filter, idex) => {
+          return (
+            <button
+              key={idex}
+              className={`${
+                modalCtx.dateRange === filter
+                  ? "border-primary-800 font-bold"
+                  : "border-peach"
+              } p-4 font-DM text-xl font-normal border-b-4`}
+              onClick={handleClick}
+              value={filter}
+            >
+              {filter}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

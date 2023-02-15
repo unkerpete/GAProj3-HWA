@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Listbox } from "@headlessui/react";
 import { BsChevronExpand } from "react-icons/bs";
-import ButtonSubmit from "../Components/ButtonSubmit";
+import ButtonOther from "../Components/ButtonOther";
 
 const Form = (props) => {
   const [formType, setFormType] = useState(props.header);
@@ -34,16 +34,24 @@ const Form = (props) => {
       };
 
   const getUrl = (formType) => {
+    let url;
     switch (formType) {
       case "Corporate Volunteer Form":
-        return "http://127.0.0.1:5001/volunteer/create";
+        url = "http://127.0.0.1:5001/volunteer/create";
+        break;
       case "Enquiry form":
-        return "http://127.0.0.1:5001/contact/create";
+        url = "http://127.0.0.1:5001/contact/create";
+        break;
       case "Home Care Service Enquiry":
-        return "http://127.0.0.1:5001/homecare/create";
+        url = "http://127.0.0.1:5001/homecare/create";
+        break;
       case "Transport Services Enquiry":
-        return "http://127.0.0.1:5001/transport/create";
+        url = "http://127.0.0.1:5001/transport/create";
+        break;
+      default:
+        url = "";
     }
+    return url;
   };
 
   //PUT TO BACKEND
@@ -212,7 +220,11 @@ const Form = (props) => {
           />
 
           <div className="col-start-1 col-end-9 flex justify-center">
-            <ButtonSubmit text="Submit" className="justify-center" />
+            <ButtonOther
+              type="submit"
+              text="Submit"
+              className="justify-center"
+            />
           </div>
         </div>
       </form>

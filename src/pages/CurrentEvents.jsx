@@ -1,68 +1,102 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 import PictureCards from "../Components/PictureCards";
 import TagsDisplay from "../Components/Current-Events/TagsDisplay";
 import EventsSectionHeader from "../Components/Current-Events/EventsSectionHeader";
 import EventsModal from "../Components/Current-Events/EventsModal";
 export const ModalContext = createContext();
 
-const pictureInfo = [
-  {
-    title: "Medical Talk - Essential Caregiving Skills",
-    dateStart: "21 Jan 2023",
-    dateEnd: "",
-    time: "9:00 am",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-    img: "src/Assets/shujun/homepage/blog/blog1.png",
-    action: "/current-events",
-    tag: "Talks",
-  },
-  {
-    title: "Seniors Go Digital",
-    dateStart: "21 Jan 2023",
-    dateEnd: "23 Jan 2023",
-    time: "9 - 5:30 pm",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid",
-    img: "src/Assets/shujun/homepage/blog/blog2.png",
-    action: "/current-events",
-    tag: "Classes & Workshops",
-  },
-  {
-    title: "37th Annual Wheel, Walk or Jog 2021",
-    dateStart: "5 Feb 2023",
-    dateEnd: "28 Feb 2023",
-    time: "",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid",
-    img: "src/Assets/shujun/homepage/blog/blog3.png",
-    action: "/current-events",
-    tag: "Fundraiser",
-  },
-];
+//DELETE THIS LATER
+import dummyEvents from "../Components/Current-Events/dummyEvents";
 
 const CurrentEvents = () => {
-  const [modalIsActive, setModalIsActive] = useState(true);
-  // date-based API endpoints to filter to current, upcoming, past
-  // Custom API call to filter through dates
-  // Further API endpoints to sort based on categories
-  // API endpoints return with
-  // Date, image, category, title, time link -> all to be stored inside a state that will be mapped
+  const [modalIsActive, setModalIsActive] = useState(false);
+  const [modalEvent, setModalEvent] = useState({});
+  const [dateRange, setDateRange] = useState("Current");
+  const [selectedTag, setSelectedTag] = useState("All");
+  const [pictureInfo, setPictureInfo] = useState(dummyEvents);
+  const [refresh, setRefresh] = useState(true);
+  const url = "http://127.0.0.1:5001/events/showbytagrange";
+
+  const getFilteredEvents = async () => {
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((results) => {
+        setPictureInfo(results);
+      })
+      .catch((error) => console.error(error));
+    setRefresh(false);
+  };
+
+  useEffect(() => {
+    if (refresh) {
+      getFilteredEvents();
+    }
+  }, [refresh]);
+
+  // const getUrl = (dateRange, selectedTag) => {
+  //   let url;
+  //   switch (true) {
+  //     case dateRange === "Current":
+  //     case dateRange === "Upcoming":
+  //     case dateRange === "Past":
+  //       url = "http://127.0.0.1:5001/events/";
+  //       break;
+  //     case selectedTag === "All":
+  //       url = getUrl(dateRange, "");
+  //       break;
+  //     default:
+  //       url = `http://127.0.0.1:5001/events?date=${dateRange}&tag=${selectedTag}`;
+  //   }
+  //   return url;
+  // };
 
   const changeModalStatus = () => {
     setModalIsActive(!modalIsActive);
   };
 
+  const disableScroll = (id) => {
+    document.getElementById(id).style.overflow = "hidden";
+    document.getElementById(id).style.height = "100vh";
+  };
+
+  const enableScroll = (id) => {
+    document.getElementById(id).style.overflow = "auto";
+  };
+
+  /////////FOR CHECKING ONLY LATER DELETE///////////////////////
+  console.log(`Date Range:${dateRange},Tag:${selectedTag}`);
+  useEffect(() => {
+    console.log(`Event Modal:${modalEvent}`);
+  }, [modalEvent]);
+  /////////FOR CHECKING ONLY LATER DELETE///////////////////////
+
   return (
-    <ModalContext.Provider value={{ modalIsActive, changeModalStatus }}>
+    <ModalContext.Provider
+      value={{
+        modalIsActive,
+        modalEvent,
+        dateRange,
+        selectedTag,
+        pictureInfo,
+        changeModalStatus,
+        disableScroll,
+        enableScroll,
+        setDateRange,
+        setSelectedTag,
+        setModalEvent,
+        setPictureInfo,
+      }}
+    >
       <div>
         <EventsSectionHeader />
-
         <TagsDisplay />
-
         <PictureCards pictureInfo={pictureInfo} vertical />
-
-        <EventsModal />
+        {modalIsActive && <EventsModal />}
       </div>
     </ModalContext.Provider>
   );

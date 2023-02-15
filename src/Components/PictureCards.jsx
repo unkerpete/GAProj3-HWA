@@ -1,28 +1,36 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Button from "./Button";
+import ButtonOther from "./ButtonOther";
 import { ModalContext } from "../pages/CurrentEvents";
 
 const PictureCards = (props) => {
   const modalCtx = useContext(ModalContext);
+
   const getTagClass = (tag) => {
+    let colour;
     switch (tag) {
       case "Talks":
-        return "bg-peach";
+        colour = "bg-peach";
+        break;
       case "Classes & Workshops":
-        return "bg-secondary-400";
+        colour = "bg-secondary-400";
+        break;
       case "Fundraiser":
-        return "bg-primary-400";
+        colour = "bg-primary-400";
+        break;
       case "Community Gatherings":
-        return "bg-secondary-400";
+        colour = "bg-secondary-400";
+        break;
       default:
-        return "bg-white";
+        colour = "bg-white";
     }
+    return colour;
   };
 
-  const handleClick = () => {
+  const handleClick = (obj) => {
     modalCtx.changeModalStatus();
-    console.log(modalCtx.modalIsActive);
+    modalCtx.disableScroll("root");
+    modalCtx.setModalEvent(obj);
   };
 
   return (
@@ -30,7 +38,7 @@ const PictureCards = (props) => {
       className={`${
         props.vertical
           ? "grid grid-rows-3 py-20 pl-20 pr-60"
-          : "grid grid-cols-3 gap-8"
+          : "grid grid-cols-3 gap-8 h-[459px] overflow-y-clip"
       }`}
     >
       {props.pictureInfo.map((obj, index) => {
@@ -73,14 +81,16 @@ const PictureCards = (props) => {
                 </Link>
                 <p className="font-DM text-lg font-normal">
                   {obj.dateStart} {obj.dateEnd ? "-" : null} {obj.dateEnd}
-                  {obj.time ? ", " : null}
-                  {obj.time}
+                  {obj.timeString ? ", " : null}
+                  {obj.timeString}
                 </p>
               </div>
               {props.vertical ? (
-                <div onClick={handleClick}>
-                  <Button text="Learn More" link="" />
-                </div>
+                <ButtonOther
+                  text="Learn More"
+                  type="button"
+                  onClick={() => handleClick(obj)}
+                />
               ) : null}
             </div>
           </div>
