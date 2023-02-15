@@ -11,16 +11,12 @@ const PictureCards = (props) => {
     switch (tag) {
       case "Talks":
         return "bg-peach";
-
       case "Classes & Workshops":
         return "bg-secondary-400";
-
       case "Fundraiser":
         return "bg-primary-400";
-
       case "Community Gatherings":
         return "bg-secondary-400";
-
       default:
         return "bg-white";
     }
@@ -68,10 +64,10 @@ const PictureCards = (props) => {
 
               <div className={props.vertical ? "mr-8" : "mb-3"}>
                 <img
-                  className="rounded-2xl border"
+                  className="rounded-2xl border test"
                   src={`data:image/jpg;base64,${base64string}`}
                   width="431"
-                  height="287"
+                  max-height="287"
                 />
               </div>
 
