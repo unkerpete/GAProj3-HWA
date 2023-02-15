@@ -1,43 +1,53 @@
-import React from "react";
+import React, { useContext } from "react";
 import CategoryCard from "./CategoryCard";
-
-const categoryCardData = [
-  {
-    img: "src/Assets/shujun/homepage/categories/For_Caregivers.png",
-    bg_img: "src/Assets/shujun/homepage/categories/For_Caregivers_Border.png",
-    subheader: "For Caregivers",
-    body: "We support family caregivers through providing regular quality programmes and services, and uplifts them with a robust support system.",
-    btnText: "See our Services",
-    btnLink: "/our-services",
-  },
-  {
-    img: "src/Assets/shujun/homepage/categories/For_Donors.png",
-    bg_img: "src/Assets/shujun/homepage/categories/For_Donors_Borders.png",
-    subheader: "For Donors",
-    body: "Your gift will enable and support individuals with physical challenges as well as their family caregivers through HWA's rehabilitaion, home care, and transport programmes and services.",
-    btnText: "Make a Donation",
-    btnLink: "/get-involved",
-  },
-  {
-    img: "src/Assets/shujun/homepage/categories/For_Volunteers.png",
-    bg_img: "src/Assets/shujun/homepage/categories/For_Volunteers_Borders.png",
-    subheader: "For Volunteers",
-    body: "The service of volunteers contributes significantly to the social reintegration of the physically challenged in our community.",
-    btnText: "Be a Volunteer",
-    btnLink: "/get-involved",
-  },
-  {
-    img: "src/Assets/shujun/homepage/categories/For_Disabilities.png",
-    bg_img:
-      "src/Assets/shujun/homepage/categories/For_Disabilities_Borders.png",
-    subheader: "For People with Disabilities",
-    body: "HWA's rehabilitation, home care, and transportation services caters to the distinct needs of the physically challenged. No one gets left behind",
-    btnText: "See our Services",
-    btnLink: "/our-services",
-  },
-];
+import tabContext from "../../context/tabContext";
 
 const Category = () => {
+  const tabCtx = useContext(tabContext);
+
+  const categoryCardData = [
+    {
+      img: "src/Assets/shujun/homepage/categories/For_Caregivers.png",
+      bg_img: "src/Assets/shujun/homepage/categories/For_Caregivers_Border.png",
+      subheader: "For Caregivers",
+      body: "We support family caregivers through providing regular quality programmes and services, and uplifts them with a robust support system.",
+      btnText: "See our Services",
+      btnLink: "/our-services",
+    },
+    {
+      img: "src/Assets/shujun/homepage/categories/For_Donors.png",
+      bg_img: "src/Assets/shujun/homepage/categories/For_Donors_Borders.png",
+      subheader: "For Donors",
+      body: "Your gift will enable and support individuals with physical challenges as well as their family caregivers through HWA's rehabilitaion, home care, and transport programmes and services.",
+      btnText: "Make a Donation",
+      btnLink: "/get-involved/",
+      tabCtxFunction: () => {
+        tabCtx.setGetInvolvedActiveTab("tab1");
+      },
+    },
+    {
+      img: "src/Assets/shujun/homepage/categories/For_Volunteers.png",
+      bg_img:
+        "src/Assets/shujun/homepage/categories/For_Volunteers_Borders.png",
+      subheader: "For Volunteers",
+      body: "The service of volunteers contributes significantly to the social reintegration of the physically challenged in our community.",
+      btnText: "Be a Volunteer",
+      btnLink: "/get-involved/",
+      tabCtxFunction: () => {
+        tabCtx.setGetInvolvedActiveTab("tab2");
+      },
+    },
+    {
+      img: "src/Assets/shujun/homepage/categories/For_Disabilities.png",
+      bg_img:
+        "src/Assets/shujun/homepage/categories/For_Disabilities_Borders.png",
+      subheader: "For People with Disabilities",
+      body: "HWA's rehabilitation, home care, and transportation services caters to the distinct needs of the physically challenged. No one gets left behind",
+      btnText: "See our Services",
+      btnLink: "/our-services",
+    },
+  ];
+
   return (
     <div className="p-20">
       <div className="grid grid-rows-2 justify-items-center">
@@ -61,6 +71,7 @@ const Category = () => {
               body={item.body}
               text={item.btnText}
               link={item.btnLink}
+              tabFunction={item.tabCtxFunction}
             />
           );
         })}
