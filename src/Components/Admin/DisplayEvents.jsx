@@ -1,19 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Delete from "./Delete";
 import Update from "./Update";
 import axios from "axios";
 import useAxios from "../../Hooks/useAxios";
 import { Buffer } from "buffer";
 import spinner from "../../Components/Get-Involved/loadingspinner.svg";
+import tabContext from "../../context/tabContext";
 
 const DisplayEvents = () => {
+  const ctx = useContext(tabContext);
   const [events, setEvents] = useState([]); // To store the array of events
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFetchEvents = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get("http://127.0.0.1:5001/events/showall");
+      const res = await axios.get("http://127.0.0.1:5001/events/showall", {
+        headers: {
+          Authorization: `Bearer ${ctx.ACCESS_TOKEN}`,
+        },
+      });
       setEvents(res.data.events);
       console.log("events: ", events);
     } catch (err) {

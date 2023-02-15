@@ -1,24 +1,27 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import CreateEvent from "../Components/Admin/CreateEvent";
 import DisplayEvents from "../Components/Admin/DisplayEvents";
 import Login from "../Components/Admin/Login";
+import tabContext from "../context/tabContext";
 
 const Admin = () => {
   // FIXME: Bring this access token states to parent at App.jsx
-  const [ACCESS_TOKEN, SET_ACCESS_TOKEN] = useState("");
+  const ctx = useContext(tabContext);
+
+  // const [ACCESS_TOKEN, SET_ACCESS_TOKEN] = useState("");
 
   return (
     <>
       {/* NO ACCESS TOKEN, THEN DISPLAY THIS */}
-      {!ACCESS_TOKEN && (
+      {!ctx.ACCESS_TOKEN && (
         <Login
-          SET_ACCESS_TOKEN={SET_ACCESS_TOKEN}
-          ACCESS_TOKEN={ACCESS_TOKEN}
+          // SET_ACCESS_TOKEN={SET_ACCESS_TOKEN}
+          // ACCESS_TOKEN={ACCESS_TOKEN}
         />
       )}
 
       {/* HAVE ACCESS TOKEN, THEN DISPLAY THIS */}
-      {ACCESS_TOKEN && (
+      {ctx.ACCESS_TOKEN && (
 
       <div className="">
         <div className="grid grid-cols-2">

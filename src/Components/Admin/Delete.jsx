@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import tabContext from "../../context/tabContext";
 
 const Delete = ({ eventId }) => {
+  const ctx = useContext(tabContext)
+
   const deleteEvent = () => {
     fetch("http://127.0.0.1:5001/events/delete", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${ctx.ACCESS_TOKEN}`,
       },
       body: JSON.stringify({
         id: `${eventId}`,
