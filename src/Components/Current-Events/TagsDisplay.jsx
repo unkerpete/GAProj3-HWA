@@ -6,7 +6,7 @@ const tagTypes = [
   "Fundraisers",
   "Talks",
   "Classes & Workshops",
-  "Community Gatherings",
+  "Community Gathering",
 ];
 
 const TagsDisplay = () => {

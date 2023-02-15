@@ -21,44 +21,44 @@ const CurrentEvents = () => {
   // The 2 APIs, one showing today + 3 days, the other showing everything else after that.
   const currentEventsUrl = "http://127.0.0.1:5001/events/currentevents";
   const upcomingEventsUrl = "http://127.0.0.1:5001/events/upcomingevents";
+  const pastEventsUrl = "http://127.0.0.1:5001/events/pastevents";
 
-  // fetches this data on change of dateRange state or selectedTag state,
-  useEffect(
-    () => {
+  // fetches these data on change of dateRange state or selectedTag state,
+
+  useEffect(() => {
+    if (dateRange === "Current") {
       if (selectedTag === "All") {
-        if (dateRange === "Current") {
-          const getAllCurrentEvents = async () => {
-            let data = {
-              withinTheseDays: "3",
-              tag: [
-                "Fundraisers",
-                "Talks",
-                "Community Gathering",
-                "Classes & Workshops",
-              ],
-            };
-            try {
-              const response = await fetch(currentEventsUrl, {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-              });
-              const results = await response.json();
-              setPictureInfo(results);
-              console.log(results);
-            } catch (error) {
-              console.error(error);
-            }
-          };
-
-          getAllCurrentEvents();
-        }
-      } else if (dateRange === "Current") {
-        const getCurrentEvents = async () => {
+        const getAllCurrentEvents = async () => {
           let data = {
-            withinTheseDays: "3",
+            withinTheseDays: 3,
+            tag: [
+              "Fundraisers",
+              "Talks",
+              "Community Gathering",
+              "Classes & Workshops",
+            ],
+          };
+          try {
+            const response = await fetch(currentEventsUrl, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+            const results = await response.json();
+            setPictureInfo(results);
+            console.log(results);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+
+        getAllCurrentEvents();
+      } else {
+        const getSelectedCurrentEvents = async () => {
+          let data = {
+            withinTheseDays: 3,
             tag: selectedTag,
           };
           try {
@@ -77,11 +77,41 @@ const CurrentEvents = () => {
           }
         };
 
-        getCurrentEvents();
-      } else if (dateRange === "Upcoming") {
-        const getUpcomingEvents = async () => {
+        getSelectedCurrentEvents();
+      }
+    } else if (dateRange === "Upcoming") {
+      if (selectedTag === "All") {
+        const getAllUpcomingEvents = async () => {
           let data = {
-            afterTheseDays: "3",
+            afterTheseDays: 3,
+            tag: [
+              "Fundraisers",
+              "Talks",
+              "Community Gathering",
+              "Classes & Workshops",
+            ],
+          };
+          try {
+            const response = await fetch(upcomingEventsUrl, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+            const results = await response.json();
+            setPictureInfo(results);
+            console.log(results);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+
+        getAllUpcomingEvents();
+      } else {
+        const getSelectedUpcomingEvents = async () => {
+          let data = {
+            afterTheseDays: 3,
             tag: selectedTag,
           };
           try {
@@ -100,49 +130,64 @@ const CurrentEvents = () => {
           }
         };
 
-        getUpcomingEvents();
+        getSelectedUpcomingEvents();
       }
-    },
-    [dateRange],
-    [selectedTag]
-  );
-  // const getFilteredEvents = async () => {
-  //   fetch(url, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((response) => response.json())
-  //     .then((results) => {
-  //       setPictureInfo(results);
-  //     })
-  //     .catch((error) => console.error(error));
-  //   setRefresh(false);
-  // };
+    } else if (dateRange === "Past") {
+      let today = new Date();
+      if (selectedTag === "All") {
+        const getAllPastEvents = async () => {
+          let data = {
+            dateStart: today,
+            tag: [
+              "Fundraisers",
+              "Talks",
+              "Community Gathering",
+              "Classes & Workshops",
+            ],
+          };
+          try {
+            const response = await fetch(pastEventsUrl, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+            const results = await response.json();
+            setPictureInfo(results);
+            console.log(results);
+          } catch (error) {
+            console.error(error);
+          }
+        };
 
-  // useEffect(() => {
-  //   if (refresh) {
-  //     getFilteredEvents();
-  //   }
-  // }, [refresh]);
+        getAllPastEvents();
+      } else {
+        const getSelectedPastEvents = async () => {
+          let data = {
+            dateStart: today,
+            tag: selectedTag,
+          };
+          try {
+            const response = await fetch(pastEventsUrl, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+            const results = await response.json();
+            setPictureInfo(results);
+            console.log(results);
+          } catch (error) {
+            console.error(error);
+          }
+        };
 
-  // const getUrl = (dateRange, selectedTag) => {
-  //   let url;
-  //   switch (true) {
-  //     case dateRange === "Current":
-  //     case dateRange === "Upcoming":
-  //     case dateRange === "Past":
-  //       url = "http://127.0.0.1:5001/events/";
-  //       break;
-  //     case selectedTag === "All":
-  //       url = getUrl(dateRange, "");
-  //       break;
-  //     default:
-  //       url = `http://127.0.0.1:5001/events?date=${dateRange}&tag=${selectedTag}`;
-  //   }
-  //   return url;
-  // };
+        getSelectedPastEvents();
+      }
+    }
+  }, [dateRange, selectedTag]);
 
   const changeModalStatus = () => {
     setModalIsActive(!modalIsActive);
