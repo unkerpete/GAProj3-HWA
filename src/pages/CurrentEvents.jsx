@@ -6,9 +6,9 @@ import EventsModal from "../Components/Current-Events/EventsModal";
 import CalendarModal from "../Components/Current-Events/CalendarModal";
 export const ModalContext = createContext();
 import axios from "axios";
+import spinner from "../Components/Get-Involved/loadingspinner.svg";
 //DELETE THIS LATER
 import dummyEvents from "../Components/Current-Events/dummyEvents";
-import spinner from "../Components/Get-Involved/loadingspinner.svg";
 
 const CurrentEvents = () => {
   const [modalIsActive, setModalIsActive] = useState(false);
@@ -17,13 +17,13 @@ const CurrentEvents = () => {
   const [dateRange, setDateRange] = useState("Current");
   const [selectedTag, setSelectedTag] = useState("All");
   const [pictureInfo, setPictureInfo] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   // const [refresh, setRefresh] = useState(true);
   ////////////////////////////////////////////////////////////////
   // FIXME: calendar
   const [calRange, setCalRange] = useState(new Date());
-  const [isLoading, setIsLoading] = useState(false);
 
-  // The 2 APIs, one showing today + 3 days, the other showing everything else after that.
+  // The 3 APIs, one showing today + 3 days, the other showing everything else after that. Past events show events with start date prior to today.
   const currentEventsUrl = "http://127.0.0.1:5001/events/currentevents";
   const upcomingEventsUrl = "http://127.0.0.1:5001/events/upcomingevents";
   const pastEventsUrl = "http://127.0.0.1:5001/events/pastevents";
@@ -35,6 +35,7 @@ const CurrentEvents = () => {
     if (dateRange === "Current") {
       if (selectedTag === "All") {
         const getAllCurrentEvents = async () => {
+          setIsLoading(true);
           let data = {
             withinTheseDays: 3,
             tag: [
@@ -58,11 +59,13 @@ const CurrentEvents = () => {
           } catch (error) {
             console.error(error);
           }
+          setIsLoading(false);
         };
 
         getAllCurrentEvents();
       } else {
         const getSelectedCurrentEvents = async () => {
+          setIsLoading(true);
           let data = {
             withinTheseDays: 3,
             tag: selectedTag,
@@ -81,6 +84,7 @@ const CurrentEvents = () => {
           } catch (error) {
             console.error(error);
           }
+          setIsLoading(false);
         };
 
         getSelectedCurrentEvents();
@@ -88,6 +92,7 @@ const CurrentEvents = () => {
     } else if (dateRange === "Upcoming") {
       if (selectedTag === "All") {
         const getAllUpcomingEvents = async () => {
+          setIsLoading(true);
           let data = {
             afterTheseDays: 3,
             tag: [
@@ -111,11 +116,13 @@ const CurrentEvents = () => {
           } catch (error) {
             console.error(error);
           }
+          setIsLoading(false);
         };
 
         getAllUpcomingEvents();
       } else {
         const getSelectedUpcomingEvents = async () => {
+          setIsLoading(true);
           let data = {
             afterTheseDays: 3,
             tag: selectedTag,
@@ -134,6 +141,7 @@ const CurrentEvents = () => {
           } catch (error) {
             console.error(error);
           }
+          setIsLoading(false);
         };
 
         getSelectedUpcomingEvents();
@@ -141,6 +149,7 @@ const CurrentEvents = () => {
     } else if (dateRange === "Past") {
       let today = new Date();
       if (selectedTag === "All") {
+        setIsLoading(true);
         const getAllPastEvents = async () => {
           let data = {
             dateStart: today,
@@ -165,11 +174,13 @@ const CurrentEvents = () => {
           } catch (error) {
             console.error(error);
           }
+          setIsLoading(false);
         };
 
         getAllPastEvents();
       } else {
         const getSelectedPastEvents = async () => {
+          setIsLoading(true);
           let data = {
             dateStart: today,
             tag: selectedTag,
@@ -188,6 +199,7 @@ const CurrentEvents = () => {
           } catch (error) {
             console.error(error);
           }
+          setIsLoading(false);
         };
 
         getSelectedPastEvents();
@@ -268,7 +280,11 @@ const CurrentEvents = () => {
       <div>
         <EventsSectionHeader />
         <TagsDisplay />
-        {isLoading && <img src={spinner} />}
+        <div className="">
+          {isLoading && (
+            <img src={spinner} width="200" className="mx-auto m-0" />
+          )}
+        </div>
         <PictureCards pictureInfo={pictureInfo} vertical />
         {modalIsActive && <EventsModal />}
         {calendarIsActive && <CalendarModal />}
