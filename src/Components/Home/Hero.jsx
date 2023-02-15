@@ -2,6 +2,10 @@ import React from "react";
 import Button from "../Button";
 
 const Hero = () => {
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="grid grid-cols-2 text-primary-800 bg-peach">
       <div className="p-20 grid grid-rows-1">
@@ -17,7 +21,11 @@ const Hero = () => {
           </div>
         </div>
         <div className="h-fit content-end pb-10">
-          <Button text={"Read about Us"} link={`/About-Us`} />
+          <Button
+            text={"Read about Us"}
+            link={`/About-Us`}
+            handleClick={handleClick}
+          />
         </div>
       </div>
       <div>

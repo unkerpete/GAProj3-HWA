@@ -34,6 +34,7 @@ const DrpdwnGetInvolved = (props) => {
                 to="/get-involved/"
                 onClick={() => {
                   getInvolvedTabContext.setGetInvolvedActiveTab("tab1");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
                 Make a Donation
@@ -51,6 +52,7 @@ const DrpdwnGetInvolved = (props) => {
                 to="/get-involved/"
                 onClick={() => {
                   getInvolvedTabContext.setGetInvolvedActiveTab("tab2");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
                 Become a Volunteer

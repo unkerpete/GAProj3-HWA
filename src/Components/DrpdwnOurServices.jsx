@@ -37,6 +37,7 @@ const DrpdwnOurServices = (props) => {
                 to="/our-services"
                 onClick={() => {
                   tabCtx.setOurServiceActiveTab("tab1");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
                 Transport
@@ -50,6 +51,7 @@ const DrpdwnOurServices = (props) => {
                 to="/our-services"
                 onClick={() => {
                   tabCtx.setOurServiceActiveTab("tab2");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
                 Rehabilitation
@@ -67,6 +69,7 @@ const DrpdwnOurServices = (props) => {
                 to="/our-services"
                 onClick={() => {
                   tabCtx.setOurServiceActiveTab("tab3");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
                 Home Care
@@ -84,6 +87,7 @@ const DrpdwnOurServices = (props) => {
                 to="/our-services"
                 onClick={() => {
                   tabCtx.setOurServiceActiveTab("tab4");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
                 Social Services
