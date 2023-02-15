@@ -55,16 +55,15 @@ const DisplayEvents = () => {
                 <Delete eventId={event._id} />
               </div>
               <div className="flex justify-center">
-              <Update
-                title={event.title}
-                description={event.description}
-                img={event.img}
-                action={event.img}
-                tag={event.tag}
-                id={event._id}
-              />
+                <Update
+                  title={event.title}
+                  description={event.description}
+                  img={event.img}
+                  action={event.img}
+                  tag={event.tag}
+                  id={event._id}
+                />
               </div>
-              
             </span>
           </div>
         );
