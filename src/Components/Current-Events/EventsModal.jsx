@@ -3,6 +3,7 @@ import { RxCross1 } from "react-icons/rx";
 import Button from "../Button";
 import ReactDOM from "react-dom";
 import { ModalContext } from "../../pages/CurrentEvents";
+import { Buffer } from "buffer";
 
 const getBtnText = (tag) => {
   if (tag === "Fundraiser") {
