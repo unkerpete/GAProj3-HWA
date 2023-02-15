@@ -1,7 +1,7 @@
 import { set } from "jjs";
 import React, { useState } from "react";
 import useAxios from "../../Hooks/useAxios";
-import ButtonSubmit from "../ButtonSubmit";
+import ButtonOther from "../ButtonOther";
 import MessageModal from "../MessageModal";
 
 // to change button into a separate component
@@ -115,7 +115,7 @@ const Form = () => {
           />
         </div>
         <div className="flex justify-center mb-28 pb-16">
-          <ButtonSubmit text="Submit" />
+          <ButtonOther text="Submit" />
         </div>
       </form>
       {isOpen && response && (
