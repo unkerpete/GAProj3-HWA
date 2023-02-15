@@ -10,17 +10,18 @@ const DisplayEvents = () => {
 
   const [events, setEvents] = useState([]); // To store the array of events
 
-  const fetchEvents = async () => {
-    try {
-      const res = await axios.get("http://127.0.0.1:5001/events/showall");
-      setEvents(res.data);
-      // mapped();
-      // console.log("events.data.events: ", events.data.events);
-      console.log("events ", events);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // FIXME: should be cat delete
+  // const fetchEvents = async () => {
+  //   try {
+  //     const res = await axios.get("http://127.0.0.1:5001/events/showall");
+  //     setEvents(res.data);
+  //     // mapped();
+  //     // console.log("events.data.events: ", events.data.events);
+  //     console.log("events ", events);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   const handleFetchEvents = async () => {
     try {

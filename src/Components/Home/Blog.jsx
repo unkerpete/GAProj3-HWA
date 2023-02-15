@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PictureCards from "../PictureCards";
 import Button from "../Button";
 
-//DELTE THIS LATER
+//DELETE THIS LATER
 import dummyEvents from "../Current-Events/dummyEvents";
 
 const Blog = () => {
