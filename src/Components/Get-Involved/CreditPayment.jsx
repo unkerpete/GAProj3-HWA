@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Button1 from "./Button1";
 import PaymentThru from "./PaymentThru";
 
-const CreditPayment = () => {
+const CreditPayment = ({ amount }) => {
   const [isChecked, setIsChecked] = useState(false);
   const [inputValues, setInputValues] = useState({});
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const CreditPayment = () => {
   const handleCreditSubmission = (e) => {
     e.preventDefault();
     console.log("Credit Submission");
-    navigate("/Home");
+    navigate("/payment");
 
     //
   };
@@ -145,7 +145,7 @@ const CreditPayment = () => {
           </div>
 
           <Button1
-            text={"Complete Donation XXX value"}
+            text={`Complete Donation $ ${amount}`}
             handleSubmission={handleCreditSubmission}
           />
         </div>

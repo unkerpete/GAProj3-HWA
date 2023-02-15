@@ -6,30 +6,38 @@ import Button from "../Button";
 import dummyEvents from "../Current-Events/dummyEvents";
 
 const Blog = () => {
-  const [pictureInfo, setPictureInfo] = useState(dummyEvents);
-  const [refresh, setRefresh] = useState(true);
-  const url = "http://127.0.0.1:5001/events/showall";
-
-  const getAllEvents = async () => {
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((results) => {
-        setPictureInfo(results);
-      })
-      .catch((error) => console.error(error));
-    setRefresh(false);
-  };
+  const [pictureInfo, setPictureInfo] = useState([]);
+  const url = "http://127.0.0.1:5001/events/currentevents";
 
   useEffect(() => {
-    if (refresh) {
-      getAllEvents();
-    }
-  }, [refresh]);
+    const getAllEvents = async () => {
+      let data = {
+        withinTheseDays: "3",
+        tag: [
+          "Fundraisers",
+          "Talks",
+          "Community Gathering",
+          "Classes & Workshops",
+        ],
+      };
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        const results = await response.json();
+        setPictureInfo(results);
+        console.log(results);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    getAllEvents();
+  }, []);
 
   return (
     <div className="flex flex-col p-20 text-primary-800 h-5/6 content-between">

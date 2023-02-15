@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes, Navigate, Link } from "react-router-dom";
 const Button = (props) => {
   return (
-    <Link to={`${props.link}`}>
+    <Link to={`${props.link}`} onClick={props.handleClick}>
       <button
         type="button"
         className="font-DM text-lg font-normal bg-primary-600 hover:bg-primary-800 text-white py-3 px-6 rounded-full hover:scale-105 ease-in-out duration-300"

@@ -1,9 +1,10 @@
 import React from "react";
+import PaymentThru from "../Components/Get-Involved/PaymentThru";
 
 const Payment = () => {
   return (
     <div>
-      <div>PROCESSING PAYMENT</div>
+      <PaymentThru />
     </div>
   );
 };

@@ -1,12 +1,39 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import fbLogo from "../assets/peter/footer/Footer_FB_icon.svg";
 import instaLogo from "../assets/peter/footer/Footer_Instar_icon.svg";
 import ytbeLogo from "../assets/peter/footer/Footer_YT_icon.svg";
 import tabContext from "../context/tabContext";
+import useAxios from "../Hooks/useAxios";
 
 const Footer = () => {
   const tabCtx = useContext(tabContext);
+  const [subEmail, setSubEmail] = useState(null);
+  const subEmailRef = useRef("");
+
+  const { response, error, loading, makeRequest } = useAxios(
+    {
+      method: "PUT",
+      url: "/subs/create",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: {
+        email: subEmail,
+      },
+    },
+    false
+  );
+
+  const handleInputSubmit = () => {
+    setSubEmail(subEmailRef.current.value);
+  };
+
+  // when subEmail state gets updated, API call is made.
+  useEffect(() => {
+    makeRequest();
+    console.log(error);
+  }, [subEmail]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -61,11 +88,15 @@ const Footer = () => {
           <p>For the latest news, events, and updates.</p>
           {/* backend - Add useref state for input, and click handler on the -> button. On click of the button, send useref state to backend. */}
           <input
-            type="text"
             className="h-10 w-1/4 mt-4 rounded-md pl-2"
             placeholder="Email"
+            ref={subEmailRef}
+            value={subEmail && "Thank you for subscribing"}
           />
-          <div className="h-8 w-8 rounded-full text-3xl leading-7 text-center inline-block relative right-10 top-1 bg-primary-400 hover:cursor-pointer">
+          <div
+            className="h-8 w-8 rounded-full text-3xl leading-7 text-center inline-block relative right-10 top-1 bg-primary-400 hover:cursor-pointer"
+            onClick={handleInputSubmit}
+          >
             ⇾
           </div>
         </div>
@@ -150,24 +181,31 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex pl-20 relative bottom-7">
-          <img
-            src={fbLogo}
-            width="20"
-            height="20"
-            className="m-2 hover:cursor-pointer"
-          ></img>
-          <img
-            src={instaLogo}
-            width="20"
-            height="20"
-            className="m-2 hover:cursor-pointer"
-          ></img>
-          <img
-            src={ytbeLogo}
-            width="20"
-            height="20"
-            className="m-2 hover:cursor-pointer"
-          ></img>
+          <a href="https://www.facebook.com/HWASingapore" target="_blank">
+            <img
+              src={fbLogo}
+              width="20"
+              height="20"
+              className="m-2 hover:cursor-pointer"
+            ></img>
+          </a>
+          <a href="https://www.instagram.com/hwa.sg/" target="_blank">
+            <img
+              src={instaLogo}
+              width="20"
+              height="20"
+              className="m-2 hover:cursor-pointer"
+            ></img>
+          </a>
+
+          <a href="https://www.youtube.com/@HWASingapore" target="_blank">
+            <img
+              src={ytbeLogo}
+              width="20"
+              height="20"
+              className="m-2 hover:cursor-pointer"
+            ></img>
+          </a>
         </div>
       </div>
     </>
