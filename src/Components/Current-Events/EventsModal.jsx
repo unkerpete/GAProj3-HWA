@@ -27,6 +27,8 @@ const EventsModal = () => {
     modalCtx.enableScroll("root");
   };
 
+  const base64string = Buffer.from(obj.img.data.data).toString("base64");
+
   return (
     <>
       {ReactDOM.createPortal(
@@ -46,7 +48,9 @@ const EventsModal = () => {
             </p>
             <img
               className="rounded-2xl border object-cover w-full my-8"
-              src={obj.img}
+              // src={obj.img}
+
+              src={`data:image/jpg;base64,${base64string}`}
               width="431"
               height="287"
             />
