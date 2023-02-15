@@ -3,7 +3,7 @@ import { RxCross1 } from "react-icons/rx";
 import ButtonOther from "../ButtonOther";
 import ReactDOM from "react-dom";
 import { ModalContext } from "../../pages/CurrentEvents";
-import Calendar from "../CalendarDELETE";
+import CalendarComp from "../CalendarComp";
 
 const CalendarModal = () => {
   const modalCtx = useContext(ModalContext);
@@ -30,7 +30,7 @@ const CalendarModal = () => {
               </div>
             </div>
 
-            <Calendar />
+            <CalendarComp />
 
             <div className="flex justify-center pt-28">
               <ButtonOther
