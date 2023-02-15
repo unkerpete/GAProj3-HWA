@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Login = ( {SET_ACCESS_TOKEN, ACCESS_TOKEN } ) => {
+const Login = ({ SET_ACCESS_TOKEN, ACCESS_TOKEN }) => {
   const [login, setLogin] = useState({
     username: "",
     password: "",
@@ -27,9 +27,7 @@ const Login = ( {SET_ACCESS_TOKEN, ACCESS_TOKEN } ) => {
       .then((result) => {
         console.log(result.access);
         SET_ACCESS_TOKEN(result.access);
-        
       });
-
   };
 
   const createUser = (e) => {
@@ -56,43 +54,47 @@ const Login = ( {SET_ACCESS_TOKEN, ACCESS_TOKEN } ) => {
 
   return (
     <div className="flex justify-center">
-      <div>
-      <h3>Enter Login Details</h3>
-      <form className="m-4" onSubmit={(e) => loginUser(e)}>
-        <input
-          className="border-2 border-black-500"
-          placeholder="username"
-          type="text"
-          onChange={(e) => {
-            handleChange(e);
-          }}
-          value={login.username}
-          name="username"
-        ></input>
-        <br />
-        <input
-          className="border-2 border-black-500"
-          placeholder="password"
-          type="text"
-          onChange={(e) => {
-            handleChange(e);
-          }}
-          value={login.password}
-          name="password"
-        ></input>
-        <br />
-        <button className="bg-gray-200 p-2 rounded" placeholder="submit">
-          Submit
-        </button>
-        <button
-          className="bg-gray-200 p-2 rounded"
-          placeholder="create"
-          onClick={(e) => createUser(e)}
-        >
-          create
-        </button>
-      </form>
-    </div>
+      <div className="rounded-lg shadow-lg bg-primary-200 m-10">
+        <span className="font-DM text-base font-normal">
+          <div className="p-10">
+            <div className="font-DM text-xl font-normal ml-5 w-44">Enter Login Details</div>
+            <form className="m-4" onSubmit={(e) => loginUser(e)}>
+              <input
+                className="border-2 border-lightgray-200 mx-auto mb-2 rounded-lg p-1"
+                placeholder="username"
+                type="text"
+                onChange={(e) => {
+                  handleChange(e);
+                }}
+                value={login.username}
+                name="username"
+              ></input>
+              <br />
+              <input
+                className="border-2 border-lightgray-200 mx-auto mb-2 rounded-lg p-1"
+                placeholder="password"
+                type="text"
+                onChange={(e) => {
+                  handleChange(e);
+                }}
+                value={login.password}
+                name="password"
+              ></input>
+              <br />
+              <button className="inline-block px-4 mx-2 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out" placeholder="submit">
+                Submit
+              </button>
+              <button
+                className="inline-block px-4 mx-2 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
+                placeholder="create"
+                onClick={(e) => createUser(e)}
+              >
+                create
+              </button>
+            </form>
+          </div>
+        </span>
+      </div>
     </div>
   );
 };

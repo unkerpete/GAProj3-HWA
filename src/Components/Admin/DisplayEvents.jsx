@@ -26,13 +26,17 @@ const DisplayEvents = () => {
   return (
     <>
       <button
-        className="my-5 ml-44 inline-block px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
+        className="my-6 ml-44 inline-block px-6 py-2.5 bg-primary-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-primary-800 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg transition duration-150 ease-in-out"
         onClick={handleFetchEvents}
       >
         Fetch Events
       </button>
       {/* Display spinner if still loading */}
-      {isLoading && <img src={spinner} width="200" />}
+      {isLoading && (
+        <div className="ml-40">
+          <img src={spinner} width="200" />
+        </div>
+      )}
 
       {/* Updated mapping */}
       {events.map((event) => {
@@ -45,21 +49,44 @@ const DisplayEvents = () => {
             <img src={`data:image/jpg;base64,${base64string}`} />
             <span className="text-gray-700 mb-4">
               <p>
-                Title :&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{" "}
+                <span className="font-bold">
+                  Title :&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{" "}
+                </span>
                 {event.title}
               </p>
-              <p>Start Date: &nbsp;&nbsp; {event.dateStart.split("T")[0]}</p>
               <p>
-                End Date: &nbsp;&nbsp;&nbsp; &nbsp;{event.dateEnd.split("T")[0]}
+                <span className="font-bold">Start Date: &nbsp;&nbsp;</span>{" "}
+                {event.dateStart.split("T")[0]}
               </p>
               <p>
-                Time: &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{" "}
+                <span className="font-bold">
+                  End Date: &nbsp;&nbsp;&nbsp; &nbsp;
+                </span>
+                {event.dateEnd.split("T")[0]}
+              </p>
+              <p>
+                <span className="font-bold">
+                  Time: &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{" "}
+                </span>
                 {event.timeString}
               </p>
-              <p>Description: {event.description}</p>
-              <p>Action :&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; {event.action}</p>
-              <p>Tags : &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; {event.tag}</p>
-              <div className="flex justify-center">
+              <p>
+                <span className="font-bold">Description: </span>
+                {event.description}
+              </p>
+              <p>
+                <span className="font-bold">
+                  Action :&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                </span>{" "}
+                {event.action}
+              </p>
+              <p>
+                <span className="font-bold">
+                  Tags : &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{" "}
+                </span>
+                {event.tag}
+              </p>
+              <div className="flex justify-center ml-3">
                 <Delete eventId={event._id} />
               </div>
 
@@ -68,7 +95,7 @@ const DisplayEvents = () => {
                   title={event.title}
                   description={event.description}
                   img={event.img}
-                  action={event.img}
+                  action={event.action}
                   tag={event.tag}
                   id={event._id}
                 />
