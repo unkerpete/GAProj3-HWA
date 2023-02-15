@@ -5,7 +5,7 @@ const Button1 = ({ text, handleSubmission }) => {
   return (
     <div>
       <button
-        className="bg-primary-600 text-white rounded-2xl px-4 py-1 mb-24 font-DM text-lg font-normal "
+        className="font-DM text-lg font-normal bg-primary-600 hover:bg-primary-800 text-white py-3 px-6 rounded-full hover:scale-105 ease-in-out duration-300"
         type="submit"
         onClick={(e) => {
           handleSubmission(e);

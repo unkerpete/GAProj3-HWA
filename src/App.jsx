@@ -15,6 +15,7 @@ import StyleGuide from "./pages/StyleGuide";
 import Calender from "./Components/Calendar";
 import tabContext from "./context/tabContext";
 import Admin from "./pages/Admin";
+import Payment from "./pages/Payment";
 
 function App() {
   const [getInvolvedActiveTab, setGetInvolvedActiveTab] = useState("tab1");
@@ -44,6 +45,7 @@ function App() {
           <Route path="/contact-us/" element={<ContactUs />} />
           <Route path="/styleguide" element={<StyleGuide />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/payment/" element={<Payment />} />
         </Routes>
         <Footer />
       </tabContext.Provider>

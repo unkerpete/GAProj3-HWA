@@ -4,11 +4,12 @@ import DisplayEvents from "../Components/Admin/DisplayEvents";
 import Login from "../Components/Admin/Login";
 
 const Admin = () => {
+  // FIXME: Bring this access token states to parent at App.jsx
   const [ACCESS_TOKEN, SET_ACCESS_TOKEN] = useState("");
 
   return (
     <>
-      {ACCESS_TOKEN === "" ? (
+      {/* {ACCESS_TOKEN === "" ? (
         <Login
           SET_ACCESS_TOKEN={SET_ACCESS_TOKEN}
           ACCESS_TOKEN={ACCESS_TOKEN}
@@ -33,7 +34,11 @@ const Admin = () => {
             </div>
           </div>
         </div>
-      )}
+        <div className="col-span-1 mb-10">
+          <DisplayEvents />
+        </div>
+      </div>
+      {/* )} */}
     </>
   );
 };
