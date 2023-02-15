@@ -15,10 +15,97 @@ const CurrentEvents = () => {
   const [calendarIsActive, setCalendarIsActive] = useState(false);
   const [dateRange, setDateRange] = useState("Current");
   const [selectedTag, setSelectedTag] = useState("All");
-  const [pictureInfo, setPictureInfo] = useState(dummyEvents);
+  const [pictureInfo, setPictureInfo] = useState([]);
   // const [refresh, setRefresh] = useState(true);
-  // const url = "http://127.0.0.1:5001/events/showbytagrange";
 
+  // The 2 APIs, one showing today + 3 days, the other showing everything else after that.
+  const currentEventsUrl = "http://127.0.0.1:5001/events/currentevents";
+  const upcomingEventsUrl = "http://127.0.0.1:5001/events/upcomingevents";
+
+  // fetches this data on change of dateRange state or selectedTag state,
+  useEffect(
+    () => {
+      if (selectedTag === "All") {
+        if (dateRange === "Current") {
+          const getAllCurrentEvents = async () => {
+            let data = {
+              withinTheseDays: "3",
+              tag: [
+                "Fundraisers",
+                "Talks",
+                "Community Gathering",
+                "Classes & Workshops",
+              ],
+            };
+            try {
+              const response = await fetch(currentEventsUrl, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+              });
+              const results = await response.json();
+              setPictureInfo(results);
+              console.log(results);
+            } catch (error) {
+              console.error(error);
+            }
+          };
+
+          getAllCurrentEvents();
+        }
+      } else if (dateRange === "Current") {
+        const getCurrentEvents = async () => {
+          let data = {
+            withinTheseDays: "3",
+            tag: selectedTag,
+          };
+          try {
+            const response = await fetch(currentEventsUrl, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+            const results = await response.json();
+            setPictureInfo(results);
+            console.log(results);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+
+        getCurrentEvents();
+      } else if (dateRange === "Upcoming") {
+        const getUpcomingEvents = async () => {
+          let data = {
+            afterTheseDays: "3",
+            tag: selectedTag,
+          };
+          try {
+            const response = await fetch(upcomingEventsUrl, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+            const results = await response.json();
+            setPictureInfo(results);
+            console.log(results);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+
+        getUpcomingEvents();
+      }
+    },
+    [dateRange],
+    [selectedTag]
+  );
   // const getFilteredEvents = async () => {
   //   fetch(url, {
   //     method: "POST",

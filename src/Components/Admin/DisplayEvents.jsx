@@ -54,6 +54,7 @@ const DisplayEvents = () => {
               <div className="flex justify-center">
                 <Delete eventId={event._id} />
               </div>
+
               <div className="flex justify-center ">
               <Update
                 title={event.title}
@@ -64,7 +65,6 @@ const DisplayEvents = () => {
                 id={event._id}
               />
               </div>
-              
             </span>
           </div>
         );
