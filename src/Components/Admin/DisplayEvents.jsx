@@ -4,16 +4,22 @@ import Update from "./Update";
 import axios from "axios";
 import useAxios from "../../Hooks/useAxios";
 import { Buffer } from "buffer";
+import spinner from "../../Components/Get-Involved/loadingspinner.svg";
 
 const DisplayEvents = () => {
   const [events, setEvents] = useState([]); // To store the array of events
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleFetchEvents = async () => {
+    setIsLoading(true);
     try {
       const res = await axios.get("http://127.0.0.1:5001/events/showall");
       setEvents(res.data.events);
       console.log("events: ", events);
     } catch (err) {
       console.log(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -25,6 +31,8 @@ const DisplayEvents = () => {
       >
         Fetch Events
       </button>
+      {/* Display spinner if still loading */}
+      {isLoading && <img src={spinner} width="200" />}
 
       {/* Updated mapping */}
       {events.map((event) => {
@@ -56,14 +64,14 @@ const DisplayEvents = () => {
               </div>
 
               <div className="flex justify-center ">
-              <Update
-                title={event.title}
-                description={event.description}
-                img={event.img}
-                action={event.img}
-                tag={event.tag}
-                id={event._id}
-              />
+                <Update
+                  title={event.title}
+                  description={event.description}
+                  img={event.img}
+                  action={event.img}
+                  tag={event.tag}
+                  id={event._id}
+                />
               </div>
             </span>
           </div>
