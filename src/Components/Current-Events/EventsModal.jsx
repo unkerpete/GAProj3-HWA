@@ -23,6 +23,23 @@ const EventsModal = () => {
   const modalCtx = useContext(ModalContext);
   const obj = modalCtx.modalEvent;
 
+  const weekday = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  const date = new Date(obj.dateStart);
+  const day = date.getDate();
+  const month = date.toLocaleString("default", { month: "short" });
+  const year = date.getFullYear();
+  const dayOfWeek = weekday[date.getDay()];
+  const formattedDate = `${day} ${month} ${year}, ${dayOfWeek}`;
+
   const handleModalClose = () => {
     modalCtx.changeModalStatus();
     modalCtx.enableScroll("root");
@@ -43,9 +60,11 @@ const EventsModal = () => {
               </div>
             </div>
             <p className="font-DM text-lg font-normal mt-3">
-              {obj.dateStart} {obj.dateEnd ? "-" : null} {obj.dateEnd}
-              {obj.timeString ? ", " : null}
-              {obj.timeString}
+              {/* {obj.dateStart} {obj.dateEnd ? "-" : null} {obj.dateEnd}
+              {obj.timeString ? ", " : null} */}
+              {formattedDate}
+              <br />
+              {obj.timeString && obj.timeString}
             </p>
             <img
               className="rounded-2xl border object-cover w-full my-8"
