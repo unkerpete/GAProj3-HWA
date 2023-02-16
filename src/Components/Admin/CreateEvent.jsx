@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
 import parse from "date-fns/parse";
 import axios from "axios";
-import { Buffer } from "buffer";
+// import { Buffer } from "buffer";
 import tabContext from "../../context/tabContext";
 
 const CreateEvent = () => {
-  const ctx = useContext(tabContext)
+  const ctx = useContext(tabContext);
   const [toggleCreate, setToggleCreate] = useState(false);
   const [file, setFile] = useState(null);
 
@@ -141,7 +141,6 @@ const CreateEvent = () => {
                 />
                 <label for="img">Image</label>
                 <input
-                  
                   placeholder="img"
                   name="img"
                   type="file"
