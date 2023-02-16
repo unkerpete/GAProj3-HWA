@@ -3,15 +3,15 @@
 ## Home Page
 <img width="1264" alt="image" src="https://user-images.githubusercontent.com/118168304/219431389-523f7428-681d-4740-8a03-6ba2672ad1dc.png">
 
-## Challenging Hover State of Image
-A styling feat that our team member Tyler did
-</br>
-<img width="1247" alt="image" src="https://user-images.githubusercontent.com/118168304/219440997-c42bb7a9-0de9-4ae5-bbdf-15eca5b26a87.png">
-
 ## Navigating Through The Pages
 The navigation bar at the top of each page provides the links to the main pages of the website. On hover of a main page link, a dropdown navigation bar appears with more specific links of said main page.
 </br>
 <img width="1266" alt="image" src="https://user-images.githubusercontent.com/118168304/219432433-fc021d51-e78c-4292-a579-80abea1a09d0.png">
+
+## Challenging Styling of Image
+A styling feat that our team member Tyler did. The intentional imperfect circle that appears on hovering over one of the image.
+</br>
+<img width="1247" alt="image" src="https://user-images.githubusercontent.com/118168304/219440997-c42bb7a9-0de9-4ae5-bbdf-15eca5b26a87.png">
 
 ## Form Submissions
 There are a few enquiry forms in the website. These forms have an email address validation (@ sign) and phone number validation (8 numbers). On a valid submission, a modal will appear to inform user.
