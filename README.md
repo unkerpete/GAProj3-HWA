@@ -1,4 +1,4 @@
-# hwa - frontend
+# HWA - Frontend
 
 ## Image file storage in MongoDB
 
