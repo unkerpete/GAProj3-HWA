@@ -1,10 +1,10 @@
-
 # Frontend Development for Handicaps Welfare Assocation
 
 As part of the General Assembly Software Engineering Immersive (SEI) course, our team of developers worked on creating a website for the Handicaps Welfare Association (HWA). We collaborated closely with the UX Design Immersive (UXDI) class to ensure that the website is designed to meet the needs and preferences of the association's target audience. Our goal was to create an accessible, user-friendly website that provides valuable information and resources to people with disabilities, their families, and the broader community. We used a range of frontend development tools and technologies, including HTML, CSS, JavaScript, Tailwind and the MERN stack, to bring the UXDI team's designs to life. Throughout the development process, we prioritized clear and consistent communication with the UXDI team to ensure that the final product meets the client's needs and exceed their expectations.
 
-| ----------------------------- | --------------------------------------------- | --------------------------------------------------|
-| ![Home page](public/Home.png) | ![Get Involved page](public/Get-Involved.png) | ![Current Events page](public/Current-Events.png) |
+![Home page](public/Home.png)
+![Get Involved page](public/Get-Involved.png)
+![Current Events page](public/Current-Events.png)
 
 ## Table of Contents
 
@@ -13,6 +13,7 @@ As part of the General Assembly Software Engineering Immersive (SEI) course, our
 - [Technologies](#technologies)
 - [Hierarchy](#hierarchy)
 - [Frontend Approach](#frontend-approach)
+- [Image file storage in MongoDB](#image-file-storage-in-mongodb)
 - [Contributors](#contributors)
 - [References](#references)
 
@@ -49,11 +50,15 @@ This project uses the following technologies:
 - **R**eact: a frontend JavaScript library for building user interfaces
 - **N**ode.js: a JavaScript runtime environment for server-side development
 
-## Heirarchy
+## Hierarchy
+
+![Hierarchy](public/Hierarchy.png)
+
+(If the image is too small for viewing, you may download it from the public directory.)
 
 ## Frontend Approach
 
-#### Identify Dynamic UI
+### Identify Dynamic UI
 
 We identified the following key dynamic UX features:
 
@@ -61,7 +66,7 @@ We identified the following key dynamic UX features:
 - Interactive animations: Animations for tabs, accordians and buttons that respond to user clicking
 - Dynamic filtering: Event displays that adjust based on user selected filters
 
-#### React & Tailwind
+### React & Tailwind
 
 We then used React and Tailwind, which complement each other in building those dynamic features.
 
@@ -71,7 +76,7 @@ We then used React and Tailwind, which complement each other in building those d
 
 - Responsive design: Tailwind's responsive utility classes, combined with React's ability to conditionally render components based on state, makes it easy to create responsive and adaptive UIs that work across the entire web applications. For example, we used a single Form component that shows different labels on different pages. We also used a single PictureCard component that renders either a horizontal or vertical layout depending on the state on the page.
 
-#### React & Backend
+### React & Backend
 
 We use React to store states and user input to fetch data from a database:
 
@@ -81,7 +86,7 @@ We use React to store states and user input to fetch data from a database:
 4. Set up states to store the fetched data.
 5. Update the UI based on the fetched data.
 
-## Image file storage in MongoDB
+### Image file storage in MongoDB
 
 A dedicated route `/admin` allows for potential users to skip the hassle of interacting with the database to create new information, specifically for the events creation, updating and deleting.
 
@@ -108,7 +113,7 @@ And that's all on the client side of things.
 
 If you would like to further customize the site's appearance, feel free to refer to the styling guide below for more information!
 
-#### 1. CSS Style Guide by Tyler
+### CSS Style Guide
 
 ```HTML
     <div>
@@ -153,6 +158,8 @@ If you would like to further customize the site's appearance, feel free to refer
 - Mapping fetched data led to some props not being rendered, such as the background colour of event tags and the number of search results.
 
 - Minor styling issues that make the web application differ slightly from the original UX design.
+
+- Further optimization of hierarchy.
 
 ## Contributors
 
