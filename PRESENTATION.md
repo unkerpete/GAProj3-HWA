@@ -11,7 +11,7 @@ The navigation bar at the top of each page provides the links to the main pages 
 ## Challenging Styling of Image
 A styling feat that our team member Tyler did. The intentional imperfect circle that appears on hovering over one of the image.
 </br>
-<img width="1247" alt="image" src="https://user-images.githubusercontent.com/118168304/219440997-c42bb7a9-0de9-4ae5-bbdf-15eca5b26a87.png">
+<img width="1199" alt="image" src="https://user-images.githubusercontent.com/118168304/219442454-9534c6ac-844f-49d3-a56e-9cfad017164b.png">
 
 ## Form Submissions
 There are a few enquiry forms in the website. These forms have an email address validation (@ sign) and phone number validation (8 numbers). On a valid submission, a modal will appear to inform user.
