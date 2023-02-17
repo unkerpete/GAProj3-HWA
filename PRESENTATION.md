@@ -28,12 +28,13 @@ At the current events page the user can filter events by a combination of its da
 
 </br>
 Filtering by "Current", "Upcoming", "Past" and Categories
-![Eventpage_walkthrough](https://user-images.githubusercontent.com/118168304/219543623-d9958a0a-e8ad-400f-963a-d13036398de3.gif)
-
+</br>
+![Eventpage_walkthrough](https://user-images.githubusercontent.com/118168304/219544020-e3e24e36-608c-4cdd-b177-063053d6f454.gif)
 
 </br>
 Filtering by date range on calender
-![Eventpage_Calender](https://user-images.githubusercontent.com/118168304/219543016-1015921f-4ad3-472b-873e-1f9c2bf6d774.gif)
+</br>
+![Eventpage_Calender](https://user-images.githubusercontent.com/118168304/219544037-f0e34f5c-ff7a-472d-9e17-7575b452e0e3.gif)
 
 
 ## Admin Page
