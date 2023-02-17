@@ -24,7 +24,7 @@ At the donation page, clicking on one of the donation amount choices will prefil
 <img width="469" alt="image" src="https://user-images.githubusercontent.com/118168304/219437838-a5bb2ff7-2e02-40c6-b631-af7402e98298.png">
 
 ## Current Events Page
-At the current events page the user can filter events by a combination of its dates ("Current", "Upcoming", and "Past"), and its category. A For this website, "Current" retrieves events within the next 3 days, "Upcoming" retrieves events happening after the next 3 days.
+At the current events page the user can filter events by a combination of its dates ("Current", "Upcoming", and "Past"), and its category. For this website, "Current" refers to events happening within the next 3 days, "Upcoming" refers to events happening after "Current".
 </br>
 <img width="787" alt="image" src="https://user-images.githubusercontent.com/118168304/219438610-6759fd3c-c499-4cba-b4e8-3c3ff8334929.png">
 
