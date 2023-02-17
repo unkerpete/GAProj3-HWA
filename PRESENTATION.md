@@ -26,12 +26,10 @@ At the donation page, clicking on one of the donation amount choices will prefil
 ## Current Events Page
 At the current events page the user can filter events by a combination of its dates ("Current", "Upcoming", and "Past"), and its category. For this website, "Current" refers to events happening within the next 3 days, "Upcoming" refers to events happening after "Current".
 
-</br>
 Filtering by "Current", "Upcoming", "Past" and Categories
 </br>
 ![Eventpage_walkthrough](https://user-images.githubusercontent.com/118168304/219544020-e3e24e36-608c-4cdd-b177-063053d6f454.gif)
 
-</br>
 Filtering by date range on calender
 </br>
 ![Eventpage_Calender](https://user-images.githubusercontent.com/118168304/219544037-f0e34f5c-ff7a-472d-9e17-7575b452e0e3.gif)
@@ -39,5 +37,13 @@ Filtering by date range on calender
 
 ## Admin Page
 At the admin page the admin can perform full CRUD functions for events. The admin can create new events along with uploading of an image relevant to the event. In this page, the admin can also delete, update, and read all events.
+
+Creating an Event
 </br>
-<img width="696" alt="image" src="https://user-images.githubusercontent.com/118168304/219439943-786c913a-002a-4246-91a7-1208403f3af4.png">
+![Upload_testPost](https://user-images.githubusercontent.com/118168304/219544337-6dd49a31-6198-4c14-870b-5a9c45ddc9af.gif)
+
+Updating and Deleting an Event
+</br>
+![UpdateDel_testPost](https://user-images.githubusercontent.com/118168304/219544685-a0cd6150-cd17-464d-bdae-1243400cc3da.gif)
+
+
