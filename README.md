@@ -181,5 +181,5 @@ If you would like to further customize the site's appearance, feel free to refer
 
 - All images were provide by the UXDI team.
 
-- [Figma prototype from the UXDI team](https://www.figma.com/proto/mAoZuGPEzFhi83uKqWOsCq/Proj-3-Fig-Design---Heartz-Design-HWA?page-id=596%3A29933&node-id=596%3A29938&viewport=961%2C528%2C0.02&scaling=scale-down&starting-point-node-id=596%3A29938)
+- [Figma prototype from the UXDI team (wireframe)](https://www.figma.com/proto/mAoZuGPEzFhi83uKqWOsCq/Proj-3-Fig-Design---Heartz-Design-HWA?page-id=596%3A29933&node-id=596%3A29938&viewport=961%2C528%2C0.02&scaling=scale-down&starting-point-node-id=596%3A29938)
 
