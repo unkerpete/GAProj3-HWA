@@ -1,5 +1,4 @@
-
-# Frontend Development for Handicaps Welfare Assocation
+# Frontend Development for Handicaps Welfare Association
 
 As part of the General Assembly Software Engineering Immersive (SEI) course, our team of developers worked on creating a website for the Handicaps Welfare Association (HWA). We collaborated closely with the UX Design Immersive (UXDI) class to ensure that the website is designed to meet the needs and preferences of the association's target audience. Our goal was to create an accessible, user-friendly website that provides valuable information and resources to people with disabilities, their families, and the broader community. We used a range of frontend development tools and technologies, including HTML, CSS, JavaScript, Tailwind and the MERN stack, to bring the UXDI team's designs to life. Throughout the development process, we prioritized clear and consistent communication with the UXDI team to ensure that the final product meets the client's needs and exceed their expectations.
 
@@ -49,7 +48,9 @@ This project uses the following technologies:
 - **R**eact: a frontend JavaScript library for building user interfaces
 - **N**ode.js: a JavaScript runtime environment for server-side development
 
-## Heirarchy
+## Hierarchy
+
+![Hierarchy](images/hie.svg)
 
 ## Frontend Approach
 
@@ -58,7 +59,7 @@ This project uses the following technologies:
 We identified the following key dynamic UX features:
 
 - Dynamic forms: Forms that adjust or update based on user input or validation errors, providing instant feedback and guidance to the user
-- Interactive animations: Animations for tabs, accordians and buttons that respond to user clicking
+- Interactive animations: Animations for tabs, accordions and buttons that respond to user clicking
 - Dynamic filtering: Event displays that adjust based on user selected filters
 
 #### React & Tailwind
