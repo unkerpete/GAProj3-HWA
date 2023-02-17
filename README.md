@@ -1,6 +1,5 @@
 # Frontend Development for Handicaps Welfare Assocation
 
-
 As part of the General Assembly Software Engineering Immersive (SEI) course, our team of developers worked on creating a website for the Handicaps Welfare Association (HWA). We collaborated closely with the UX Design Immersive (UXDI) class to ensure that the website is designed to meet the needs and preferences of the association's target audience. Our goal was to create an accessible, user-friendly website that provides valuable information and resources to people with disabilities, their families, and the broader community. We used a range of frontend development tools and technologies, including HTML, CSS, JavaScript, Tailwind and the MERN stack, to bring the UXDI team's designs to life. Throughout the development process, we prioritized clear and consistent communication with the UXDI team to ensure that the final product meets the client's needs and exceed their expectations.
 
 ![Home page](public/Home.png)
@@ -9,15 +8,25 @@ As part of the General Assembly Software Engineering Immersive (SEI) course, our
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Technologies](#technologies)
-- [Hierarchy](#hierarchy)
-- [Frontend Approach](#frontend-approach)
-- [CSS Style Guide](#css-style-guide)
-- [Image file storage in MongoDB](#image-file-storage-in-mongodb)
-- [Contributors](#contributors)
-- [References](#references)
+- [Frontend Development for Handicaps Welfare Assocation](#frontend-development-for-handicaps-welfare-assocation)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Technologies](#technologies)
+  - [Hierarchy](#hierarchy)
+  - [Frontend Approach](#frontend-approach)
+    - [_Identify Dynamic UI_](#identify-dynamic-ui)
+    - [_React \& Tailwind_](#react--tailwind)
+    - [React \& Backend](#react--backend)
+    - [Image file storage in MongoDB](#image-file-storage-in-mongodb)
+    - [Reading retrieved binary image from database](#reading-retrieved-binary-image-from-database)
+  - [CSS Style Guide](#css-style-guide)
+  - [Challenges](#challenges)
+  - [Unsolved Problems \& Further Work](#unsolved-problems--further-work)
+  - [Contributors](#contributors)
+    - [SEI Team](#sei-team)
+    - [UXDI Team](#uxdi-team)
+  - [References](#references)
 
 ## Installation
 
@@ -35,7 +44,7 @@ As part of the General Assembly Software Engineering Immersive (SEI) course, our
 - npm install -D tailwindcss
 
 3. Start the development server: npm run dev
-4. Open http://localhost:3000 or any other port to view it in the browser.
+4. Open http://localhost:3000 or any other port that you have configured to view it in the browser.
 
 ## Usage
 
@@ -54,28 +63,27 @@ This project uses the following technologies:
 
 ## Hierarchy
 
-
 ![Hierarchy](images/hie.svg)
 
 ## Frontend Approach
 
-### Identify Dynamic UI
+### _Identify Dynamic UI_
 
 We identified the following key dynamic UX features:
 
-- Dynamic forms: Forms that adjust or update based on user input or validation errors, providing instant feedback and guidance to the user
-- Interactive animations: Animations for tabs, accordions and buttons that respond to user clicking
-- Dynamic filtering: Event displays that adjust based on user selected filters
+- **Dynamic forms**: Forms that adjust or update based on user input or validation errors, providing instant feedback and guidance to the user
+- **Interactive animations**: Animations for tabs, accordions and buttons that respond to user clicking
+- **Dynamic filtering**: Event displays that adjust based on user selected filters
 
-### React & Tailwind
+### _React & Tailwind_
 
 We then used React and Tailwind, which complement each other in building those dynamic features.
 
-- Reusable components: Using React's component-based architecture, we built reusable UI components, which made our code modular and maintainable. We used Tailwind's utility classes to style these components in a flexible and consistent way, making it easier to achieve a consistent look and feel across our entire application.
+- **Reusable components**: Using React's component-based architecture, we built reusable UI components, which made our code modular and maintainable. We used Tailwind's utility classes to style these components in a flexible and consistent way, making it easier to achieve a consistent look and feel across our entire application.
 
-- Rapid development: Because Tailwind's utility classes provide a large set of pre-defined styles, we could quickly build UI components without having to write custom CSS. This saved us time and allowed us to focus on building functionality rather than tweaking CSS styles.
+- **Rapid development**: Because Tailwind's utility classes provide a large set of pre-defined styles, we could quickly build UI components without having to write custom CSS. This saved us time and allowed us to focus on building functionality rather than tweaking CSS styles.
 
-- Responsive design: Tailwind's responsive utility classes, combined with React's ability to conditionally render components based on state, makes it easy to create responsive and adaptive UIs that work across the entire web applications. For example, we used a single Form component that shows different labels on different pages. We also used a single PictureCard component that renders either a horizontal or vertical layout depending on the state on the page.
+- **Responsive design**: Tailwind's responsive utility classes, combined with React's ability to conditionally render components based on state, makes it easy to create responsive and adaptive UIs that work across the entire web applications. For example, we used a single Form component that shows different labels on different pages. We also used a single PictureCard component that renders either a horizontal or vertical layout depending on the state on the page.
 
 ### React & Backend
 
@@ -109,6 +117,33 @@ Instead, we chose to have a single point of access to all these information, and
 ![fetching to API endpoints](/images/APIcall.png)
 
 And that's all on the client side of things.
+
+### Reading retrieved binary image from database
+
+The binary data retrieved from the database needs to be read in order to display the images correctly in the browser.
+
+1. For the components that will be rendering the images retrieved, we need to import `Buffer` which helps in the handling and operations of binary data.
+
+![importing buffer](/images/buffer.png)
+
+2. In the fetch function, we keep the results headers to be `"Content-Type": "application/json"`. This data is then stored into a state. The image object will later be manipulated.
+
+3. We will initialize the buffer with the data by calling `Buffer.from()` and we read the data from the buffer with `toString("base64")`, specifying that it is of Base64 encoding. The returned string is stored into a variable.
+
+```javascript
+const base64string = Buffer.from(obj.img.data.data).toString("base64");
+```
+
+4. We then finally pass this variable to our `img` tag as it's `src` property to be rendered. Here, it is specified that the image is of Base64 encoding, and the string is passed.
+
+```javascript
+<img
+  className="rounded-2xl border test"
+  src={`data:image/jpg;base64,${base64string}`}
+  width="431"
+  max-height="287"
+/>
+```
 
 ## CSS Style Guide
 
@@ -144,11 +179,11 @@ If you would like to further customize the site's appearance, feel free to refer
 
 ## Challenges
 
-- Data inconsistency: Maintaining data consistency between the front-end and back-end required careful attention to detail. When the front-end and back-end had different data structures, keys or validation, inconsistencies occured, which led to bugs and other issues.
+- **Data inconsistency**: Maintaining data consistency between the front-end and back-end required careful attention to detail. When the front-end and back-end had different data structures, keys or validation, inconsistencies occurred, which led to bugs and other issues.
 
-- Performance: As we were using the free version of MongoDB Atlas with limited bandwidth, network latency led to slow response times in the display of images.
+- **Performance**: As we were using the free version of MongoDB Atlas with limited bandwidth, network latency led to slow response times in the display of images.
 
-- Testing: Testing the integration between the front-end and back-end was complex and time-consuming. Often, things did not display as expected when testing the HTTP requests.
+- **Testing**: Testing the integration between the front-end and back-end was complex and time-consuming. Often, things did not display as expected when testing the HTTP requests.
 
 ## Unsolved Problems & Further Work
 
@@ -182,4 +217,3 @@ If you would like to further customize the site's appearance, feel free to refer
 - All images were provide by the UXDI team.
 
 - [Figma prototype from the UXDI team (wireframe)](https://www.figma.com/proto/mAoZuGPEzFhi83uKqWOsCq/Proj-3-Fig-Design---Heartz-Design-HWA?page-id=596%3A29933&node-id=596%3A29938&viewport=961%2C528%2C0.02&scaling=scale-down&starting-point-node-id=596%3A29938)
-
