@@ -13,6 +13,7 @@ As part of the General Assembly Software Engineering Immersive (SEI) course, our
 - [Technologies](#technologies)
 - [Hierarchy](#hierarchy)
 - [Frontend Approach](#frontend-approach)
+- [CSS Style Guide](#css-style-guide)
 - [Image file storage in MongoDB](#image-file-storage-in-mongodb)
 - [Contributors](#contributors)
 - [References](#references)
@@ -109,11 +110,9 @@ Instead, we chose to have a single point of access to all these information, and
 
 And that's all on the client side of things.
 
-## Additional Info
+## CSS Style Guide
 
 If you would like to further customize the site's appearance, feel free to refer to the styling guide below for more information!
-
-### CSS Style Guide
 
 ```HTML
     <div>
@@ -182,4 +181,3 @@ If you would like to further customize the site's appearance, feel free to refer
 
 - All images were provide by the UXDI team.
 - [Figma prototype from the UXDI team](https://www.figma.com/proto/mAoZuGPEzFhi83uKqWOsCq/Proj-3-Fig-Design---Heartz-Design-HWA?page-id=596%3A29933&node-id=596%3A29938&viewport=961%2C528%2C0.02&scaling=scale-down&starting-point-node-id=596%3A29938)
-
