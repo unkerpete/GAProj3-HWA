@@ -16,17 +16,25 @@ A styling feat that our team member Tyler did. The intentional imperfect circle 
 ## Form Submissions
 There are a few enquiry forms in the website. These forms have an email address validation (@ sign) and phone number validation (8 numbers). On a valid submission, a modal will appear to inform user.
 </br>
-<img width="625" alt="image" src="https://user-images.githubusercontent.com/118168304/219434523-50f1c742-9a08-4cb4-952d-959233b493e2.png">
+![Form_Validation](https://user-images.githubusercontent.com/118168304/219540994-21e48c47-bfe0-4262-8535-f53d8a38ac71.gif)
 
 ## Donation Page
 At the donation page, clicking on one of the donation amount choices will prefill the "Complete Donation" button below.
 </br>
-<img width="469" alt="image" src="https://user-images.githubusercontent.com/118168304/219437838-a5bb2ff7-2e02-40c6-b631-af7402e98298.png">
+![Donate](https://user-images.githubusercontent.com/118168304/219540476-0f8a158e-dc36-4363-ad83-b24717c9f360.gif)
 
 ## Current Events Page
 At the current events page the user can filter events by a combination of its dates ("Current", "Upcoming", and "Past"), and its category. For this website, "Current" refers to events happening within the next 3 days, "Upcoming" refers to events happening after "Current".
+
 </br>
-<img width="787" alt="image" src="https://user-images.githubusercontent.com/118168304/219438610-6759fd3c-c499-4cba-b4e8-3c3ff8334929.png">
+Filtering by "Current", "Upcoming", "Past" and Categories
+![Eventpage_walkthrough](https://user-images.githubusercontent.com/118168304/219543623-d9958a0a-e8ad-400f-963a-d13036398de3.gif)
+
+
+</br>
+Filtering by date range on calender
+![Eventpage_Calender](https://user-images.githubusercontent.com/118168304/219543016-1015921f-4ad3-472b-873e-1f9c2bf6d774.gif)
+
 
 ## Admin Page
 At the admin page the admin can perform full CRUD functions for events. The admin can create new events along with uploading of an image relevant to the event. In this page, the admin can also delete, update, and read all events.
